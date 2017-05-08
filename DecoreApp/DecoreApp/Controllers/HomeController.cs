@@ -10,14 +10,12 @@ namespace DecoreApp.Controllers
     {
         public ActionResult Index()
         {
-
-            // hej
             return View();
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Your application description page";
 
             return View();
         }
