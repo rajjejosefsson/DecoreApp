@@ -10,6 +10,8 @@ namespace DecoreApp.Controllers
     {
         public ActionResult Index()
         {
+
+            // hej
             return View();
         }
 
