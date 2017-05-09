@@ -1,0 +1,9 @@
+c:\users\administratör.win-ohoru1ap6cb\documents\visual studio 2017\Projects\EventService\decore.models\bin\Debug\decore.models.dll
+c:\users\administratör.win-ohoru1ap6cb\documents\visual studio 2017\Projects\EventService\decore.models\bin\Debug\decore.models.pdb
+c:\users\administratör.win-ohoru1ap6cb\documents\visual studio 2017\Projects\EventService\decore.models\obj\Debug\decore.models.csprojResolveAssemblyReference.cache
+c:\users\administratör.win-ohoru1ap6cb\documents\visual studio 2017\Projects\EventService\decore.models\obj\Debug\decore.models.dll
+c:\users\administratör.win-ohoru1ap6cb\documents\visual studio 2017\Projects\EventService\decore.models\obj\Debug\decore.models.pdb
+C:\inetpub\wwwroot\group4\decore.models\bin\Debug\decore.models.dll
+C:\inetpub\wwwroot\group4\decore.models\bin\Debug\decore.models.pdb
+C:\inetpub\wwwroot\group4\decore.models\obj\Debug\decore.models.dll
+C:\inetpub\wwwroot\group4\decore.models\obj\Debug\decore.models.pdb

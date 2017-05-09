@@ -1,0 +1,14 @@
+C:\Users\Administratör.WIN-OHORU1AP6CB\Desktop\EventService\obj\Debug\EventService.csprojResolveAssemblyReference.cache
+C:\inetpub\wwwroot\group4\EventService\obj\Debug\EventService.csprojResolveAssemblyReference.cache
+C:\inetpub\wwwroot\group4\EventService\bin\EventService.dll.config
+C:\inetpub\wwwroot\group4\EventService\bin\EventService.dll
+C:\inetpub\wwwroot\group4\EventService\bin\EventService.pdb
+C:\inetpub\wwwroot\group4\EventService\bin\Decore.Models.dll
+C:\inetpub\wwwroot\group4\EventService\bin\Decore.Models.pdb
+C:\inetpub\wwwroot\group4\EventService\obj\Debug\EventService.dll
+C:\inetpub\wwwroot\group4\EventService\obj\Debug\EventService.pdb
+C:\inetpub\wwwroot\group4\EventService\bin\decore.data.dll
+C:\inetpub\wwwroot\group4\EventService\bin\EntityFramework.dll
+C:\inetpub\wwwroot\group4\EventService\bin\decore.data.pdb
+C:\inetpub\wwwroot\group4\EventService\bin\decore.data.dll.config
+C:\inetpub\wwwroot\group4\EventService\bin\EntityFramework.xml
