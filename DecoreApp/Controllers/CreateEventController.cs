@@ -19,7 +19,7 @@ namespace DecoreApp.Controllers
         {
             var eventsTypes = new Dictionary<int, string>
             {
-               {0, "Sittning"},
+               {0, "Sittning!"},
                {1, "Leka"},
                {2, "Dansa"},
             };
