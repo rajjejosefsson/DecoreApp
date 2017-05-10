@@ -11,6 +11,9 @@ using Decore.Data.Repositories;
 namespace EventService
 {
 
+
+
+
     /// <summary>
     /// Class EventService.
     /// </summary>
@@ -22,6 +25,7 @@ namespace EventService
         /// The event repository
         /// </summary>
         private readonly EventRepository _eventRepository = new EventRepository();
+
 
 
         /// <summary>
@@ -55,6 +59,7 @@ namespace EventService
         {
             throw new NotImplementedException();
         }
+
 
 
 
