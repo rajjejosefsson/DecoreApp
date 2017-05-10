@@ -16,18 +16,12 @@ namespace DecoreApp.Controllers
 
         public ActionResult Index(string title, string description)
         {
-
-
-            // TODO: skiter sig 
-           var events = _eventWCFclient.GetEvents();
-
-
-        var viewModel = new EventViewModel
-            {
-                Events = events
-            };
-
-            return View(viewModel);
-        }
+            var events = _eventWCFclient.GetEvents();
+            var viewModel = new EventViewModel
+                {
+                    Events = events
+                };
+                return View(viewModel);
+            }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using DecoreApp.Models;
+using Decore.Models;
 
 namespace DecoreApp.ViewModels
 {

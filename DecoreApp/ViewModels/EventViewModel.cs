@@ -43,7 +43,11 @@ namespace DecoreApp.ViewModels
         public string Description { get; set; }
 
 
+        [Required(ErrorMessage = "Beskrivning måste anges")]
+        public float BasePrice { get; set; }
 
+
+      
 
     }
 }

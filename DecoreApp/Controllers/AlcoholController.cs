@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DecoreApp.ViewModels;
-using DecoreApp.Models;
+using Decore.Models;
 
 namespace DecoreApp.Controllers
 {

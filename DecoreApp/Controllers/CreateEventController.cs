@@ -29,6 +29,8 @@ namespace DecoreApp.Controllers
             {
                 EventTypes = eventsTypes
             };
+
+
             return View(viewModel);
         }
 
@@ -39,27 +41,27 @@ namespace DecoreApp.Controllers
         {
 
 
-            var ev = new Event
+            var eventObject = new Event
             {
                 Title = viewModel.Title,
                 Description = viewModel.Description,
-                StartDate = DateTime.Now,
-                EndDate = DateTime.Now,
-                SaleStop = DateTime.Now,
-                BasePrice = 23,
-                EventType = "Sittning",
+                StartDate = DateTime.Now, // ADD TO FORM
+                EndDate = DateTime.Now, // ADD TO FORM
+                SaleStop = DateTime.Now, // ADD TO FORM
+                BasePrice = viewModel.BasePrice,
+                EventType = "Sittning", // ADD TO FORM
                 ZipCode = viewModel.ZipCode,
                 Adress = viewModel.Adress,
                 ImageURL = viewModel.ImageURL,
-                EventOwner = 1,
-                CreatedBy = 1,
+                EventOwner = 1, // ADD TO FORM (NEED TO GET USER FIRST)
+                CreatedBy = 1, // ADD TO FORM (NEED TO GET USER FIRST)
                 CreatedAt = DateTime.Now,
-                UpdatedAt = DateTime.Now
+                UpdatedAt = DateTime.Now // IS NOT NEEDED TO SHOW 
             };
-            _eventWCFclient.CreateEvent(ev);
+            _eventWCFclient.CreateEvent(eventObject);
 
 
-            return RedirectToAction("Index", "Events");
+            return RedirectToAction("Index", "EventList");
         }
 
 
