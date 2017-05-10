@@ -9,300 +9,29 @@
 //------------------------------------------------------------------------------
 
 namespace DecoreApp.EventServiceReference {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Event", Namespace="http://schemas.datacontract.org/2004/07/Decore.Models", IsReference=true)]
-    [System.SerializableAttribute()]
-    public partial class Event : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AdressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private float BasePriceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CreatedAtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CreatedByField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime EndDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int EventOwnerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EventTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ImageURLField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime SaleStopField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime StartDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TitleField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime UpdatedAtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ZipCodeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Adress {
-            get {
-                return this.AdressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AdressField, value) != true)) {
-                    this.AdressField = value;
-                    this.RaisePropertyChanged("Adress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public float BasePrice {
-            get {
-                return this.BasePriceField;
-            }
-            set {
-                if ((this.BasePriceField.Equals(value) != true)) {
-                    this.BasePriceField = value;
-                    this.RaisePropertyChanged("BasePrice");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedAt {
-            get {
-                return this.CreatedAtField;
-            }
-            set {
-                if ((this.CreatedAtField.Equals(value) != true)) {
-                    this.CreatedAtField = value;
-                    this.RaisePropertyChanged("CreatedAt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CreatedBy {
-            get {
-                return this.CreatedByField;
-            }
-            set {
-                if ((this.CreatedByField.Equals(value) != true)) {
-                    this.CreatedByField = value;
-                    this.RaisePropertyChanged("CreatedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime EndDate {
-            get {
-                return this.EndDateField;
-            }
-            set {
-                if ((this.EndDateField.Equals(value) != true)) {
-                    this.EndDateField = value;
-                    this.RaisePropertyChanged("EndDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int EventOwner {
-            get {
-                return this.EventOwnerField;
-            }
-            set {
-                if ((this.EventOwnerField.Equals(value) != true)) {
-                    this.EventOwnerField = value;
-                    this.RaisePropertyChanged("EventOwner");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EventType {
-            get {
-                return this.EventTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EventTypeField, value) != true)) {
-                    this.EventTypeField = value;
-                    this.RaisePropertyChanged("EventType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ImageURL {
-            get {
-                return this.ImageURLField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ImageURLField, value) != true)) {
-                    this.ImageURLField = value;
-                    this.RaisePropertyChanged("ImageURL");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime SaleStop {
-            get {
-                return this.SaleStopField;
-            }
-            set {
-                if ((this.SaleStopField.Equals(value) != true)) {
-                    this.SaleStopField = value;
-                    this.RaisePropertyChanged("SaleStop");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime StartDate {
-            get {
-                return this.StartDateField;
-            }
-            set {
-                if ((this.StartDateField.Equals(value) != true)) {
-                    this.StartDateField = value;
-                    this.RaisePropertyChanged("StartDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Title {
-            get {
-                return this.TitleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
-                    this.TitleField = value;
-                    this.RaisePropertyChanged("Title");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime UpdatedAt {
-            get {
-                return this.UpdatedAtField;
-            }
-            set {
-                if ((this.UpdatedAtField.Equals(value) != true)) {
-                    this.UpdatedAtField = value;
-                    this.RaisePropertyChanged("UpdatedAt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ZipCode {
-            get {
-                return this.ZipCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ZipCodeField, value) != true)) {
-                    this.ZipCodeField = value;
-                    this.RaisePropertyChanged("ZipCode");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="EventServiceReference.IEventService")]
     public interface IEventService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEventService/GetEvents", ReplyAction="http://tempuri.org/IEventService/GetEventsResponse")]
-        DecoreApp.EventServiceReference.Event[] GetEvents();
+        Decore.Models.Event[] GetEvents();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEventService/GetEvents", ReplyAction="http://tempuri.org/IEventService/GetEventsResponse")]
-        System.Threading.Tasks.Task<DecoreApp.EventServiceReference.Event[]> GetEventsAsync();
+        System.Threading.Tasks.Task<Decore.Models.Event[]> GetEventsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEventService/GetEventById", ReplyAction="http://tempuri.org/IEventService/GetEventByIdResponse")]
-        DecoreApp.EventServiceReference.Event GetEventById(int eventId);
+        Decore.Models.Event GetEventById(int eventId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEventService/GetEventById", ReplyAction="http://tempuri.org/IEventService/GetEventByIdResponse")]
-        System.Threading.Tasks.Task<DecoreApp.EventServiceReference.Event> GetEventByIdAsync(int eventId);
+        System.Threading.Tasks.Task<Decore.Models.Event> GetEventByIdAsync(int eventId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEventService/CreateEvent", ReplyAction="http://tempuri.org/IEventService/CreateEventResponse")]
-        void CreateEvent(DecoreApp.EventServiceReference.Event eventObject);
+        void CreateEvent(Decore.Models.Event eventObject);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEventService/CreateEvent", ReplyAction="http://tempuri.org/IEventService/CreateEventResponse")]
-        System.Threading.Tasks.Task CreateEventAsync(DecoreApp.EventServiceReference.Event eventObject);
+        System.Threading.Tasks.Task CreateEventAsync(Decore.Models.Event eventObject);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -332,27 +61,27 @@ namespace DecoreApp.EventServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public DecoreApp.EventServiceReference.Event[] GetEvents() {
+        public Decore.Models.Event[] GetEvents() {
             return base.Channel.GetEvents();
         }
         
-        public System.Threading.Tasks.Task<DecoreApp.EventServiceReference.Event[]> GetEventsAsync() {
+        public System.Threading.Tasks.Task<Decore.Models.Event[]> GetEventsAsync() {
             return base.Channel.GetEventsAsync();
         }
         
-        public DecoreApp.EventServiceReference.Event GetEventById(int eventId) {
+        public Decore.Models.Event GetEventById(int eventId) {
             return base.Channel.GetEventById(eventId);
         }
         
-        public System.Threading.Tasks.Task<DecoreApp.EventServiceReference.Event> GetEventByIdAsync(int eventId) {
+        public System.Threading.Tasks.Task<Decore.Models.Event> GetEventByIdAsync(int eventId) {
             return base.Channel.GetEventByIdAsync(eventId);
         }
         
-        public void CreateEvent(DecoreApp.EventServiceReference.Event eventObject) {
+        public void CreateEvent(Decore.Models.Event eventObject) {
             base.Channel.CreateEvent(eventObject);
         }
         
-        public System.Threading.Tasks.Task CreateEventAsync(DecoreApp.EventServiceReference.Event eventObject) {
+        public System.Threading.Tasks.Task CreateEventAsync(Decore.Models.Event eventObject) {
             return base.Channel.CreateEventAsync(eventObject);
         }
     }

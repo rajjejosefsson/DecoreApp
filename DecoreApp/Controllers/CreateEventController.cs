@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using DecoreApp.ViewModels;
 using DecoreApp.EventServiceReference;
+using Decore.Models;
 
 namespace DecoreApp.Controllers
 {
@@ -38,23 +39,27 @@ namespace DecoreApp.Controllers
         {
 
 
-            // post to event webservice 
-
-            var eventObj = new Event();
-            var ev = new Event {Title = "Patrik Festen", EventType = "Sittning", Adress = "Skolgatan 21", Description = "Knarka på Så hårt det går" };
-
+            var ev = new Event
+            {
+                Title = viewModel.Title,
+                Description = viewModel.Description,
+                StartDate = DateTime.Now,
+                EndDate = DateTime.Now,
+                SaleStop = DateTime.Now,
+                BasePrice = 23,
+                EventType = "Sittning",
+                ZipCode = viewModel.ZipCode,
+                Adress = viewModel.Adress,
+                ImageURL = viewModel.ImageURL,
+                EventOwner = 1,
+                CreatedBy = 1,
+                CreatedAt = DateTime.Now,
+                UpdatedAt = DateTime.Now
+            };
             _eventWCFclient.CreateEvent(ev);
-            
-            
-            // Send dummy data
-            return RedirectToAction(
-                "Index",
-                "Events",
-                new
-                {
-                    Title = viewModel.Title,
-                    Description = viewModel.Description
-                });
+
+
+            return RedirectToAction("Index", "Events");
         }
 
 

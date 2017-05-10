@@ -79,4 +79,3 @@ C:\inetpub\wwwroot\group4\DecoreApp\bin\Microsoft.Owin.Security.Twitter.xml
 C:\inetpub\wwwroot\group4\DecoreApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\inetpub\wwwroot\group4\DecoreApp\obj\Debug\DecoreApp.dll
 C:\inetpub\wwwroot\group4\DecoreApp\obj\Debug\DecoreApp.pdb
-C:\inetpub\wwwroot\group4\DecoreApp\obj\Debug\DecoreApp.csprojResolveAssemblyReference.cache

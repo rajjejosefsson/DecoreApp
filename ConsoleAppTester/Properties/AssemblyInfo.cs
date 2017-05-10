@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Decore.Data")]
+[assembly: AssemblyTitle("ConsoleAppTester")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Decore.Data")]
+[assembly: AssemblyProduct("ConsoleAppTester")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("e9b843be-f33c-4c79-8c4d-357bef8bdb89")]
+[assembly: Guid("eb0015bf-ed93-47f2-b8ea-840d2ad8fe54")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -10,7 +10,7 @@
   <xs:complexType name="Event">
     <xs:sequence>
       <xs:element minOccurs="0" name="Adress" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="BasePrice" type="xs:float" />
+      <xs:element minOccurs="0" name="BasePrice" nillable="true" type="xs:float" />
       <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
       <xs:element minOccurs="0" name="CreatedBy" type="xs:int" />
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
@@ -19,10 +19,10 @@
       <xs:element minOccurs="0" name="EventType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="ImageURL" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SaleStop" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SaleStop" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="UpdatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
     </xs:sequence>
     <xs:attribute ref="ser:Id" />

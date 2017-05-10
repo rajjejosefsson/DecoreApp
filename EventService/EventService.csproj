@@ -40,7 +40,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -61,7 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="EventService.svc" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EventService.svc.cs">
@@ -74,6 +83,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -82,14 +92,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\decore.data\decore.data.csproj">
-      <Project>{8623f796-fb43-4cf4-b9a1-8f1d28c182e9}</Project>
-      <Name>decore.data</Name>
+    <ProjectReference Include="..\Decore.Data\Decore.Data.csproj">
+      <Project>{E9B843BE-F33C-4C79-8C4D-357BEF8BDB89}</Project>
+      <Name>Decore.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Decore.Models\Decore.Models.csproj">
+    <ProjectReference Include="..\decore.models\Decore.Models.csproj">
       <Project>{9C642D6D-FFC3-4F5B-A6B2-7410B3E9D933}</Project>
       <Name>Decore.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

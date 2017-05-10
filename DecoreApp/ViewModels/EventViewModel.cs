@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Decore.Models;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using DecoreApp.EventServiceReference;
 
 namespace DecoreApp.ViewModels
 {
