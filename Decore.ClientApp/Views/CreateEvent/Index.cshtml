@@ -1,0 +1,94 @@
+﻿@using System.Web.Mvc.Html
+@model Decore.ClientApp.ViewModels.EventViewModel
+@{
+    ViewBag.Title = "Event Page";
+}
+
+
+<style>
+
+
+
+</style>
+
+
+
+
+<div class="row content">
+    <div class="col-sm-12 col-md-8 col-md-offset-2">
+
+        <div class="form-box">
+            <h2 class="text-center">Create new event</h2>
+            <div class="inner-form">
+
+
+                @using (Html.BeginForm("CreateEvent", "CreateEvent", "POST"))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Title, "Title")
+                        @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Description, "Beskrivning")
+                        @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.BasePrice, "Bas Pris")
+                        @Html.TextBoxFor(model => model.BasePrice, new { @class = "form-control" })
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ZipCode, "Postnummer")
+                        @Html.TextBoxFor(model => model.ZipCode, new { @class = "form-control" })
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Adress, "Adress")
+                        @Html.TextBoxFor(model => model.Adress, new { @class = "form-control" })
+                    </div>
+
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ImageURL, "Länk till bild")
+                        @Html.TextBoxFor(model => model.ImageURL, new { @class = "form-control" })
+                    </div>
+
+            
+
+                 
+
+                    <div class="form-group">
+                        @Html.HiddenFor(model => model.Id, new { id = "hiddenId" })
+                        <input type="submit" value="Lägg till" class="btn btn-primary create-save-btn" />
+                    </div>
+
+                }
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+@section scripts {
+    <script>
+                $(".btn-success").on("click", function() {
+                    $(".alert").removeClass("in").show();
+	                $(".alert").delay(200).addClass("in").fadeOut(2000);
+                });
+    </script>
+}
