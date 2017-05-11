@@ -61,7 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Decore.Data\Decore.Data.csproj">
-      <Project>{e9b843be-f33c-4c79-8c4d-357bef8bdb89}</Project>
+      <Project>{E9B843BE-F33C-4C79-8C4D-357BEF8BDB89}</Project>
       <Name>Decore.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\decore.models\Decore.Models.csproj">

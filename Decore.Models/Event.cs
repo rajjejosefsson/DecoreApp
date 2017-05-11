@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Decore.Models
 {
 
-    [DataContract(IsReference = true)]
+    [DataContract]
     public class Event
     {
 

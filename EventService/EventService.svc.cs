@@ -17,7 +17,7 @@ namespace EventService
     /// <summary>
     /// Class EventService.
     /// </summary>
-    /// <seealso cref="EventService.IEventService" />
+    /// <seealso cref="IEventService" />
     public class EventService : IEventService
     {
 
@@ -45,6 +45,7 @@ namespace EventService
         public ICollection<Event> GetEvents()
         {
             var events = _eventRepository.GetEvents();
+            
             return events;
         }
 
