@@ -17,7 +17,7 @@ namespace EventService
     /// <summary>
     /// Class EventService.
     /// </summary>
-    /// <seealso cref="EventService.IEventService" />
+    /// <seealso cref="IEventService" />
     public class EventService : IEventService
     {
 

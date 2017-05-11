@@ -11,4 +11,3 @@ C:\Users\rasmusjosefsson\Source\Repos\DecoreApp\decore.models\bin\Debug\Decore.M
 C:\Users\rasmusjosefsson\Source\Repos\DecoreApp\decore.models\bin\Debug\Decore.Models.pdb
 C:\Users\rasmusjosefsson\Source\Repos\DecoreApp\decore.models\obj\Debug\Decore.Models.dll
 C:\Users\rasmusjosefsson\Source\Repos\DecoreApp\decore.models\obj\Debug\Decore.Models.pdb
-C:\Users\rasmusjosefsson\Source\Repos\DecoreApp\decore.models\obj\Debug\Decore.Models.csprojResolveAssemblyReference.cache
