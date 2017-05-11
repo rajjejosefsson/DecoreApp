@@ -45,6 +45,7 @@ namespace EventService
         public ICollection<Event> GetEvents()
         {
             var events = _eventRepository.GetEvents();
+            
             return events;
         }
 
