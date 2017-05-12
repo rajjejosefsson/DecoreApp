@@ -61,9 +61,9 @@ namespace EventService
             throw new NotImplementedException();
         }
 
-
-
-
-
+        public ICollection<EventType> GetEventTypes()
+        {
+            return _eventRepository.GetEventTypes();
+        }
     }
 }

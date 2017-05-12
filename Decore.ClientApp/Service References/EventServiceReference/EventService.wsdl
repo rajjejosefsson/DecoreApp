@@ -25,6 +25,12 @@
   <wsdl:message name="IEventService_CreateEvent_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateEventResponse" />
   </wsdl:message>
+  <wsdl:message name="IEventService_GetEventTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventTypes" />
+  </wsdl:message>
+  <wsdl:message name="IEventService_GetEventTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventTypesResponse" />
+  </wsdl:message>
   <wsdl:portType name="IEventService">
     <wsdl:operation name="GetEvents">
       <wsdl:input wsaw:Action="http://tempuri.org/IEventService/GetEvents" message="tns:IEventService_GetEvents_InputMessage" />
@@ -37,6 +43,10 @@
     <wsdl:operation name="CreateEvent">
       <wsdl:input wsaw:Action="http://tempuri.org/IEventService/CreateEvent" message="tns:IEventService_CreateEvent_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IEventService/CreateEventResponse" message="tns:IEventService_CreateEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEventTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEventService/GetEventTypes" message="tns:IEventService_GetEventTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEventService/GetEventTypesResponse" message="tns:IEventService_GetEventTypes_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IEventService" type="tns:IEventService">
@@ -61,6 +71,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateEvent">
       <soap:operation soapAction="http://tempuri.org/IEventService/CreateEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEventTypes">
+      <soap:operation soapAction="http://tempuri.org/IEventService/GetEventTypes" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

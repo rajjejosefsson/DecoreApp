@@ -32,6 +32,12 @@ namespace Decore.ClientApp.EventServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEventService/CreateEvent", ReplyAction="http://tempuri.org/IEventService/CreateEventResponse")]
         System.Threading.Tasks.Task CreateEventAsync(Decore.Models.Event eventObject);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEventService/GetEventTypes", ReplyAction="http://tempuri.org/IEventService/GetEventTypesResponse")]
+        Decore.Models.EventType[] GetEventTypes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEventService/GetEventTypes", ReplyAction="http://tempuri.org/IEventService/GetEventTypesResponse")]
+        System.Threading.Tasks.Task<Decore.Models.EventType[]> GetEventTypesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -83,6 +89,14 @@ namespace Decore.ClientApp.EventServiceReference {
         
         public System.Threading.Tasks.Task CreateEventAsync(Decore.Models.Event eventObject) {
             return base.Channel.CreateEventAsync(eventObject);
+        }
+        
+        public Decore.Models.EventType[] GetEventTypes() {
+            return base.Channel.GetEventTypes();
+        }
+        
+        public System.Threading.Tasks.Task<Decore.Models.EventType[]> GetEventTypesAsync() {
+            return base.Channel.GetEventTypesAsync();
         }
     }
 }

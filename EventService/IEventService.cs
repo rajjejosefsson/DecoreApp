@@ -50,5 +50,8 @@ namespace EventService
         [OperationContract]
         void CreateEvent(Event eventObject);
 
+
+        [OperationContract]
+        ICollection<EventType> GetEventTypes();
     }
 }
