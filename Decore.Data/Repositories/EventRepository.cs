@@ -24,7 +24,7 @@ namespace Decore.Data.Repositories
         {
             using (DecoreDbContext context = new DecoreDbContext())
             {
-                return context.Events.AsNoTracking().ToList();
+                return context.Events.Include("EventType").AsNoTracking().ToList();
             }
         }
 

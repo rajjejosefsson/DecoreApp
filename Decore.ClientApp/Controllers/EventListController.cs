@@ -17,9 +17,12 @@ namespace Decore.ClientApp.Controllers
         public ActionResult Index(string title, string description)
         {
             var events = _eventWCFclient.GetEvents();
+            var eventTypes = _eventWCFclient.GetEventTypes();
+
             var viewModel = new EventViewModel
                 {
-                    Events = events
+                    Events = events,
+                    EventTypes = eventTypes
                 };
                 return View(viewModel);
             }
