@@ -37,6 +37,12 @@
                         @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
                     </div>
 
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.EventTypes, "Event typ")
+                        @Html.DropDownListFor(model => model.EventTypes, new SelectList(Model.EventTypes, "key", "Value"), "--- Select tomething ---", new { @class = "form-control" })
+                    </div>
+
+
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.BasePrice, "Bas Pris")

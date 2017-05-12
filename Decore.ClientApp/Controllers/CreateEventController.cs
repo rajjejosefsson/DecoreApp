@@ -45,9 +45,9 @@ namespace Decore.ClientApp.Controllers
             {
                 Title = viewModel.Title,
                 Description = viewModel.Description,
-                StartDate = DateTime.Now, // ADD TO FORM
-                EndDate = DateTime.Now, // ADD TO FORM
-                SaleStop = DateTime.Now, // ADD TO FORM
+                StartDate = viewModel.StartDate, // ADD TO FORM
+                EndDate = viewModel.EndDate, // ADD TO FORM
+                SaleStop = viewModel.SaleStop, // ADD TO FORM
                 BasePrice = viewModel.BasePrice,
                 EventType = "Sittning", // ADD TO FORM
                 ZipCode = viewModel.ZipCode,
@@ -55,8 +55,8 @@ namespace Decore.ClientApp.Controllers
                 ImageURL = viewModel.ImageURL,
                 EventOwner = 1, // ADD TO FORM (NEED TO GET USER FIRST)
                 CreatedBy = 1, // ADD TO FORM (NEED TO GET USER FIRST)
-                CreatedAt = DateTime.Now,
-                UpdatedAt = DateTime.Now // IS NOT NEEDED TO SHOW 
+                CreatedAt = viewModel.CreatedAt,
+                UpdatedAt = viewModel.UpdatedAt // IS NOT NEEDED TO SHOW 
             };
             _eventWCFclient.CreateEvent(eventObject);
 

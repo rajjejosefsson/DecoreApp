@@ -1,4 +1,5 @@
 ﻿using Decore.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -29,7 +30,18 @@ namespace Decore.ClientApp.ViewModels
         [StringLength(140, ErrorMessage = "Får ej vara över 140 bokstäver")]
         public string ImageURL { get; set; }
 
+        [Required(ErrorMessage = "Start datum måste anges")]
+        public DateTime StartDate { get; set; }
 
+        [Required(ErrorMessage = "Slut datum måste anges")]
+        public DateTime EndDate { get; set; }
+
+        [Required(ErrorMessage = "Säljeperiod måste anges")]
+        public DateTime SaleStop { get; set; }
+
+        public DateTime CreatedAt { get; set; }
+
+        public DateTime UpdatedAt { get; set; }
 
         [Required(ErrorMessage = "Event Owner måste anges")]
         [StringLength(40, ErrorMessage = "Får ej vara över 40 bokstäver")]
