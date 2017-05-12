@@ -44,7 +44,7 @@
                         @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
                     </div>
 
-                     <!-- Inte helt rätt ännu är nåt i controllern den hämtar istället -->
+                  
                     <div class="form-group">
                         @Html.LabelFor(model => model.EventTypes, "Event typ")
                         @Html.DropDownListFor(model => model.EventTypeId, new SelectList(Model.EventTypes, "Id", "Title"), new {@class = "form-control"})
