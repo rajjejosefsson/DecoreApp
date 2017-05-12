@@ -45,7 +45,7 @@ namespace Decore.ClientApp.Controllers
                 EndDate = viewModel.EndDate,
                 SaleStop = viewModel.SaleStop,
                 BasePrice = viewModel.BasePrice,
-            //  EventType = viewModel.EventTypeId, // ADD TO FORM
+                EventTypeId = viewModel.EventTypeId,
                 ZipCode = viewModel.ZipCode,
                 Adress = viewModel.Adress,
                 ImageURL = viewModel.ImageURL,
@@ -54,7 +54,7 @@ namespace Decore.ClientApp.Controllers
                 CreatedAt = DateTime.Now,
                 UpdatedAt = DateTime.Now // IS NOT NEEDED TO SHOW 
             };
-           // _eventWCFclient.CreateEvent(eventObject);
+            _eventWCFclient.CreateEvent(eventObject);
 
 
             return RedirectToAction("Index", "EventList");
