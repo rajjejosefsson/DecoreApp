@@ -4,6 +4,9 @@
     ViewBag.Title = "Event Page";
 }
 
+<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.css" rel="stylesheet" />
+<link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+
 
 <style>
 
@@ -42,7 +45,36 @@
                         @Html.DropDownListFor(model => model.EventTypes, new SelectList(Model.EventTypes, "key", "Value"), "--- Select tomething ---", new { @class = "form-control" })
                     </div>
 
-
+                  <!-- Select DateTime -->
+                    <div class="form-group has-feedback has-feedback-right">
+                        <div class="input-group date" id="datetimepicker">
+                            @Html.LabelFor(model => model.StartDate)
+                            @Html.TextBoxFor(model => model.StartDate, new { @class = "form-control form-control input-group-addon" })
+                            <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
+                            <div class="error-holder">
+                                @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+                            </div>
+                            @Html.LabelFor(model => model.EndDate)
+                            @Html.TextBoxFor(model => model.EndDate, new { @class = "form-control form-control input-group-addon" })
+                            <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
+                            <div class="error-holder">
+                                @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+                            </div>
+                            @Html.LabelFor(model => model.SaleStop)
+                            @Html.TextBoxFor(model => model.SaleStop, new { @class = "form-control form-control input-group-addon" })
+                            <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
+                            <div class="error-holder">
+                                @Html.ValidationMessageFor(model => model.SaleStop, "", new { @class = "text-danger" })
+                            </div>
+                            @Html.LabelFor(model => model.StartDate)
+                            @Html.TextBoxFor(model => model.StartDate, new { @class = "form-control form-control input-group-addon" })
+                            <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
+                            <div class="error-holder">
+                                @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                <!-- Select DateTime END -->
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.BasePrice, "Bas Pris")
