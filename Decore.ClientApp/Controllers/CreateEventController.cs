@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Decore.ClientApp.EventServiceReference;
 using Decore.ClientApp.ViewModels;
@@ -20,13 +17,10 @@ namespace Decore.ClientApp.Controllers
         {
             var eventsTypes = _eventWCFclient.GetEventTypes();
            
-
             var viewModel = new EventViewModel
             {
                 EventTypes = eventsTypes
             };
-
-
             return View(viewModel);
         }
 
@@ -56,7 +50,7 @@ namespace Decore.ClientApp.Controllers
             };
             _eventWCFclient.CreateEvent(eventObject);
 
-
+            // test
             return RedirectToAction("Index", "EventList");
         }
 
