@@ -20,8 +20,8 @@ namespace Decore.ClientApp.Controllers
         {
             var eventsTypes = new Dictionary<int, string>
             {
-               {0, "Sittning!"},
-               {1, "Leka"},
+               {0, "Sittning"},
+               {1, "Fest"},
                {2, "Dansa"},
             };
 
@@ -45,11 +45,11 @@ namespace Decore.ClientApp.Controllers
             {
                 Title = viewModel.Title,
                 Description = viewModel.Description,
-                StartDate = viewModel.StartDate, // ADD TO FORM
-                EndDate = viewModel.EndDate, // ADD TO FORM
-                SaleStop = viewModel.SaleStop, // ADD TO FORM
+                StartDate = viewModel.StartDate,
+                EndDate = viewModel.EndDate,
+                SaleStop = viewModel.SaleStop,
                 BasePrice = viewModel.BasePrice,
-                EventType = "Sittning", // ADD TO FORM
+                EventType = viewModel.EventTypes, // ADD TO FORM
                 ZipCode = viewModel.ZipCode,
                 Adress = viewModel.Adress,
                 ImageURL = viewModel.ImageURL,
