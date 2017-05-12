@@ -55,8 +55,8 @@ namespace Decore.ClientApp.Controllers
                 ImageURL = viewModel.ImageURL,
                 EventOwner = 1, // ADD TO FORM (NEED TO GET USER FIRST)
                 CreatedBy = 1, // ADD TO FORM (NEED TO GET USER FIRST)
-                CreatedAt = viewModel.CreatedAt,
-                UpdatedAt = viewModel.UpdatedAt // IS NOT NEEDED TO SHOW 
+                CreatedAt = DateTime.Now,
+                UpdatedAt = DateTime.Now // IS NOT NEEDED TO SHOW 
             };
             _eventWCFclient.CreateEvent(eventObject);
 

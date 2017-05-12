@@ -31,17 +31,18 @@ namespace Decore.ClientApp.ViewModels
         public string ImageURL { get; set; }
 
         [Required(ErrorMessage = "Start datum måste anges")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime StartDate { get; set; }
 
         [Required(ErrorMessage = "Slut datum måste anges")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime EndDate { get; set; }
 
         [Required(ErrorMessage = "Säljeperiod måste anges")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime SaleStop { get; set; }
 
-        public DateTime CreatedAt { get; set; }
-
-        public DateTime UpdatedAt { get; set; }
+     
 
         [Required(ErrorMessage = "Event Owner måste anges")]
         [StringLength(40, ErrorMessage = "Får ej vara över 40 bokstäver")]
