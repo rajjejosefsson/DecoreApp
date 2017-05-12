@@ -37,9 +37,9 @@ button {
 .btn {
     border-radius: 4px;
     line-height: 1.4em;
-    padding: 14px 33px 14px;
+    padding: 7px 14px;
     transition: all .2s linear;
-    font-size: 18px;
+    font-size: 16px;
     border: 0 solid transparent;
     box-shadow: 0 1px 3px rgba(0,0,0,.30);
     outline: 0;
