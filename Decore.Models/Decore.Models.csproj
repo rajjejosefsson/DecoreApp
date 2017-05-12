@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Beverage.cs" />
     <Compile Include="Event.cs" />
+    <Compile Include="EventType.cs" />
     <Compile Include="Measure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
