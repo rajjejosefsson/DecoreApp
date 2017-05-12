@@ -11,10 +11,12 @@ namespace Decore.ClientApp.ViewModels
         public int Id { get; set; }
 
         public ICollection<Event> Events { get; set; }
+        public ICollection<EventType> EventTypes { get; set; }
 
+
+        [Required(ErrorMessage = "Eventtyp måste anges")]
         public int EventTypeId { get; set; }
 
-        public ICollection<EventType> EventTypes { get; set; }
 
         [Required(ErrorMessage = "Title måste anges")]
         [StringLength(40, ErrorMessage = "Får ej vara över 40 bokstäver")]
@@ -59,7 +61,7 @@ namespace Decore.ClientApp.ViewModels
         public string Description { get; set; }
 
 
-        [Required(ErrorMessage = "Beskrivning måste anges")]
+        [Required(ErrorMessage = "Baspris måste anges")]
         public float BasePrice { get; set; }
 
 

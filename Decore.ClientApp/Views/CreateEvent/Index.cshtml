@@ -36,19 +36,27 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.Title, "Title")
                         @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                        </div>
                     </div>
 
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.Description, "Beskrivning")
                         @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                        </div>
                     </div>
 
                   
                     <div class="form-group">
                         @Html.LabelFor(model => model.EventTypes, "Event typ")
                         @Html.DropDownListFor(model => model.EventTypeId, new SelectList(Model.EventTypes, "Id", "Title"), new {@class = "form-control"})
-                 
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.EventTypes, "", new { @class = "text-danger" })
+                        </div>
                     </div>
 
                   <!-- Nån designguru som kan fixa detta? -->
@@ -94,18 +102,27 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.BasePrice, "Bas Pris")
                             @Html.TextBoxFor(model => model.BasePrice, new { @class = "form-control" })
+                            <div class="error-holder">
+                                @Html.ValidationMessageFor(model => model.BasePrice, "", new { @class = "text-danger" })
+                            </div>
                         </div>
 
 
                         <div class="form-group">
                             @Html.LabelFor(model => model.ZipCode, "Postnummer")
                             @Html.TextBoxFor(model => model.ZipCode, new { @class = "form-control" })
+                            <div class="error-holder">
+                                @Html.ValidationMessageFor(model => model.ZipCode, "", new { @class = "text-danger" })
+                            </div>
                         </div>
 
 
                         <div class="form-group">
                             @Html.LabelFor(model => model.Adress, "Adress")
                             @Html.TextBoxFor(model => model.Adress, new { @class = "form-control" })
+                            <div class="error-holder">
+                                @Html.ValidationMessageFor(model => model.Adress, "", new { @class = "text-danger" })
+                            </div>
                         </div>
 
 
@@ -113,6 +130,9 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.ImageURL, "Länk till bild")
                             @Html.TextBoxFor(model => model.ImageURL, new { @class = "form-control" })
+                            <div class="error-holder">
+                                @Html.ValidationMessageFor(model => model.ImageURL, "", new { @class = "text-danger" })
+                            </div>
                         </div>
 
 

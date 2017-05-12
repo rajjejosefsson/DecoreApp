@@ -30,28 +30,39 @@ namespace Decore.ClientApp.Controllers
         public ActionResult CreateEvent(EventViewModel viewModel)
         {
 
-
-            var eventObject = new Event
+            if(ModelState.IsValid)
             {
-                Title = viewModel.Title,
-                Description = viewModel.Description,
-                StartDate = viewModel.StartDate,
-                EndDate = viewModel.EndDate,
-                SaleStop = viewModel.SaleStop,
-                BasePrice = viewModel.BasePrice,
-                EventTypeId = viewModel.EventTypeId,
-                ZipCode = viewModel.ZipCode,
-                Adress = viewModel.Adress,
-                ImageURL = viewModel.ImageURL,
-                EventOwner = 1, // ADD TO FORM (NEED TO GET USER FIRST)
-                CreatedBy = 1, // ADD TO FORM (NEED TO GET USER FIRST)
-                CreatedAt = DateTime.Now,
-                UpdatedAt = DateTime.Now // IS NOT NEEDED TO SHOW 
-            };
-            _eventWCFclient.CreateEvent(eventObject);
 
-            // test
-            return RedirectToAction("Index", "EventList");
+                var eventObject = new Event
+                {
+                    Title = viewModel.Title,
+                    Description = viewModel.Description,
+                    StartDate = viewModel.StartDate,
+                    EndDate = viewModel.EndDate,
+                    SaleStop = viewModel.SaleStop,
+                    BasePrice = viewModel.BasePrice,
+                    EventTypeId = viewModel.EventTypeId,
+                    ZipCode = viewModel.ZipCode,
+                    Adress = viewModel.Adress,
+                    ImageURL = viewModel.ImageURL,
+                    EventOwner = 1, // ADD TO FORM (NEED TO GET USER FIRST)
+                    CreatedBy = 1, // ADD TO FORM (NEED TO GET USER FIRST)
+                    CreatedAt = DateTime.Now,
+                    UpdatedAt = DateTime.Now // IS NOT NEEDED TO SHOW 
+                };
+                _eventWCFclient.CreateEvent(eventObject);
+
+
+
+                return RedirectToAction("Index", "EventList");
+            }
+
+
+
+            var eventsTypes = _eventWCFclient.GetEventTypes();
+            viewModel.EventTypes = eventsTypes;
+
+            return View("Index", viewModel);
         }
 
 
