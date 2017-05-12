@@ -287,3 +287,4 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 .vs/config/applicationhost.config
+.vs/config/applicationhost.config
