@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Decore.Models
 {
-
     [DataContract]
     public class Event
     {
-
         [Required]
         [DataMember]
         public int Id { get; set; }
@@ -41,7 +36,7 @@ namespace Decore.Models
 
         [Required]
         [DataMember]
-        public string EventType { get; set; }
+        public int EventTypeId { get; set; }
 
         [Required]
         [DataMember]
