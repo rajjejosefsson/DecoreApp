@@ -34,14 +34,15 @@
                     <div class="caption">
                         <h3>@item.Title</h3>
                         <p>Beskrivning: @item.Description</p>
-                       
+                        <p>Event typ:
                         @foreach (var eventType in @Model.EventTypes)
                         {
                             if (eventType.Id == @item.EventTypeId)
                             {
-                                <p>Event typ: @eventType.Title</p>
+                                 @eventType.Title
                             }
                         }
+                        </p>
                        
                         <p>Adress: @item.Adress</p>
                         <p>Pris på biljett: @item.BasePrice kr</p>
