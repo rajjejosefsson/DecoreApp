@@ -18,12 +18,8 @@ namespace Decore.ClientApp.Controllers
 
         public ActionResult Index()
         {
-            var eventsTypes = new Dictionary<int, string>
-            {
-               {0, "Sittning"},
-               {1, "Fest"},
-               {2, "Dansa"},
-            };
+            var eventsTypes = _eventWCFclient.GetEventTypes();
+           
 
             var viewModel = new EventViewModel
             {

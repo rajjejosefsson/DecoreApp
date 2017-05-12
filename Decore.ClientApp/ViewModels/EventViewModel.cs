@@ -14,7 +14,7 @@ namespace Decore.ClientApp.ViewModels
 
         public int EventTypeId { get; set; }
 
-        public Dictionary<int, string> EventTypes { get; set; }
+        public ICollection<EventType> EventTypes { get; set; }
 
         [Required(ErrorMessage = "Title måste anges")]
         [StringLength(40, ErrorMessage = "Får ej vara över 40 bokstäver")]

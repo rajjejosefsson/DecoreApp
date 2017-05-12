@@ -47,11 +47,8 @@
                      <!-- Inte helt rätt ännu är nåt i controllern den hämtar istället -->
                     <div class="form-group">
                         @Html.LabelFor(model => model.EventTypes, "Event typ")
-                        @Html.DropDownListFor(m => m.EventTypeId, // Store selected value in  m.EventTypeId
-                            new SelectList(Model.EventTypes, "Key", "Value"),
-                            "- Please select your state -",
-                            new { @class = "form-control" }
-                            )                    
+                        @Html.DropDownListFor(model => model.EventTypeId, new SelectList(Model.EventTypes, "Id", "Title"), new {@class = "form-control"})
+                 
                     </div>
 
                   <!-- Nån designguru som kan fixa detta? -->
