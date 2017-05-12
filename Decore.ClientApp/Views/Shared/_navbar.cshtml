@@ -50,7 +50,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/Home/Index"><img src="../../content/images/decore-logo.png"></a>
+            <a href='@Url.Action("Index", "Home")'>
+                <img src='@Url.Content("~/content/images/decore-logo.png")' />
+            </a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
