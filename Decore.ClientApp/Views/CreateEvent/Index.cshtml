@@ -1,4 +1,5 @@
-﻿@using System.Web.Mvc.Html
+﻿@using System.Web.Mvc
+@using System.Web.Mvc.Html
 @model Decore.ClientApp.ViewModels.EventViewModel
 @{
     ViewBag.Title = "Event Page";
@@ -46,8 +47,11 @@
                      <!-- Inte helt rätt ännu är nåt i controllern den hämtar istället -->
                     <div class="form-group">
                         @Html.LabelFor(model => model.EventTypes, "Event typ")
-                        @Html.DropDownListFor(model => model.EventTypes, new SelectList(Model.EventTypes, "key", "Value"), "--- Select something ---", new { @class = "form-control" })
-                    </div>
+                        @Html.DropDownListFor(m => m.EventTypeId, // Store selected value in  m.EventTypeId
+                            new SelectList(Model.EventTypes, "Key", "Value"),
+                            "- Please select your state -",
+                            new { @class = "form-control" }
+                            )                    </div>
 
                   <!-- Nån designguru som kan fixa detta? -->
                   <!-- Select DateTime -->

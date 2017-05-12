@@ -9,8 +9,11 @@ namespace Decore.ClientApp.ViewModels
     {
 
         public int Id { get; set; }
+
         public ICollection<Event> Events { get; set; }
-        public int EventId { get; set; }
+
+        public int EventTypeId { get; set; }
+
         public Dictionary<int, string> EventTypes { get; set; }
 
         [Required(ErrorMessage = "Title måste anges")]
