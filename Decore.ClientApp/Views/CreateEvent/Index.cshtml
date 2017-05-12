@@ -9,7 +9,10 @@
 
 
 <style>
-
+    .input-group-addon {
+        background-color: white;
+        border-radius: 3px !important;
+    }
 
 
 </style>
@@ -40,93 +43,143 @@
                         @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
                     </div>
 
+                     <!-- Inte helt rätt ännu är nåt i controllern den hämtar istället -->
                     <div class="form-group">
                         @Html.LabelFor(model => model.EventTypes, "Event typ")
-                        @Html.DropDownListFor(model => model.EventTypes, new SelectList(Model.EventTypes, "key", "Value"), "--- Select tomething ---", new { @class = "form-control" })
+                        @Html.DropDownListFor(model => model.EventTypes, new SelectList(Model.EventTypes, "key", "Value"), "--- Select something ---", new { @class = "form-control" })
                     </div>
 
+                  <!-- Nån designguru som kan fixa detta? -->
                   <!-- Select DateTime -->
                     <div class="form-group has-feedback has-feedback-right">
                         <div class="input-group date" id="datetimepicker">
-                            @Html.LabelFor(model => model.StartDate)
-                            @Html.TextBoxFor(model => model.StartDate, new { @class = "form-control form-control input-group-addon" })
-                            <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
-                            <div class="error-holder">
-                                @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
-                            </div>
-                            @Html.LabelFor(model => model.EndDate)
-                            @Html.TextBoxFor(model => model.EndDate, new { @class = "form-control form-control input-group-addon" })
-                            <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
-                            <div class="error-holder">
-                                @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
-                            </div>
-                            @Html.LabelFor(model => model.SaleStop)
-                            @Html.TextBoxFor(model => model.SaleStop, new { @class = "form-control form-control input-group-addon" })
-                            <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
-                            <div class="error-holder">
-                                @Html.ValidationMessageFor(model => model.SaleStop, "", new { @class = "text-danger" })
-                            </div>
-                            @Html.LabelFor(model => model.StartDate)
-                            @Html.TextBoxFor(model => model.StartDate, new { @class = "form-control form-control input-group-addon" })
+
+                            @Html.LabelFor(model => model.StartDate, "Startdatum")
+                            @Html.TextBoxFor(model => model.StartDate, new { @class = "form-control form-control input-group-addon", @placeholder = "plz input date" })
                             <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
                             <div class="error-holder">
                                 @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
-                <!-- Select DateTime END -->
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.BasePrice, "Bas Pris")
-                        @Html.TextBoxFor(model => model.BasePrice, new { @class = "form-control" })
+                    <div class="form-group has-feedback has-feedback-right">
+                        <div class="input-group date" id="datetimepicker2">
+                            @Html.LabelFor(model => model.EndDate, "Slutdatum")
+                            @Html.TextBoxFor(model => model.EndDate, new { @class = "form-control form-control input-group-addon", @placeholder = "plz input date" })
+                            <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
+                            <div class="error-holder">
+                                @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="form-group has-feedback has-feedback-right">
+                            <div class="input-group date" id="datetimepicker3">
+                                @Html.LabelFor(model => model.SaleStop, "Slutdatum för säljeperiod")
+                                @Html.TextBoxFor(model => model.SaleStop, new { @class = "form-control form-control input-group-addon", @placeholder = "plz input date" })
+                                <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
+                                <div class="error-holder">
+                                    @Html.ValidationMessageFor(model => model.SaleStop, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Select DateTime END -->
+
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.BasePrice, "Bas Pris")
+                            @Html.TextBoxFor(model => model.BasePrice, new { @class = "form-control" })
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ZipCode, "Postnummer")
+                            @Html.TextBoxFor(model => model.ZipCode, new { @class = "form-control" })
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Adress, "Adress")
+                            @Html.TextBoxFor(model => model.Adress, new { @class = "form-control" })
+                        </div>
+
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ImageURL, "Länk till bild")
+                            @Html.TextBoxFor(model => model.ImageURL, new { @class = "form-control" })
+                        </div>
+
+
+
+
+
+                        <div class="form-group">
+                            @Html.HiddenFor(model => model.Id, new { id = "hiddenId" })
+                            <input type="submit" value="Lägg till" class="btn btn-primary create-save-btn" />
+                        </div>
+
+                        }
+
                     </div>
 
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.ZipCode, "Postnummer")
-                        @Html.TextBoxFor(model => model.ZipCode, new { @class = "form-control" })
-                    </div>
 
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Adress, "Adress")
-                        @Html.TextBoxFor(model => model.Adress, new { @class = "form-control" })
-                    </div>
-
-
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.ImageURL, "Länk till bild")
-                        @Html.TextBoxFor(model => model.ImageURL, new { @class = "form-control" })
-                    </div>
-
-            
-
-                 
-
-                    <div class="form-group">
-                        @Html.HiddenFor(model => model.Id, new { id = "hiddenId" })
-                        <input type="submit" value="Lägg till" class="btn btn-primary create-save-btn" />
-                    </div>
-
-                }
-
+                </div>
             </div>
-
-
-
         </div>
-    </div>
-</div>
-
+   
 
 
 
 @section scripts {
-    <script>
+   
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/locale-all.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
+
+<script>
+        /* Global FUNCTIONS */
+        function renderCalendar(data) {
+            $('#calendar')
+                .fullCalendar({
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,basicWeek,basicDay'
+                    },
+                    locale: 'sv',
+                    navLinks: true, // can click day/week names to navigate views
+                    editable: true,
+                    eventLimit: true, // allow "more" link when too many events
+                    events: data,
+
+                });
+        }
+        /* Global FUNCTIONS Ends */
+
+        /* DatetimePicker*/
+        $('#datetimepicker')
+            .datetimepicker({
+                locale: 'sv'
+            });
+        $('#datetimepicker2')
+               .datetimepicker({
+                   locale: 'sv'
+               });
+        $('#datetimepicker3')
+               .datetimepicker({
+                   locale: 'sv'
+               });
+
                 $(".btn-success").on("click", function() {
                     $(".alert").removeClass("in").show();
 	                $(".alert").delay(200).addClass("in").fadeOut(2000);
                 });
-    </script>
+</script>
 }
