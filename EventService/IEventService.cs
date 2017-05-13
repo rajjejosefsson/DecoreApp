@@ -50,6 +50,10 @@ namespace EventService
         [OperationContract]
         void CreateEvent(Event eventObject);
 
+        [OperationContract]
+        void DeleteEventById(int eventId);
+
+
 
         [OperationContract]
         ICollection<EventType> GetEventTypes();

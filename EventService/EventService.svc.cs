@@ -65,5 +65,10 @@ namespace EventService
         {
             return _eventRepository.GetEventTypes();
         }
+
+        public void DeleteEventById(int eventId)
+        {
+           _eventRepository.DeleteEventById(eventId);
+        }
     }
 }

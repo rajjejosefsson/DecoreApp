@@ -33,6 +33,12 @@ namespace Decore.ClientApp.EventServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEventService/CreateEvent", ReplyAction="http://tempuri.org/IEventService/CreateEventResponse")]
         System.Threading.Tasks.Task CreateEventAsync(Decore.Models.Event eventObject);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEventService/DeleteEventById", ReplyAction="http://tempuri.org/IEventService/DeleteEventByIdResponse")]
+        void DeleteEventById(int eventId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEventService/DeleteEventById", ReplyAction="http://tempuri.org/IEventService/DeleteEventByIdResponse")]
+        System.Threading.Tasks.Task DeleteEventByIdAsync(int eventId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEventService/GetEventTypes", ReplyAction="http://tempuri.org/IEventService/GetEventTypesResponse")]
         Decore.Models.EventType[] GetEventTypes();
         
@@ -89,6 +95,14 @@ namespace Decore.ClientApp.EventServiceReference {
         
         public System.Threading.Tasks.Task CreateEventAsync(Decore.Models.Event eventObject) {
             return base.Channel.CreateEventAsync(eventObject);
+        }
+        
+        public void DeleteEventById(int eventId) {
+            base.Channel.DeleteEventById(eventId);
+        }
+        
+        public System.Threading.Tasks.Task DeleteEventByIdAsync(int eventId) {
+            return base.Channel.DeleteEventByIdAsync(eventId);
         }
         
         public Decore.Models.EventType[] GetEventTypes() {

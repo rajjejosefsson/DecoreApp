@@ -36,5 +36,16 @@ namespace Decore.Data.Repositories
             }
         }
 
+        public void DeleteEventById(int eventId)
+        {
+            using (DecoreDbContext context = new DecoreDbContext())
+            {
+                // Get event by id
+                var eventInDb = context.Events.SingleOrDefault(e => e.Id == eventId);
+                context.Events.Remove(eventInDb);
+                context.SaveChanges();
+            }
+        }
+
     }
 }
