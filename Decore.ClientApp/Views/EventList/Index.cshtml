@@ -50,7 +50,7 @@
                         <p>Slutdatum för event: @item.EndDate</p>
                         <p>Slutdatum för försäljning: @item.SaleStop</p>
                         <p>Skapad: @item.CreatedAt</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Köp Biljett</a> <a href="#" class="btn btn-default" role="button">Personal</a> <a href="" class="btn btn-danger deleteButton" role="button" data-id="@item.Id">Ta Bort</a></p>                     
+                        <p><a href="#" class="btn btn-primary" role="button">Köp Biljett</a> <a href="#" class="btn btn-default" role="button">Personal</a> <a class="btn btn-danger" href="javascript:(function(){$.postGo( '@Url.Action("DeleteEventById")', { 'id': @item.Id  } );})()">Ta Bort</a></p>                                             
                     </div>
                 </div>
             </div>
@@ -58,40 +58,32 @@
     }
 </div>
 @section scripts {
-    
+   
     <script>
 
-        
-        $("#myTable")
-            .on("click",
-                ".deleteButton",
-                function() {
-                  
-                    var collapsedDiv = $(this).closest('div');
-                    var partedDiv = collapsedDiv.prev('div.parent');
 
-                    // Remove collapsed div
-                    collapsedDiv.remove();
-                    partedDiv.remove();
+        (function ($) {
+            $.extend({
+                getGo: function (url, params) {
+                    document.location = url + '?' + $.param(params);
+                },
+                postGo: function (url, params) {
+                    var $form = $("<form>")
+                        .attr("method", "post")
+                        .attr("action", url);
+                    $.each(params, function (name, value) {
+                        $("<input type='hidden'>")
+                            .attr("name", name)
+                            .attr("value", value)
+                            .appendTo($form);
+                    });
+                    $form.appendTo("body");
+                    $form.submit();
+                }
+            });
+        })(jQuery);
+       
 
-                    var eventId = $(this).data('id');
-
-                    $.ajax({
-                        type: "post",
-                        url: "@Url.Action("DeleteEventById", "EventList")",
-                        ajaxasync: true,
-                    data: { id: eventId },
-
-                    success: function() {
-                        alert("success");
-                    },
-                    error: function(data) {
-                        alert(data.x);
-                    }
-                });
-        });
-
-        
 
 
 

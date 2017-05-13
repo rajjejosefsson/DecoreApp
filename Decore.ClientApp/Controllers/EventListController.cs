@@ -28,10 +28,10 @@ namespace Decore.ClientApp.Controllers
             }
 
         [HttpPost]
-        public void DeleteEventById(int Id)
+        public ActionResult DeleteEventById(int Id)
         {
             _eventWCFclient.DeleteEventById(Id);
-            
+            return RedirectToAction("Index", "EventList");
         }
     }
 }
