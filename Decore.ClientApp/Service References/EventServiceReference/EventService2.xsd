@@ -18,6 +18,7 @@
       <xs:element minOccurs="0" name="EventTypeId" type="xs:int" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="ImageURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MemberPrice" nillable="true" type="xs:float" />
       <xs:element minOccurs="0" name="SaleStop" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
