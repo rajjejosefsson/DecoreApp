@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 using Decore.ClientApp.EventServiceReference;
+using Decore.ClientApp.ScheduleServiceReference;
 using Decore.ClientApp.ViewModels;
 using Decore.Models;
 
@@ -11,7 +12,7 @@ namespace Decore.ClientApp.Controllers
     {
 
         private readonly EventServiceClient _eventWCFclient = new EventServiceClient();
-
+        private readonly Service1Client _scheduleWCFclient = new Service1Client();
 
         public ActionResult Index()
         {
@@ -23,6 +24,10 @@ namespace Decore.ClientApp.Controllers
             };
             return View(viewModel);
         }
+
+
+        
+
 
 
         [ValidateAntiForgeryToken]
@@ -57,13 +62,13 @@ namespace Decore.ClientApp.Controllers
                     UpdatedAt = DateTime.Now // IS NOT NEEDED TO SHOW 
                 };
                 _eventWCFclient.CreateEvent(eventObject);
-
+                _scheduleWCFclient.AddEvent(viewModel.Id);
 
 
                 return RedirectToAction("Index", "EventList");
             }
 
-
+            
 
             var eventsTypes = _eventWCFclient.GetEventTypes();
             viewModel.EventTypes = eventsTypes;
@@ -71,7 +76,7 @@ namespace Decore.ClientApp.Controllers
             return View("Index", viewModel);
         }
 
-
+       
 
         public ActionResult UpdateEventById(int id)
         {
@@ -102,6 +107,7 @@ namespace Decore.ClientApp.Controllers
             return View("Index", viewModel);
 
         }
+
 
 
 

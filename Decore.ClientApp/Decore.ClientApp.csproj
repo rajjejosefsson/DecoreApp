@@ -218,6 +218,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ScheduleServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\BeverageViewModel.cs" />
     <Compile Include="ViewModels\EventViewModel.cs" />
@@ -282,6 +287,16 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Service References\ScheduleServiceReference\Decore.ClientApp.ScheduleServiceReference.EmployeeEventInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\ScheduleServiceReference\Service1.disco" />
+    <None Include="Service References\ScheduleServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\ScheduleServiceReference\configuration.svcinfo" />
+    <None Include="Service References\ScheduleServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -324,6 +339,19 @@
     <None Include="Service References\LoginServiceReference\LoginService3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\ScheduleServiceReference\Service1.wsdl" />
+    <None Include="Service References\ScheduleServiceReference\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ScheduleServiceReference\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ScheduleServiceReference\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ScheduleServiceReference\Service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -339,6 +367,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\EventServiceReference\" />
     <WCFMetadataStorage Include="Service References\LoginServiceReference\" />
+    <WCFMetadataStorage Include="Service References\ScheduleServiceReference\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\decore.models\Decore.Models.csproj">

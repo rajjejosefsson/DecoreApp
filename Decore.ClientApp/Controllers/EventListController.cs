@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Decore.ClientApp.EventServiceReference;
+using Decore.ClientApp.ScheduleServiceReference;
 using Decore.ClientApp.ViewModels;
 
 namespace Decore.ClientApp.Controllers
@@ -12,7 +13,7 @@ namespace Decore.ClientApp.Controllers
     {
 
       private readonly EventServiceClient _eventWCFclient = new EventServiceClient();
-
+      private readonly Service1Client _scheduleWCFclient = new Service1Client();
 
         public ActionResult Index()
         {
@@ -32,6 +33,7 @@ namespace Decore.ClientApp.Controllers
         public ActionResult DeleteEventById(int id)
         {
             _eventWCFclient.DeleteEventById(id);
+            _scheduleWCFclient.RemoveEvent(id);
             return RedirectToAction("Index", "EventList");
         }
 
