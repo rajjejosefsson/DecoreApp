@@ -29,13 +29,13 @@ namespace Decore.Models
         public DateTime EndDate { get; set; }
 
         [DataMember]
-        public DateTime? SaleStop { get; set; }
+        public DateTime SaleStop { get; set; }
 
         [DataMember]
-        public float? BasePrice { get; set; }
+        public float BasePrice { get; set; }
 
         [DataMember]
-        public float? MemberPrice { get; set; }
+        public float MemberPrice { get; set; }
 
         [Required]
         [DataMember]
