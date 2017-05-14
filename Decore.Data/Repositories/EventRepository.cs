@@ -14,7 +14,7 @@ namespace Decore.Data.Repositories
         private readonly Service1Client _scheduleWCFclient = new Service1Client();
 
 
-        public void CreateEvent(Event eventObj)
+        public void CreateEvent(Models.Event eventObj)
         {
             using (DecoreDbContext context = new DecoreDbContext())
             {
@@ -53,7 +53,7 @@ namespace Decore.Data.Repositories
             }
         }
 
-        public ICollection<Event> GetEvents()
+        public ICollection<Models.Event> GetEvents()
         {
             using (DecoreDbContext context = new DecoreDbContext())
             {
@@ -81,7 +81,7 @@ namespace Decore.Data.Repositories
         }
 
 
-        public Event GetEventById(int eventId)
+        public Models.Event GetEventById(int eventId)
         {
             using (DecoreDbContext context = new DecoreDbContext())
             {

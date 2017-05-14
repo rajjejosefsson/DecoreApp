@@ -88,6 +88,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Service References\ScheduleServiceReference\Decore.Data.ScheduleServiceReference.EmployeeEventInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ScheduleServiceReference\Service1.wsdl" />
     <None Include="Service References\ScheduleServiceReference\Service1.xsd">
       <SubType>Designer</SubType>
