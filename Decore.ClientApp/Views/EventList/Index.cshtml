@@ -60,6 +60,15 @@
                                 @Html.AntiForgeryToken()
                                 <button type="submit" class="btn btn-danger">Ta bort</button>
                             }
+                        
+                        
+                        @using (Html.BeginForm("UpdateEventById", "CreateEvent", new { id = @item.Id }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-warning">Uppdatera</button>
+                        }
+                     
+
                      
                     </div>
                 </div>

@@ -11,11 +11,37 @@ namespace Decore.Data.Repositories
     {
 
 
-        public void CreateEvent(Event eventObject)
+        public void CreateEvent(Event eventObj)
         {
             using (DecoreDbContext context = new DecoreDbContext())
             {
-                context.Events.Add(eventObject);
+
+                if (eventObj.Id == 0)
+                {
+                    // Create
+                    context.Events.Add(eventObj);
+                }
+                else
+                {
+                    // Edit
+                    var eventInDb = context.Events.SingleOrDefault(p => p.Id == eventObj.Id);
+
+                    eventInDb.Title = eventObj.Title;
+                    eventInDb.Description = eventObj.Description;
+                    eventInDb.StartDate = eventObj.StartDate;
+                    eventInDb.EndDate = eventObj.EndDate;
+                    eventInDb.SaleStop = eventObj.SaleStop;
+                    eventInDb.BasePrice = eventObj.BasePrice;
+                    eventInDb.MemberPrice = eventObj.MemberPrice;
+                    eventInDb.EventTypeId = eventObj.EventTypeId;
+                    eventInDb.ZipCode = eventObj.ZipCode;
+                    eventInDb.Adress = eventObj.Adress;
+                    eventInDb.ImageURL = eventObj.ImageURL;
+                    eventInDb.EventOwner = eventObj.EventOwner;
+                    eventInDb.CreatedBy = eventObj.EventOwner;
+                    eventInDb.CreatedAt = eventObj.CreatedAt;
+                    eventInDb.UpdatedAt = eventObj.UpdatedAt;
+                }
                 context.SaveChanges();
             }
         }
@@ -46,6 +72,7 @@ namespace Decore.Data.Repositories
                 context.SaveChanges();
             }
         }
+
 
         public Event GetEventById(int eventId)
         {

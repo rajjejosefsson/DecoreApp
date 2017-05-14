@@ -72,5 +72,38 @@ namespace Decore.ClientApp.Controllers
         }
 
 
+
+        public ActionResult UpdateEventById(int id)
+        {
+
+            var eventObj = _eventWCFclient.GetEventById(id);
+            var eventsTypes = _eventWCFclient.GetEventTypes();
+
+
+            var viewModel = new EventViewModel
+            {
+                EventTypes = eventsTypes,
+                Title = eventObj.Title,
+                Description = eventObj.Description,
+                StartDate = eventObj.StartDate,
+                EndDate = eventObj.EndDate,
+                SaleStop = eventObj.SaleStop,
+                BasePrice = eventObj.BasePrice,
+                EventTypeId = eventObj.EventTypeId,
+                ZipCode = eventObj.ZipCode,
+                Adress = eventObj.Adress,
+                ImageURL = eventObj.ImageURL,
+                EventOwner = eventObj.EventOwner,
+                CreatedBy = eventObj.EventOwner,
+                UpdatedAt = DateTime.Now // UPDATED NOW
+
+            };
+
+            return View("Index", viewModel);
+
+        }
+
+
+
     }
 }
