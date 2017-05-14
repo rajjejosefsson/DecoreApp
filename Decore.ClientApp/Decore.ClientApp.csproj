@@ -269,6 +269,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Service References\LoginServiceReference\Decore.ClientApp.LoginServiceReference.EmployeeUsers.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoginServiceReference\Decore.ClientApp.LoginServiceReference.StudentUsers.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\LoginServiceReference\LoginService.disco" />
     <None Include="Service References\LoginServiceReference\configuration91.svcinfo" />
     <None Include="Service References\LoginServiceReference\configuration.svcinfo" />
@@ -310,6 +316,12 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\LoginServiceReference\LoginService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoginServiceReference\LoginService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoginServiceReference\LoginService3.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

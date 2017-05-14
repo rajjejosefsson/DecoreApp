@@ -26,5 +26,16 @@ namespace Decore.ClientApp.Controllers
                 };
                 return View(viewModel);
             }
+
+        [HttpPost]
+        public ActionResult DeleteEventById(int Id)
+        {
+            _eventWCFclient.DeleteEventById(Id);
+            return RedirectToAction("Index", "EventList");
+        }
+
+       
     }
+
+
 }
