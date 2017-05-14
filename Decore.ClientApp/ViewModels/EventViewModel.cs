@@ -66,8 +66,9 @@ namespace Decore.ClientApp.ViewModels
         [Required(ErrorMessage = "Baspris måste anges")]
         public float BasePrice { get; set; }
 
+        [Required(ErrorMessage = "Memberpris måste anges")]
+        public float MemberPrice { get; set; }
 
-      
 
     }
 }

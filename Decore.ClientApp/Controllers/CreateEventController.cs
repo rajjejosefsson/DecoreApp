@@ -46,6 +46,7 @@ namespace Decore.ClientApp.Controllers
                     EndDate = viewModel.EndDate,
                     SaleStop = viewModel.SaleStop,
                     BasePrice = viewModel.BasePrice,
+                    MemberPrice = viewModel.MemberPrice,
                     EventTypeId = viewModel.EventTypeId,
                     ZipCode = viewModel.ZipCode,
                     Adress = viewModel.Adress,
