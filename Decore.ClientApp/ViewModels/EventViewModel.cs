@@ -56,7 +56,7 @@ namespace Decore.ClientApp.ViewModels
         [Required(ErrorMessage = "Event Owner måste anges")]
         public int CreatedBy { get; set; }
 
-
+        public DateTime UpdatedAt { get; set; }
 
         [Required(ErrorMessage = "Beskrivning måste anges")]
         [StringLength(40, ErrorMessage = "Får ej vara över 40 bokstäver")]

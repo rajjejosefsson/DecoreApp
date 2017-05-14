@@ -62,7 +62,7 @@ namespace Decore.ClientApp.Controllers
                     UpdatedAt = DateTime.Now // IS NOT NEEDED TO SHOW 
                 };
                 _eventWCFclient.CreateEvent(eventObject);
-                
+                _scheduleWCFclient.AddEvent(viewModel.Id);
 
 
                 return RedirectToAction("Index", "EventList");
@@ -76,14 +76,40 @@ namespace Decore.ClientApp.Controllers
             return View("Index", viewModel);
         }
 
+       
 
-      
-        [HttpPost]
-        public ActionResult AddEventToSchedule(int eventId)
+        public ActionResult UpdateEventById(int id)
         {
-            _scheduleWCFclient.AddEvent(eventId);
-            return Redirect("Index");
+
+            var eventObj = _eventWCFclient.GetEventById(id);
+            var eventsTypes = _eventWCFclient.GetEventTypes();
+
+
+            var viewModel = new EventViewModel
+            {
+                EventTypes = eventsTypes,
+                Title = eventObj.Title,
+                Description = eventObj.Description,
+                StartDate = eventObj.StartDate,
+                EndDate = eventObj.EndDate,
+                SaleStop = eventObj.SaleStop,
+                BasePrice = eventObj.BasePrice,
+                EventTypeId = eventObj.EventTypeId,
+                ZipCode = eventObj.ZipCode,
+                Adress = eventObj.Adress,
+                ImageURL = eventObj.ImageURL,
+                EventOwner = eventObj.EventOwner,
+                CreatedBy = eventObj.EventOwner,
+                UpdatedAt = DateTime.Now // UPDATED NOW
+
+            };
+
+            return View("Index", viewModel);
+
         }
+
+
+
 
     }
 }
