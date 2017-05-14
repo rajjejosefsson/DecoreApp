@@ -27,7 +27,7 @@
 <div class="content" style="display: block">
     @foreach (var item in Model.Events.OrderByDescending(Model => Model.CreatedAt))
     {
-        <div class="row event" id="myTable">
+        <div class="row event" id="eventCard">
             <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
                 <div class="thumbnail">
                     <img src="@item.ImageURL" alt="event image">
@@ -51,7 +51,9 @@
                         <p>Slutdatum för försäljning: @item.SaleStop</p>
                         <p>Skapad: @item.CreatedAt</p>
                         <p><a href="#" class="btn btn-primary" role="button">Köp Biljett</a> <a href="#" class="btn btn-default" role="button">Personal</a> <a class="btn btn-danger" href="javascript:(function(){$.postGo( '@Url.Action("DeleteEventById")', { 'id': @item.Id  } );})()">Ta Bort</a></p>                                             
-                    </div>
+                        <a href="#" class="btn btn-danger deleteButton" role="button" data-id="@item.Id">Ta Bort</a>
+                          
+                     </div>
                 </div>
             </div>
         </div>
@@ -84,7 +86,34 @@
         })(jQuery);
        
 
+        $("#eventCard")
+                    .on("click",
+                        ".deleteButton",
+                        function() {
+                           
+                            var collapsedDiv = $(this).closest('div');
+                            var partedDiv = collapsedDiv.prev('div.parent');
 
+                            // Remove collapsed tr
+                            collapsedDiv.remove();
+                            partedDiv.remove();
+
+                            var eventId = $(this).data('id');
+
+                            $.ajax({
+                                type: "post",
+                                url: "@Url.Action("DeleteEventById", "EventList")",
+                                ajaxasync: true,
+                            data: { id: eventId },
+
+                            success: function() {
+                                alert("success");
+                            },
+                            error: function(data) {
+                                alert(data.x);
+                            }
+                        });
+        });
 
 
 
