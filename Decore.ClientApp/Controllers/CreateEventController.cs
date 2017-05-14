@@ -62,7 +62,7 @@ namespace Decore.ClientApp.Controllers
                     UpdatedAt = DateTime.Now // IS NOT NEEDED TO SHOW 
                 };
                 _eventWCFclient.CreateEvent(eventObject);
-                _scheduleWCFclient.AddEvent(eventObject.Id);
+              
 
 
                 return RedirectToAction("Index", "EventList");
