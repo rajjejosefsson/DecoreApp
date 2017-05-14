@@ -28,9 +28,10 @@ namespace Decore.ClientApp.Controllers
             }
 
         [HttpPost]
-        public ActionResult DeleteEventById(int Id)
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteEventById(int id)
         {
-            _eventWCFclient.DeleteEventById(Id);
+            _eventWCFclient.DeleteEventById(id);
             return RedirectToAction("Index", "EventList");
         }
 

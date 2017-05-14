@@ -50,11 +50,13 @@ namespace Decore.ClientApp.ViewModels
      
 
         [Required(ErrorMessage = "Event Owner måste anges")]
-        [StringLength(40, ErrorMessage = "Får ej vara över 40 bokstäver")]
-        public string EventOwner { get; set; }
+        public int EventOwner { get; set; }
 
 
-     
+        [Required(ErrorMessage = "Event Owner måste anges")]
+        public int CreatedBy { get; set; }
+
+
 
         [Required(ErrorMessage = "Beskrivning måste anges")]
         [StringLength(40, ErrorMessage = "Får ej vara över 40 bokstäver")]
@@ -64,8 +66,9 @@ namespace Decore.ClientApp.ViewModels
         [Required(ErrorMessage = "Baspris måste anges")]
         public float BasePrice { get; set; }
 
+        [Required(ErrorMessage = "Memberpris måste anges")]
+        public float MemberPrice { get; set; }
 
-      
 
     }
 }
