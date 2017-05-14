@@ -14,7 +14,7 @@ namespace Decore.ClientApp.Controllers
       private readonly EventServiceClient _eventWCFclient = new EventServiceClient();
 
 
-        public ActionResult Index(string title, string description)
+        public ActionResult Index()
         {
             var events = _eventWCFclient.GetEvents();
             var eventTypes = _eventWCFclient.GetEventTypes();

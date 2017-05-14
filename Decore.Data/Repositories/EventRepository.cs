@@ -11,6 +11,8 @@ namespace Decore.Data.Repositories
     {
 
 
+
+
         public void CreateEvent(Event eventObj)
         {
             using (DecoreDbContext context = new DecoreDbContext())
@@ -20,6 +22,10 @@ namespace Decore.Data.Repositories
                 {
                     // Create
                     context.Events.Add(eventObj);
+                    int id = eventObj.Id;
+
+
+
                 }
                 else
                 {
