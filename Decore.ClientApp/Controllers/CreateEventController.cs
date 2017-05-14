@@ -84,6 +84,7 @@ namespace Decore.ClientApp.Controllers
             var eventObj = _eventWCFclient.GetEventById(id);
             var eventsTypes = _eventWCFclient.GetEventTypes();
 
+            TempData["IsEdit"] = true;
 
             var viewModel = new EventViewModel
             {
@@ -100,8 +101,8 @@ namespace Decore.ClientApp.Controllers
                 ImageURL = eventObj.ImageURL,
                 EventOwner = eventObj.EventOwner,
                 CreatedBy = eventObj.EventOwner,
-                UpdatedAt = DateTime.Now // UPDATED NOW
-
+                UpdatedAt = DateTime.Now, // UPDATED NOW
+                IsEdit = true
             };
 
             return View("Index", viewModel);
