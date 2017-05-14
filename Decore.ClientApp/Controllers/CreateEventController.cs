@@ -33,6 +33,11 @@ namespace Decore.ClientApp.Controllers
             if(ModelState.IsValid)
             {
 
+
+                viewModel.EventOwner = 1; // HARD CODED 
+                viewModel.CreatedBy = 1; // HARD CODED
+
+
                 var eventObject = new Event
                 {
                     Title = viewModel.Title,
@@ -45,8 +50,8 @@ namespace Decore.ClientApp.Controllers
                     ZipCode = viewModel.ZipCode,
                     Adress = viewModel.Adress,
                     ImageURL = viewModel.ImageURL,
-                    EventOwner = 1, // ADD TO FORM (NEED TO GET USER FIRST)
-                    CreatedBy = 1, // ADD TO FORM (NEED TO GET USER FIRST)
+                    EventOwner = viewModel.EventOwner,
+                    CreatedBy = viewModel.EventOwner, 
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now // IS NOT NEEDED TO SHOW 
                 };
