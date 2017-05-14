@@ -34,5 +34,9 @@ namespace Decore.ClientApp.Controllers
             _eventWCFclient.DeleteEventById(id);
             return RedirectToAction("Index", "EventList");
         }
+
+       
     }
+
+
 }

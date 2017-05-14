@@ -58,7 +58,7 @@ namespace EventService
         /// <exception cref="System.NotImplementedException"></exception>
         public Event GetEventById(int eventId)
         {
-            throw new NotImplementedException();
+            return _eventRepository.GetEventById(eventId);
         }
 
         public ICollection<EventType> GetEventTypes()

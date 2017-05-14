@@ -34,6 +34,9 @@ namespace Decore.Models
         [DataMember]
         public float? BasePrice { get; set; }
 
+        [DataMember]
+        public float? MemberPrice { get; set; }
+
         [Required]
         [DataMember]
         public int EventTypeId { get; set; }

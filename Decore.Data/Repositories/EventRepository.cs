@@ -47,5 +47,13 @@ namespace Decore.Data.Repositories
             }
         }
 
+        public Event GetEventById(int eventId)
+        {
+            using (DecoreDbContext context = new DecoreDbContext())
+            {
+                return context.Events.AsNoTracking().SingleOrDefault(e => e.Id == eventId);
+            }
+        }
+
     }
 }
