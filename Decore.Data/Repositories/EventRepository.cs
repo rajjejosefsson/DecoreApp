@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Decore.Data.ScheduleServiceReference;
 
 namespace Decore.Data.Repositories
 {
     public class EventRepository
     {
 
-
+        private readonly Service1Client _scheduleWCFclient = new Service1Client();
 
 
         public void CreateEvent(Event eventObj)
@@ -24,7 +25,7 @@ namespace Decore.Data.Repositories
                     context.Events.Add(eventObj);
                     int id = eventObj.Id;
 
-
+                    _scheduleWCFclient.AddEvent(id);
 
                 }
                 else
