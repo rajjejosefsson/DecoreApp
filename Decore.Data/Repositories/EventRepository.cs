@@ -23,9 +23,7 @@ namespace Decore.Data.Repositories
                 {
                     // Create
                     context.Events.Add(eventObj);
-                    int id = eventObj.Id;
-
-                    _scheduleWCFclient.AddEvent(id);
+                   
 
                 }
                 else
@@ -50,6 +48,9 @@ namespace Decore.Data.Repositories
                     eventInDb.UpdatedAt = eventObj.UpdatedAt;
                 }
                 context.SaveChanges();
+                int id = eventObj.Id;
+
+                _scheduleWCFclient.AddEvent(id);
             }
         }
 
