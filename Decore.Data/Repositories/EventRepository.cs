@@ -1,10 +1,6 @@
 ﻿using Decore.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Decore.Data.ScheduleServiceReference;
 using Event = Decore.Models.Event;
 
 
@@ -13,7 +9,7 @@ namespace Decore.Data.Repositories
     public class EventRepository
     {
 
-        private readonly Service1Client _scheduleWCFclient = new Service1Client();
+        
 
 
 
@@ -26,7 +22,7 @@ namespace Decore.Data.Repositories
                 {
                     // Create
                     context.Events.Add(eventObj);
-                    _scheduleWCFclient.AddEvent(eventObj.Id);
+                   
                 }
                 else
                 {
@@ -50,7 +46,7 @@ namespace Decore.Data.Repositories
                     eventInDb.UpdatedAt = eventObj.UpdatedAt;
                 }
                 context.SaveChanges();
-              
+               
             }
         }
 
@@ -76,8 +72,7 @@ namespace Decore.Data.Repositories
             {
                 // Get event by id
                 var eventInDb = context.Events.SingleOrDefault(e => e.Id == eventId);
-                context.Events.Remove(eventInDb);
-                _scheduleWCFclient.RemoveEvent(eventId);
+                context.Events.Remove(eventInDb);              
                 context.SaveChanges();
             }
         }

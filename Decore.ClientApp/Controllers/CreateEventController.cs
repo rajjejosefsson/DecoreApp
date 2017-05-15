@@ -73,8 +73,9 @@ namespace Decore.ClientApp.Controllers
             return View("Index", viewModel);
         }
 
-       
 
+       
+        
         public ActionResult UpdateEventById(int id)
         {
 
@@ -83,7 +84,7 @@ namespace Decore.ClientApp.Controllers
 
             var viewModel = new EventViewModel
             {
-                Id = eventObj.EventTypeId,
+                Id = eventObj.Id,
                 EventTypes = eventsTypes,
                 Title = eventObj.Title,
                 Description = eventObj.Description,
