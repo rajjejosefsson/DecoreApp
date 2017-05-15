@@ -53,6 +53,10 @@ namespace Decore.ClientApp.ViewModels
         public int EventOwner { get; set; }
 
 
+        [Required(ErrorMessage = "Section Id needed")]
+        public int SectionId { get; set; }
+
+
         [Required(ErrorMessage = "Event Owner måste anges")]
         public int CreatedBy { get; set; }
 

@@ -43,6 +43,10 @@ namespace Decore.Models
 
         [Required]
         [DataMember]
+        public int SectionId { get; set; }
+
+        [Required]
+        [DataMember]
         public string ZipCode { get; set; }
 
         [Required]

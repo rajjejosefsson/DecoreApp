@@ -38,11 +38,13 @@ namespace Decore.ClientApp.Controllers
 
                 viewModel.EventOwner = 1; // HARD CODED 
                 viewModel.CreatedBy = 1; // HARD CODED
+                viewModel.SectionId = 1; // HARD CODED
 
 
                 var eventObject = new Event
                 {
                     Id = viewModel.Id,
+                    SectionId = viewModel.SectionId,
                     Title = viewModel.Title,
                     Description = viewModel.Description,
                     StartDate = viewModel.StartDate,
@@ -82,9 +84,12 @@ namespace Decore.ClientApp.Controllers
             var eventObj = _eventWCFclient.GetEventById(id);
             var eventsTypes = _eventWCFclient.GetEventTypes();
 
+            eventObj.SectionId = 1;
+
             var viewModel = new EventViewModel
             {
                 Id = eventObj.Id,
+                SectionId = eventObj.SectionId,
                 EventTypes = eventsTypes,
                 Title = eventObj.Title,
                 Description = eventObj.Description,
