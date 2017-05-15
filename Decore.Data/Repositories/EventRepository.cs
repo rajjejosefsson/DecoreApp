@@ -11,7 +11,8 @@ namespace Decore.Data.Repositories
     public class EventRepository
     {
 
-    
+        private readonly Service1Client _scheduleWCFclient = new Service1Client();
+
 
 
         public void CreateEvent(Event eventObj)
