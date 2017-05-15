@@ -7,7 +7,6 @@ using System.ServiceModel.Web;
 using System.Text;
 using Decore.Models;
 using Decore.Data.Repositories;
-using Decore.Data.ScheduleServiceReference;
 using Event = Decore.Models.Event;
 
 namespace EventService
@@ -28,7 +27,7 @@ namespace EventService
         /// </summary>
         private readonly EventRepository _eventRepository = new EventRepository();
 
-        private readonly Service1Client _scheduleClient = new Service1Client();
+        //private readonly Service1Client _scheduleClient = new Service1Client();
 
 
         /// <summary>
@@ -72,7 +71,7 @@ namespace EventService
         public void DeleteEventById(int eventId)
         {
            _eventRepository.DeleteEventById(eventId);
-           _scheduleClient.RemoveEvent(eventId);
+         //  _scheduleClient.RemoveEvent(eventId);
         }
     }
 }

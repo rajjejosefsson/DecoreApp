@@ -43,6 +43,7 @@ namespace Decore.ClientApp.Controllers
 
                 var eventObject = new Event
                 {
+                    Id =  viewModel.Id,
                     Title = viewModel.Title,
                     Description = viewModel.Description,
                     StartDate = viewModel.StartDate,
