@@ -77,33 +77,12 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EventRepository.cs" />
-    <Compile Include="Service References\ScheduleServiceReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <None Include="Service References\ScheduleServiceReference\Decore.Data.ScheduleServiceReference.EmployeeEventInfo.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ScheduleServiceReference\Service1.wsdl" />
-    <None Include="Service References\ScheduleServiceReference\Service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ScheduleServiceReference\Service11.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ScheduleServiceReference\Service12.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ScheduleServiceReference\Service13.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\decore.models\Decore.Models.csproj">
@@ -130,27 +109,6 @@
     <EmbeddedResource Include="Migrations\201705142120223_removedNullableTypes.resx">
       <DependentUpon>201705142120223_removedNullableTypes.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ScheduleServiceReference\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ScheduleServiceReference\Service1.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ScheduleServiceReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ScheduleServiceReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ScheduleServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
