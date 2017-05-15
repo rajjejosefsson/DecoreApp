@@ -9,7 +9,6 @@ namespace Decore.Data.Repositories
     public class EventRepository
     {
 
-        
 
 
 
@@ -78,6 +77,10 @@ namespace Decore.Data.Repositories
             }
         }
 
+        public ICollection<Event> GetEventsBySectionId(int sectionId) // YEAS
+        {
+            return null;
+        }
 
         public Event GetEventById(int eventId)
         {
