@@ -87,6 +87,21 @@ namespace Decore.Data.Repositories
             }
         }
 
-    
+
+        public void ConnectRelativeAndPatient(int patientId, int relativeId)
+        {
+            using (DecoreDbContext context = new DecoreDbContext())
+            {
+
+                var eventObj = context.Events.SingleOrDefault(p => p.Id == relativeId);
+                var patient = context.Patients.SingleOrDefault(p => p.Id == patientId);
+
+                // Connects the relative with patient using navigations (collection) in EF 
+                Section.Event.Add(eventObj);
+                context.SaveChanges();
+            }
+        }
+
+
     }
 }

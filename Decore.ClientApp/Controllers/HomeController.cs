@@ -47,8 +47,11 @@ namespace Decore.ClientApp.Controllers
         [HttpPost]
         public ActionResult LoginEmployee(LoginViewModel viewModel)
         {
-
-                _LoginWCFclient.LoginEmployee(viewModel.Username, viewModel.Password);
+            // fungerar
+           var studentUser = _LoginWCFclient.LoginStudent(viewModel.Username, viewModel.Password);
+           
+            // Fungerar inte
+            // var employeeUser = _LoginWCFclient.LoginEmployee(viewModel.Username, viewModel.Password);
 
             return RedirectToAction("Index", "EventList");
         }
