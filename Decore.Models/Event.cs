@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
@@ -70,7 +72,6 @@ namespace Decore.Models
 
         [DataMember]
         public DateTime? UpdatedAt { get; set; }
-
 
     }
 }

@@ -50,33 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DecoreDbContext.cs" />
-    <Compile Include="Migrations\201705092159593_init.cs" />
-    <Compile Include="Migrations\201705092159593_init.Designer.cs">
-      <DependentUpon>201705092159593_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705092229075_optionalDataMembers.cs" />
-    <Compile Include="Migrations\201705092229075_optionalDataMembers.Designer.cs">
-      <DependentUpon>201705092229075_optionalDataMembers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705122000117_EventTypeTable.cs" />
-    <Compile Include="Migrations\201705122000117_EventTypeTable.Designer.cs">
-      <DependentUpon>201705122000117_EventTypeTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705122003032_EventTypeTableAddedNow.cs" />
-    <Compile Include="Migrations\201705122003032_EventTypeTableAddedNow.Designer.cs">
-      <DependentUpon>201705122003032_EventTypeTableAddedNow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705142029019_Memberpricecolumnadded.cs" />
-    <Compile Include="Migrations\201705142029019_Memberpricecolumnadded.Designer.cs">
-      <DependentUpon>201705142029019_Memberpricecolumnadded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705142120223_removedNullableTypes.cs" />
-    <Compile Include="Migrations\201705142120223_removedNullableTypes.Designer.cs">
-      <DependentUpon>201705142120223_removedNullableTypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705151114536_sectionidadded.cs" />
-    <Compile Include="Migrations\201705151114536_sectionidadded.Designer.cs">
-      <DependentUpon>201705151114536_sectionidadded.cs</DependentUpon>
+    <Compile Include="Migrations\201705152121210_init.cs" />
+    <Compile Include="Migrations\201705152121210_init.Designer.cs">
+      <DependentUpon>201705152121210_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,26 +71,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705092159593_init.resx">
-      <DependentUpon>201705092159593_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705092229075_optionalDataMembers.resx">
-      <DependentUpon>201705092229075_optionalDataMembers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705122000117_EventTypeTable.resx">
-      <DependentUpon>201705122000117_EventTypeTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705122003032_EventTypeTableAddedNow.resx">
-      <DependentUpon>201705122003032_EventTypeTableAddedNow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705142029019_Memberpricecolumnadded.resx">
-      <DependentUpon>201705142029019_Memberpricecolumnadded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705142120223_removedNullableTypes.resx">
-      <DependentUpon>201705142120223_removedNullableTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705151114536_sectionidadded.resx">
-      <DependentUpon>201705151114536_sectionidadded.cs</DependentUpon>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201705152121210_init.resx">
+      <DependentUpon>201705152121210_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
