@@ -226,6 +226,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\BeverageViewModel.cs" />
     <Compile Include="ViewModels\EventViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-datetimepicker.css" />
@@ -279,17 +280,17 @@
     <Content Include="Service References\EmployeeServiceReference\Decore.ClientApp.EmployeeServiceReference.SectionInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\EmployeeServiceReference\Service1.wsdl" />
-    <None Include="Service References\EmployeeServiceReference\Service1.xsd">
+    <None Include="Service References\EmployeeServiceReference\EmployeeServiceWCF.wsdl" />
+    <None Include="Service References\EmployeeServiceReference\EmployeeServiceWCF.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\EmployeeServiceReference\Service11.xsd">
+    <None Include="Service References\EmployeeServiceReference\EmployeeServiceWCF1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\EmployeeServiceReference\Service12.xsd">
+    <None Include="Service References\EmployeeServiceReference\EmployeeServiceWCF2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\EmployeeServiceReference\Service13.xsd">
+    <None Include="Service References\EmployeeServiceReference\EmployeeServiceWCF3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\EventServiceReference\EventService.disco" />
@@ -299,13 +300,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\EmployeeServiceReference\Service1.disco" />
     <None Include="Service References\EmployeeServiceReference\configuration91.svcinfo" />
     <None Include="Service References\EmployeeServiceReference\configuration.svcinfo" />
     <None Include="Service References\EmployeeServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\EmployeeServiceReference\EmployeeServiceWCF.disco" />
     <Content Include="Service References\LoginServiceReference\Decore.ClientApp.LoginServiceReference.EmployeeUsers.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>

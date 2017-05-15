@@ -30,6 +30,7 @@ namespace Decore.Data.Repositories
                     var eventInDb = context.Events.SingleOrDefault(p => p.Id == eventObj.Id);
 
                     eventInDb.Title = eventObj.Title;
+                    eventInDb.SectionId = eventObj.SectionId;
                     eventInDb.Description = eventObj.Description;
                     eventInDb.StartDate = eventObj.StartDate;
                     eventInDb.EndDate = eventObj.EndDate;
@@ -86,5 +87,6 @@ namespace Decore.Data.Repositories
             }
         }
 
+    
     }
 }

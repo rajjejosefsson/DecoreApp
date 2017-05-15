@@ -50,7 +50,7 @@ namespace EventService
             return events;
         }
 
-
+       
         /// <summary>
         /// Gets the event by identifier.
         /// </summary>

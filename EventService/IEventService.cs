@@ -42,7 +42,7 @@ namespace EventService
         /// <returns>Event.</returns>
         [OperationContract]
         Event GetEventById(int eventId);
-
+    
         /// <summary>
         /// Creates the event.
         /// </summary>

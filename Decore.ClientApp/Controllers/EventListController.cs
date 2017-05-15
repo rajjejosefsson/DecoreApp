@@ -13,7 +13,7 @@ namespace Decore.ClientApp.Controllers
     {
 
       private readonly EventServiceClient _eventWCFclient = new EventServiceClient();
-      private readonly Service1Client _employeeWcfClient = new Service1Client();
+      private readonly EmployeeServiceWCFClient _employeeWcfClient = new EmployeeServiceWCFClient();
 
 
         public ActionResult Index()

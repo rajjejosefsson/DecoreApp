@@ -12,7 +12,7 @@ namespace Decore.ClientApp.Controllers
     {
 
         private readonly EventServiceClient _eventWCFclient = new EventServiceClient();
-        private readonly Service1Client _employeeWcfClient = new Service1Client();
+        private readonly EmployeeServiceWCFClient _employeeWcfClient = new EmployeeServiceWCFClient();
 
         public ActionResult Index()
         {
@@ -40,7 +40,7 @@ namespace Decore.ClientApp.Controllers
 
                 viewModel.EventOwner = 1; // HARD CODED 
                 viewModel.CreatedBy = 1; // HARD CODED
-                viewModel.SectionId = 1; // HARD CODED
+   
 
 
                 var eventObject = new Event
@@ -69,10 +69,11 @@ namespace Decore.ClientApp.Controllers
                 return RedirectToAction("Index", "EventList");
             }
 
-            
 
             var eventsTypes = _eventWCFclient.GetEventTypes();
             viewModel.EventTypes = eventsTypes;
+
+          
 
             return View("Index", viewModel);
         }
@@ -85,13 +86,14 @@ namespace Decore.ClientApp.Controllers
 
             var eventObj = _eventWCFclient.GetEventById(id);
             var eventsTypes = _eventWCFclient.GetEventTypes();
+            var sectionTypes = _employeeWcfClient.GetAllSections();
 
-            eventObj.SectionId = 1;
 
             var viewModel = new EventViewModel
             {
                 Id = eventObj.Id,
                 SectionId = eventObj.SectionId,
+                SectionTypes = sectionTypes,
                 EventTypes = eventsTypes,
                 Title = eventObj.Title,
                 Description = eventObj.Description,

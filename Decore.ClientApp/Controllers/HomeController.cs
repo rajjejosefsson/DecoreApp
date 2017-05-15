@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
 using Decore.ClientApp.LoginServiceReference;
+using Decore.ClientApp.ViewModels;
 
 namespace Decore.ClientApp.Controllers
 {
@@ -16,7 +17,14 @@ namespace Decore.ClientApp.Controllers
 
         public ActionResult Index()
         {
-            return View();
+           
+            var viewModel = new LoginViewModel
+            {
+                Username = "",
+                Password = "",
+            };
+
+            return View(viewModel);
         }
 
         public ActionResult About()
@@ -35,35 +43,16 @@ namespace Decore.ClientApp.Controllers
 
 
 
-        protected void LoginEmployee(string Email, string Password)
-        {
-            
-            try
-            {
-                _LoginWCFclient.LoginEmployee(Email, Password);
-            
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex); //Login Error...
-            }
-           
-        }
-
-        protected void LoginStudent(string Email, string Password)
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult LoginEmployee(LoginViewModel viewModel)
         {
 
-            try
-            {
-                _LoginWCFclient.LoginStudent(Email, Password);
+                _LoginWCFclient.LoginEmployee(viewModel.Username, viewModel.Password);
 
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex); //Login Error...
-            }
-
+            return RedirectToAction("Index", "EventList");
         }
+
 
     }
 }

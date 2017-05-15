@@ -19,15 +19,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://193.10.202.73/EmployeeService/Service1.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://193.10.202.73/EmployeeService/EmployeeServiceWCF.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="c372a3cc-15bc-4c58-919c-4cc70d3cadac" SourceId="1" SourceUrl="http://193.10.202.73/EmployeeService/Service1.svc?xsd=xsd1" />
-    <MetadataFile FileName="Service11.xsd" MetadataType="Schema" ID="37e375a7-74b2-4966-bebc-3fe72aca3672" SourceId="1" SourceUrl="http://193.10.202.73/EmployeeService/Service1.svc?xsd=xsd2" />
-    <MetadataFile FileName="Service1.disco" MetadataType="Disco" ID="c227492b-e047-41b3-9bec-e58127ab2ea5" SourceId="1" SourceUrl="http://193.10.202.73/EmployeeService/Service1.svc?disco" />
-    <MetadataFile FileName="Service12.xsd" MetadataType="Schema" ID="1b1bd681-deed-4ad0-be16-3e678c7a78a0" SourceId="1" SourceUrl="http://193.10.202.73/EmployeeService/Service1.svc?xsd=xsd0" />
-    <MetadataFile FileName="Service13.xsd" MetadataType="Schema" ID="6cdc81e9-e335-439d-ac46-3e81142f8cbc" SourceId="1" SourceUrl="http://193.10.202.73/EmployeeService/Service1.svc?xsd=xsd3" />
-    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="eb90ec3a-d7a2-4462-a09c-9a80a48b0c5d" SourceId="1" SourceUrl="http://193.10.202.73/EmployeeService/Service1.svc?wsdl" />
+    <MetadataFile FileName="EmployeeServiceWCF.xsd" MetadataType="Schema" ID="25a874ea-c15b-4a34-be79-018b2803871f" SourceId="1" SourceUrl="http://193.10.202.73/EmployeeService/EmployeeServiceWCF.svc?xsd=xsd1" />
+    <MetadataFile FileName="EmployeeServiceWCF.disco" MetadataType="Disco" ID="1d0d179b-f8d3-4886-888e-106331913295" SourceId="1" SourceUrl="http://193.10.202.73/EmployeeService/EmployeeServiceWCF.svc?disco" />
+    <MetadataFile FileName="EmployeeServiceWCF1.xsd" MetadataType="Schema" ID="b323423b-287a-477a-9ab4-e63eee368d9d" SourceId="1" SourceUrl="http://193.10.202.73/EmployeeService/EmployeeServiceWCF.svc?xsd=xsd3" />
+    <MetadataFile FileName="EmployeeServiceWCF.wsdl" MetadataType="Wsdl" ID="13c947f8-5ec5-4056-bbd9-278812de4b57" SourceId="1" SourceUrl="http://193.10.202.73/EmployeeService/EmployeeServiceWCF.svc?wsdl" />
+    <MetadataFile FileName="EmployeeServiceWCF2.xsd" MetadataType="Schema" ID="2c349e34-4ccf-454d-b564-02de8547cf0d" SourceId="1" SourceUrl="http://193.10.202.73/EmployeeService/EmployeeServiceWCF.svc?xsd=xsd2" />
+    <MetadataFile FileName="EmployeeServiceWCF3.xsd" MetadataType="Schema" ID="d13f98ba-19dd-4910-a7d3-587f46d2e3e7" SourceId="1" SourceUrl="http://193.10.202.73/EmployeeService/EmployeeServiceWCF.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

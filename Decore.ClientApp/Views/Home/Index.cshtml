@@ -1,4 +1,7 @@
-﻿@{
+﻿
+@model Decore.ClientApp.ViewModels.LoginViewModel
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -19,7 +22,7 @@
     }
 
     .header {
-        background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../../content/images/summerparty.jpg);
+        background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(~/../content/images/summerparty.jpg);
         background-attachment: fixed;
         background-size: cover;
         background-position: 50% 50%;
@@ -47,6 +50,16 @@
         margin-top: -37px;
     }
 
+
+    .login-form {
+        max-width: 300px;
+        background-color: white;
+        color: black;
+        padding: 20px;
+        border-radius: 6px;
+    }
+
+
 </style>
 
 @section outsideContainer
@@ -55,6 +68,38 @@
         <div class="header">
             <div class="text-box text-center">
                 <img src="~/content/images/decore-logo.png">
+
+            @using (Html.BeginForm("LoginEmployee", "Home", "POST"))
+            {
+                @Html.AntiForgeryToken()
+
+                                <div class="login-form">
+  
+                           
+                                         <h2>Inloggning</h2>
+                            
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Username, "Användarnamn")
+                                            @Html.TextBoxFor(model => model.Username, new { @class = "form-control", @placeholder = "email@gmail.com" })
+                                            <div class="error-holder">
+                                                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger", })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Password, "Lösenord")
+                                            @Html.TextBoxFor(model => model.Password, new { @class = "form-control", @placeholder = "password" })
+                                            <div class="error-holder">
+                                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                      <input type="submit" value="Logga in" class="btn btn-primary create-save-btn" />
+                                </div>
+
+                        }
+
+
                <p>For students by students</p>
             </div>        
         </div>

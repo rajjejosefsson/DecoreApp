@@ -658,142 +658,142 @@ namespace Decore.ClientApp.EmployeeServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="EmployeeServiceReference.IService1")]
-    public interface IService1 {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="EmployeeServiceReference.IEmployeeServiceWCF")]
+    public interface IEmployeeServiceWCF {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IsRunning", ReplyAction="http://tempuri.org/IService1/IsRunningResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/IsRunning", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/IsRunningResponse")]
         bool IsRunning();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IsRunning", ReplyAction="http://tempuri.org/IService1/IsRunningResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/IsRunning", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/IsRunningResponse")]
         System.Threading.Tasks.Task<bool> IsRunningAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateAccess", ReplyAction="http://tempuri.org/IService1/CreateAccessResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/CreateAccess", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/CreateAccessResponse")]
         Decore.ClientApp.EmployeeServiceReference.AccessInfo CreateAccess(int createdById, string name, string description);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateAccess", ReplyAction="http://tempuri.org/IService1/CreateAccessResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/CreateAccess", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/CreateAccessResponse")]
         System.Threading.Tasks.Task<Decore.ClientApp.EmployeeServiceReference.AccessInfo> CreateAccessAsync(int createdById, string name, string description);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateAccess", ReplyAction="http://tempuri.org/IService1/UpdateAccessResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/UpdateAccess", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/UpdateAccessResponse")]
         Decore.ClientApp.EmployeeServiceReference.AccessInfo UpdateAccess(int updatedById, Decore.ClientApp.EmployeeServiceReference.AccessInfo updatedAccess);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateAccess", ReplyAction="http://tempuri.org/IService1/UpdateAccessResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/UpdateAccess", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/UpdateAccessResponse")]
         System.Threading.Tasks.Task<Decore.ClientApp.EmployeeServiceReference.AccessInfo> UpdateAccessAsync(int updatedById, Decore.ClientApp.EmployeeServiceReference.AccessInfo updatedAccess);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteAccess", ReplyAction="http://tempuri.org/IService1/DeleteAccessResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/DeleteAccess", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/DeleteAccessResponse")]
         string DeleteAccess(int acessId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteAccess", ReplyAction="http://tempuri.org/IService1/DeleteAccessResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/DeleteAccess", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/DeleteAccessResponse")]
         System.Threading.Tasks.Task<string> DeleteAccessAsync(int acessId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateEmployee", ReplyAction="http://tempuri.org/IService1/CreateEmployeeResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/CreateEmployee", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/CreateEmployeeResponse")]
         Decore.ClientApp.EmployeeServiceReference.EmployeeInfo CreateEmployee(int userIdIn, int createdByIdin, int[] sectionIds, int[] roleIdsIn);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateEmployee", ReplyAction="http://tempuri.org/IService1/CreateEmployeeResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/CreateEmployee", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/CreateEmployeeResponse")]
         System.Threading.Tasks.Task<Decore.ClientApp.EmployeeServiceReference.EmployeeInfo> CreateEmployeeAsync(int userIdIn, int createdByIdin, int[] sectionIds, int[] roleIdsIn);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetEmployeeByUserId", ReplyAction="http://tempuri.org/IService1/GetEmployeeByUserIdResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/GetEmployeeByUserId", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/GetEmployeeByUserIdResponse")]
         Decore.ClientApp.EmployeeServiceReference.EmployeeInfo GetEmployeeByUserId(int userId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetEmployeeByUserId", ReplyAction="http://tempuri.org/IService1/GetEmployeeByUserIdResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/GetEmployeeByUserId", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/GetEmployeeByUserIdResponse")]
         System.Threading.Tasks.Task<Decore.ClientApp.EmployeeServiceReference.EmployeeInfo> GetEmployeeByUserIdAsync(int userId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetEmployeeById", ReplyAction="http://tempuri.org/IService1/GetEmployeeByIdResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/GetEmployeeById", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/GetEmployeeByIdResponse")]
         Decore.ClientApp.EmployeeServiceReference.EmployeeInfo GetEmployeeById(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetEmployeeById", ReplyAction="http://tempuri.org/IService1/GetEmployeeByIdResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/GetEmployeeById", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/GetEmployeeByIdResponse")]
         System.Threading.Tasks.Task<Decore.ClientApp.EmployeeServiceReference.EmployeeInfo> GetEmployeeByIdAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ChangeEmployeeRoles", ReplyAction="http://tempuri.org/IService1/ChangeEmployeeRolesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/ChangeEmployeeRoles", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/ChangeEmployeeRolesResponse")]
         Decore.ClientApp.EmployeeServiceReference.EmployeeInfo ChangeEmployeeRoles(int updatedById, int employeeId, int[] rolesToAddId, int[] rolesToRemoveId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ChangeEmployeeRoles", ReplyAction="http://tempuri.org/IService1/ChangeEmployeeRolesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/ChangeEmployeeRoles", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/ChangeEmployeeRolesResponse")]
         System.Threading.Tasks.Task<Decore.ClientApp.EmployeeServiceReference.EmployeeInfo> ChangeEmployeeRolesAsync(int updatedById, int employeeId, int[] rolesToAddId, int[] rolesToRemoveId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ChangeEmployeeSections", ReplyAction="http://tempuri.org/IService1/ChangeEmployeeSectionsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/ChangeEmployeeSections", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/ChangeEmployeeSectionsResponse")]
         Decore.ClientApp.EmployeeServiceReference.EmployeeInfo ChangeEmployeeSections(int updatedById, int employeeId, int[] sectionsToAddIds, int[] sectionsToRemoveIds);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ChangeEmployeeSections", ReplyAction="http://tempuri.org/IService1/ChangeEmployeeSectionsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/ChangeEmployeeSections", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/ChangeEmployeeSectionsResponse")]
         System.Threading.Tasks.Task<Decore.ClientApp.EmployeeServiceReference.EmployeeInfo> ChangeEmployeeSectionsAsync(int updatedById, int employeeId, int[] sectionsToAddIds, int[] sectionsToRemoveIds);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteEmployee", ReplyAction="http://tempuri.org/IService1/DeleteEmployeeResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/DeleteEmployee", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/DeleteEmployeeResponse")]
         string DeleteEmployee(int employeeId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteEmployee", ReplyAction="http://tempuri.org/IService1/DeleteEmployeeResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/DeleteEmployee", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/DeleteEmployeeResponse")]
         System.Threading.Tasks.Task<string> DeleteEmployeeAsync(int employeeId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateRole", ReplyAction="http://tempuri.org/IService1/CreateRoleResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/CreateRole", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/CreateRoleResponse")]
         Decore.ClientApp.EmployeeServiceReference.RoleInfo CreateRole(int createdById, int sectionId, string name, string description, int[] access);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateRole", ReplyAction="http://tempuri.org/IService1/CreateRoleResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/CreateRole", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/CreateRoleResponse")]
         System.Threading.Tasks.Task<Decore.ClientApp.EmployeeServiceReference.RoleInfo> CreateRoleAsync(int createdById, int sectionId, string name, string description, int[] access);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateRole", ReplyAction="http://tempuri.org/IService1/UpdateRoleResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/UpdateRole", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/UpdateRoleResponse")]
         Decore.ClientApp.EmployeeServiceReference.RoleInfo UpdateRole(int updatedById, Decore.ClientApp.EmployeeServiceReference.RoleInfo updatedRole);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateRole", ReplyAction="http://tempuri.org/IService1/UpdateRoleResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/UpdateRole", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/UpdateRoleResponse")]
         System.Threading.Tasks.Task<Decore.ClientApp.EmployeeServiceReference.RoleInfo> UpdateRoleAsync(int updatedById, Decore.ClientApp.EmployeeServiceReference.RoleInfo updatedRole);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteRole", ReplyAction="http://tempuri.org/IService1/DeleteRoleResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/DeleteRole", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/DeleteRoleResponse")]
         string DeleteRole(int roleId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteRole", ReplyAction="http://tempuri.org/IService1/DeleteRoleResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/DeleteRole", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/DeleteRoleResponse")]
         System.Threading.Tasks.Task<string> DeleteRoleAsync(int roleId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateSection", ReplyAction="http://tempuri.org/IService1/CreateSectionResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/CreateSection", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/CreateSectionResponse")]
         Decore.ClientApp.EmployeeServiceReference.SectionInfo CreateSection(int createdById, string name, string description, string email);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateSection", ReplyAction="http://tempuri.org/IService1/CreateSectionResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/CreateSection", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/CreateSectionResponse")]
         System.Threading.Tasks.Task<Decore.ClientApp.EmployeeServiceReference.SectionInfo> CreateSectionAsync(int createdById, string name, string description, string email);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetSectionById", ReplyAction="http://tempuri.org/IService1/GetSectionByIdResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/GetSectionById", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/GetSectionByIdResponse")]
         Decore.ClientApp.EmployeeServiceReference.SectionInfo GetSectionById(int sectionId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetSectionById", ReplyAction="http://tempuri.org/IService1/GetSectionByIdResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/GetSectionById", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/GetSectionByIdResponse")]
         System.Threading.Tasks.Task<Decore.ClientApp.EmployeeServiceReference.SectionInfo> GetSectionByIdAsync(int sectionId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllSections", ReplyAction="http://tempuri.org/IService1/GetAllSectionsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/GetAllSections", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/GetAllSectionsResponse")]
         Decore.ClientApp.EmployeeServiceReference.SectionInfo[] GetAllSections();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllSections", ReplyAction="http://tempuri.org/IService1/GetAllSectionsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/GetAllSections", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/GetAllSectionsResponse")]
         System.Threading.Tasks.Task<Decore.ClientApp.EmployeeServiceReference.SectionInfo[]> GetAllSectionsAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateSection", ReplyAction="http://tempuri.org/IService1/UpdateSectionResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/UpdateSection", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/UpdateSectionResponse")]
         Decore.ClientApp.EmployeeServiceReference.SectionInfo UpdateSection(int updatedById, Decore.ClientApp.EmployeeServiceReference.SectionInfo updatedSection);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateSection", ReplyAction="http://tempuri.org/IService1/UpdateSectionResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/UpdateSection", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/UpdateSectionResponse")]
         System.Threading.Tasks.Task<Decore.ClientApp.EmployeeServiceReference.SectionInfo> UpdateSectionAsync(int updatedById, Decore.ClientApp.EmployeeServiceReference.SectionInfo updatedSection);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteSection", ReplyAction="http://tempuri.org/IService1/DeleteSectionResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/DeleteSection", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/DeleteSectionResponse")]
         string DeleteSection(int sectionId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteSection", ReplyAction="http://tempuri.org/IService1/DeleteSectionResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServiceWCF/DeleteSection", ReplyAction="http://tempuri.org/IEmployeeServiceWCF/DeleteSectionResponse")]
         System.Threading.Tasks.Task<string> DeleteSectionAsync(int sectionId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : Decore.ClientApp.EmployeeServiceReference.IService1, System.ServiceModel.IClientChannel {
+    public interface IEmployeeServiceWCFChannel : Decore.ClientApp.EmployeeServiceReference.IEmployeeServiceWCF, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<Decore.ClientApp.EmployeeServiceReference.IService1>, Decore.ClientApp.EmployeeServiceReference.IService1 {
+    public partial class EmployeeServiceWCFClient : System.ServiceModel.ClientBase<Decore.ClientApp.EmployeeServiceReference.IEmployeeServiceWCF>, Decore.ClientApp.EmployeeServiceReference.IEmployeeServiceWCF {
         
-        public Service1Client() {
+        public EmployeeServiceWCFClient() {
         }
         
-        public Service1Client(string endpointConfigurationName) : 
+        public EmployeeServiceWCFClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public Service1Client(string endpointConfigurationName, string remoteAddress) : 
+        public EmployeeServiceWCFClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Service1Client(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public EmployeeServiceWCFClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public EmployeeServiceWCFClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
