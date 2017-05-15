@@ -15,7 +15,6 @@ namespace Decore.ClientApp.Controllers
         public ActionResult Index()
         {
             var eventsTypes = _eventWCFclient.GetEventTypes();
-           
             var viewModel = new EventViewModel
             {
                 EventTypes = eventsTypes
@@ -43,7 +42,7 @@ namespace Decore.ClientApp.Controllers
 
                 var eventObject = new Event
                 {
-                    Id =  viewModel.Id,
+                    Id = viewModel.Id,
                     Title = viewModel.Title,
                     Description = viewModel.Description,
                     StartDate = viewModel.StartDate,
@@ -62,7 +61,6 @@ namespace Decore.ClientApp.Controllers
                 };
                 _eventWCFclient.CreateEvent(eventObject);
               
-
 
                 return RedirectToAction("Index", "EventList");
             }
@@ -83,10 +81,9 @@ namespace Decore.ClientApp.Controllers
             var eventObj = _eventWCFclient.GetEventById(id);
             var eventsTypes = _eventWCFclient.GetEventTypes();
 
-            TempData["IsEdit"] = true;
-
             var viewModel = new EventViewModel
             {
+                Id = eventObj.EventTypeId,
                 EventTypes = eventsTypes,
                 Title = eventObj.Title,
                 Description = eventObj.Description,
