@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
 using Decore.ClientApp.EventServiceReference;
-using Decore.ClientApp.ScheduleServiceReference;
 using Decore.ClientApp.ViewModels;
 using Decore.Models;
 
@@ -12,7 +11,6 @@ namespace Decore.ClientApp.Controllers
     {
 
         private readonly EventServiceClient _eventWCFclient = new EventServiceClient();
-        private readonly Service1Client _scheduleWCFclient = new Service1Client();
 
         public ActionResult Index()
         {
