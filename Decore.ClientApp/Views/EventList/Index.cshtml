@@ -58,16 +58,21 @@
                             <button type="submit" style="float:right" class="btn btn-danger">Ta bort</button>
                         }
 
+
+                        <button href="#" class="btn btn-primary" role="button">Köp Biljett</button>
+                        <button href="#" class="btn btn-default" role="button">Personal</button>
+
+                            @using (Html.BeginForm("DeleteEventById", "EventList", new { id = @item.Id }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-danger">Ta bort</button>
+                            }                      
+                        
                         @using (Html.BeginForm("UpdateEventById", "CreateEvent", new { id = @item.Id }))
                         {
                             @Html.AntiForgeryToken()
-                            <button type="submit" style="float:right" class="btn btn-warning">Uppdatera</button>
+                            <button type="submit" class="btn btn-warning">Uppdatera</button>
                         }
-
-                        <button href="#" class="btn btn-primary" role="button">Köp Biljett</button>
-                        <button href="#" class="btn btn-default" role="button">Personal</button>                                   
-                        
-                      
                      
                     </div>
                 </div>
