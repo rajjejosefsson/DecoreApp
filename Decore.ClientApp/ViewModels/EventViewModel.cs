@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Decore.ClientApp.EmployeeServiceReference;
 
 namespace Decore.ClientApp.ViewModels
 {
@@ -12,6 +13,9 @@ namespace Decore.ClientApp.ViewModels
 
         public ICollection<Event> Events { get; set; }
         public ICollection<EventType> EventTypes { get; set; }
+        public ICollection<SectionInfo> SectionTypes { get; set; }
+
+
 
 
         [Required(ErrorMessage = "Eventtyp måste anges")]

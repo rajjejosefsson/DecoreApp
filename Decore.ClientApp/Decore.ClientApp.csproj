@@ -208,6 +208,11 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\EmployeeServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\EventServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -262,10 +267,42 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Service References\EmployeeServiceReference\Decore.ClientApp.EmployeeServiceReference.AccessInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\EmployeeServiceReference\Decore.ClientApp.EmployeeServiceReference.EmployeeInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\EmployeeServiceReference\Decore.ClientApp.EmployeeServiceReference.RoleInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\EmployeeServiceReference\Decore.ClientApp.EmployeeServiceReference.SectionInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\EmployeeServiceReference\Service1.wsdl" />
+    <None Include="Service References\EmployeeServiceReference\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmployeeServiceReference\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmployeeServiceReference\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmployeeServiceReference\Service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\EventServiceReference\EventService.disco" />
     <None Include="Service References\EventServiceReference\configuration91.svcinfo" />
     <None Include="Service References\EventServiceReference\configuration.svcinfo" />
     <None Include="Service References\EventServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\EmployeeServiceReference\Service1.disco" />
+    <None Include="Service References\EmployeeServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\EmployeeServiceReference\configuration.svcinfo" />
+    <None Include="Service References\EmployeeServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -337,6 +374,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\EmployeeServiceReference\" />
     <WCFMetadataStorage Include="Service References\EventServiceReference\" />
     <WCFMetadataStorage Include="Service References\LoginServiceReference\" />
   </ItemGroup>

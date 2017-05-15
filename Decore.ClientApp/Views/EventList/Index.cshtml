@@ -47,6 +47,18 @@
                         <p>Adress: @item.Adress</p>
                         <p>Pris på biljett: @item.BasePrice kr</p>
                         <p>Pris på biljett för medlemmar: @item.MemberPrice kr</p>
+                        
+                        <p>
+                            Utskott:
+                            @foreach (var sectionType in @Model.SectionTypes)
+                            {
+                                if (sectionType.Id == @item.SectionId)
+                                {
+                                    @sectionType.Description;
+                                }
+                            }
+                        </p>
+
                         <p>Startdatum för event: @item.StartDate</p>
                         <p>Slutdatum för event: @item.EndDate</p>
                         <p>Slutdatum för försäljning: @item.SaleStop</p>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Decore.ClientApp.EmployeeServiceReference;
 using Decore.ClientApp.EventServiceReference;
 using Decore.ClientApp.ViewModels;
 
@@ -12,16 +13,20 @@ namespace Decore.ClientApp.Controllers
     {
 
       private readonly EventServiceClient _eventWCFclient = new EventServiceClient();
+      private readonly Service1Client _employeeWcfClient = new Service1Client();
+
 
         public ActionResult Index()
         {
             var events = _eventWCFclient.GetEvents();
             var eventTypes = _eventWCFclient.GetEventTypes();
+            var sectionTypes = _employeeWcfClient.GetAllSections();
 
             var viewModel = new EventViewModel
                 {
                     Events = events,
-                    EventTypes = eventTypes
+                    EventTypes = eventTypes,
+                    SectionTypes = sectionTypes
                 };
                 return View(viewModel);
             }
