@@ -53,7 +53,8 @@ namespace EventService
         [OperationContract]
         void DeleteEventById(int eventId);
 
-
+        [OperationContract]
+        ICollection<Event> GetEventsBySectionId(int sectionId);
 
         [OperationContract]
         ICollection<EventType> GetEventTypes();

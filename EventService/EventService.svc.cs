@@ -62,6 +62,12 @@ namespace EventService
             return _eventRepository.GetEventById(eventId);
         }
 
+        public ICollection<Event> GetEventsBySectionId(int sectionId)
+        {
+            return _eventRepository.GetEventsBySectionId(sectionId);
+        }
+
+
         public ICollection<EventType> GetEventTypes()
         {
             return _eventRepository.GetEventTypes();

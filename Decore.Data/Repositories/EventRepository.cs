@@ -10,8 +10,6 @@ namespace Decore.Data.Repositories
     {
 
 
-
-
         public void CreateEvent(Event eventObj)
         {
             using (DecoreDbContext context = new DecoreDbContext())
@@ -77,9 +75,14 @@ namespace Decore.Data.Repositories
             }
         }
 
-        public ICollection<Event> GetEventsBySectionId(int sectionId) // YEAS
+        public ICollection<Event> GetEventsBySectionId(int sectionId) 
         {
-            return null;
+            using (DecoreDbContext context = new DecoreDbContext())
+            {
+                // Get event by id
+                return context.Events.Where(e => e.SectionId == sectionId).ToList();
+           
+            }
         }
 
         public Event GetEventById(int eventId)
@@ -91,19 +94,6 @@ namespace Decore.Data.Repositories
         }
 
 
-        public void ConnectRelativeAndPatient(int patientId, int relativeId)
-        {
-            using (DecoreDbContext context = new DecoreDbContext())
-            {
-
-                var eventObj = context.Events.SingleOrDefault(p => p.Id == relativeId);
-                var patient = context.Patients.SingleOrDefault(p => p.Id == patientId);
-
-                // Connects the relative with patient using navigations (collection) in EF 
-                Section.Event.Add(eventObj);
-                context.SaveChanges();
-            }
-        }
 
 
     }
