@@ -100,7 +100,7 @@
 
                                         <div class="form-group login-group" style="text-align:left">
                                             @Html.LabelFor(model => model.Password, "Lösenord")
-                                            @Html.TextBoxFor(model => model.Password, new { @class = "form-control", @placeholder = "password" })
+                                            @Html.PasswordFor(model => model.Password, new { @class = "form-control", @placeholder = "password" })
                                             <div class="error-holder">
                                                 @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                                             </div>

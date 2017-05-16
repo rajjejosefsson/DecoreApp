@@ -48,12 +48,24 @@ namespace Decore.ClientApp.Controllers
         public ActionResult LoginEmployee(LoginViewModel viewModel)
         {
             // fungerar
-           var studentUser = _LoginWCFclient.LoginStudent(viewModel.Username, viewModel.Password);
+            var studentUser = _LoginWCFclient.LoginStudent(viewModel.Username, viewModel.Password);
+
+            //Alla kan logga in... uhmm
+            if (studentUser != null)
+            {
+
+                return RedirectToAction("Index", "EventList");
+            }
+            else
+            {
+                ModelState.AddModelError("", "Username or Password is wrong");
+            }
+            return View();
+        
            
             // Fungerar inte
             // var employeeUser = _LoginWCFclient.LoginEmployee(viewModel.Username, viewModel.Password);
-
-            return RedirectToAction("Index", "EventList");
+            
         }
 
 
