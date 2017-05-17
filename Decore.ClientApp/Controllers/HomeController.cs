@@ -13,6 +13,7 @@ namespace Decore.ClientApp.Controllers
     {
 
         private readonly LoginServiceClient _LoginWCFclient = new LoginServiceClient();
+ 
 
 
         public ActionResult Index()
@@ -49,9 +50,9 @@ namespace Decore.ClientApp.Controllers
         {
             // fungerar
             var studentUser = _LoginWCFclient.LoginStudent(viewModel.Username, viewModel.Password);
-
-            //Alla kan logga in... uhmm
-            if (studentUser != null)
+           
+           
+            if (studentUser.StudentId != null)
             {
 
                 return RedirectToAction("Index", "EventList");
@@ -60,7 +61,7 @@ namespace Decore.ClientApp.Controllers
             {
                 ModelState.AddModelError("", "Username or Password is wrong");
             }
-            return View();
+            return RedirectToAction("Index", "Home");
         
            
             // Fungerar inte
