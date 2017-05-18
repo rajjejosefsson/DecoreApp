@@ -17,7 +17,6 @@ namespace Decore.ClientApp.ViewModels
 
 
 
-
         [Required(ErrorMessage = "Eventtyp måste anges")]
         public int EventTypeId { get; set; }
 
