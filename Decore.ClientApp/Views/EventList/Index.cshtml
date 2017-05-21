@@ -80,10 +80,10 @@
                             @Html.AntiForgeryToken()
                             <button type="submit" style="float:right" class="btn btn-warning">Uppdatera</button>
                         }
-                        <button class="btn btn-primary" role="button"  href="#ticketModal" data-toggle="modal" data-target="#ticketModal">Köp Biljett</button>
+                        <button class="btn btn-primary" role="button" data-toggle="modal" data-target="#@item.Id">Köp Biljett</button>
                         <button href="#" class="btn btn-default" role="button">Personal</button>
 
-                        <div class="modal fade" id="ticketModal">
+                        <div class="modal fade" id="@item.Id">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
