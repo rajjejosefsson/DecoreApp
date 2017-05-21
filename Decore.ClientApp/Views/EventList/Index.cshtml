@@ -19,6 +19,11 @@
         border-radius: 4px;
         color: #444444;
     }
+   
+ 
+    .modal-backdrop {
+  z-index: -1;
+}
 </style>
 
 
@@ -75,10 +80,70 @@
                             @Html.AntiForgeryToken()
                             <button type="submit" style="float:right" class="btn btn-warning">Uppdatera</button>
                         }
-                        <button href="#" class="btn btn-primary" role="button">Köp Biljett</button>
+                        <button class="btn btn-primary" role="button"  href="#ticketModal" data-toggle="modal" data-target="#ticketModal">Köp Biljett</button>
                         <button href="#" class="btn btn-default" role="button">Personal</button>
 
-                            
+                        <div class="modal fade" id="ticketModal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <h4 class="modal-title">Detaljer för köp</h4>
+                                    </div>
+                                    <div class="modal-body">                                   
+                                     @foreach (var items in Model.Events.OrderByDescending(Model => Model.CreatedAt))
+                                     {
+                                        <h3>@item.Title</h3>
+                                        <p>Beskrivning: @items.Description</p>
+                                        <p>
+                                            Event typ:
+                                            @foreach (var eventType in @Model.EventTypes)
+                                            {
+                                                if (eventType.Id == @items.EventTypeId)
+                                                {
+                                                    @eventType.Title
+                                                }
+                                            }
+                                        </p>
+
+                                        <p>Adress: @items.Adress</p>
+                                        <p>Pris på biljett: @items.BasePrice kr</p>
+                                        <p>Pris på biljett för medlemmar: @items.MemberPrice kr</p>
+
+                                        <p>
+                                            Utskott:
+                                            @foreach (var sectionType in @Model.SectionTypes)
+                                            {
+                                                if (sectionType.Id == @items.SectionId)
+                                                {
+                                                    @sectionType.Description;
+                                                }
+                                            }
+                                        </p>
+
+                                        <p>Startdatum för event: @items.StartDate</p>
+                                        <p>Slutdatum för event: @items.EndDate</p>
+                                        <p>Slutdatum för försäljning: @items.SaleStop</p>
+
+
+                                            <div class="modal-footer">      
+                                                @using (Html.BeginForm("", "", new { id = @items.Id }))
+                                                {
+                                                    @Html.AntiForgeryToken()
+                                                    <button type="submit" style="float:right;" class="btn btn-info">Köp Biljett</button>
+                                                }                                      
+                                                <a href="#" style="margin-top: 5px;" data-dismiss="modal" class="btn">Close</a>
+                                               
+                                               
+                                            </div>
+                                     }
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
                         
                    
                      
