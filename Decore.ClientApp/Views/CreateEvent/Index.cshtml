@@ -1,10 +1,12 @@
-﻿@model Decore.ClientApp.ViewModels.EventViewModel
+﻿@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@model Decore.ClientApp.ViewModels.EventViewModel
 @{
     ViewBag.Title = "Event Page";
 }
 
-<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.css" rel="stylesheet"/>
-<link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker.css" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.css" rel="stylesheet" />
+<link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker.css" rel="stylesheet" />
 
 
 <style>
@@ -17,19 +19,22 @@
 </style>
 
 
+
+
 <div class="row content">
     <div class="col-sm-12 col-md-8 col-md-offset-2">
 
         <div class="form-box">
+            
+        @if (Model.IsEdit)
+        {
+            <h2 class="text-center">Edit event</h2>
+        }
+        else
+        {
+            <h2 class="text-center">Create new event</h2>
 
-            @if (Model.IsEdit)
-            {
-                <h2 class="text-center">Edit event</h2>
-            }
-            else
-            {
-                <h2 class="text-center">Create new event</h2>
-            }
+        }
             <div class="inner-form">
 
 
@@ -69,7 +74,7 @@
                         <div class="input-group date" id="datetimepicker">
 
                             @Html.LabelFor(model => model.StartDate, "Startdatum")
-                            @Html.TextBoxFor(model => model.StartDate, new {@class = "form-control form-control input-group-addon", placeholder = "plz input date"})
+                            @Html.TextBoxFor(model => model.StartDate, new {@class = "form-control form-control input-group-addon", @placeholder = "Please input a date"})
                             <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
                             <div class="error-holder">
                                 @Html.ValidationMessageFor(model => model.StartDate, "", new {@class = "text-danger"})
@@ -80,7 +85,7 @@
                     <div class="form-group has-feedback has-feedback-right">
                         <div class="input-group date" id="datetimepicker2">
                             @Html.LabelFor(model => model.EndDate, "Slutdatum")
-                            @Html.TextBoxFor(model => model.EndDate, new {@class = "form-control form-control input-group-addon", placeholder = "plz input date"})
+                            @Html.TextBoxFor(model => model.EndDate, new {@class = "form-control form-control input-group-addon", @placeholder = "Please input a date"})
                             <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
                             <div class="error-holder">
                                 @Html.ValidationMessageFor(model => model.EndDate, "", new {@class = "text-danger"})
@@ -91,7 +96,7 @@
                     <div class="form-group has-feedback has-feedback-right">
                         <div class="input-group date" id="datetimepicker3">
                             @Html.LabelFor(model => model.SaleStop, "Slutdatum för säljeperiod")
-                            @Html.TextBoxFor(model => model.SaleStop, new {@class = "form-control form-control input-group-addon", placeholder = "plz input date"})
+                            @Html.TextBoxFor(model => model.SaleStop, new {@class = "form-control form-control input-group-addon", @placeholder = "Please input a date" })
                             <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
                             <div class="error-holder">
                                 @Html.ValidationMessageFor(model => model.SaleStop, "", new {@class = "text-danger"})
@@ -100,6 +105,7 @@
                     </div>
 
                     <!-- Select DateTime END -->
+
 
 
                     <div class="form-group">
@@ -144,6 +150,7 @@
                     </div>
 
 
+
                     <div class="form-group">
                         @Html.LabelFor(model => model.ImageURL, "Länk till bild")
                         @Html.TextBoxFor(model => model.ImageURL, new {@class = "form-control"})
@@ -153,6 +160,10 @@
                     </div>
 
 
+
+
+
+
                     <div class="form-group">
                         @Html.HiddenFor(model => model.Id, new {id = "hiddenId"})
 
@@ -160,6 +171,7 @@
                         @if (Model.IsEdit)
                         {
                             <input type="submit" value="Uppdatera" class="btn btn-primary create-save-btn"/>
+
                         }
                         else
                         {
@@ -169,25 +181,29 @@
 
 
                     </div>
+
                 }
 
             </div>
 
 
+
         </div>
-    </div>
-</div>
+            </div>
+        </div>
+   
+
 
 
 @section scripts {
+   
 
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/locale-all.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/locale-all.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
-
-    <script>
+<script>
         /* Global FUNCTIONS */
         function renderCalendar(data) {
             $('#calendar')
@@ -213,18 +229,17 @@
                 locale: 'sv'
             });
         $('#datetimepicker2')
-            .datetimepicker({
-                locale: 'sv'
-            });
+               .datetimepicker({
+                   locale: 'sv'
+               });
         $('#datetimepicker3')
-            .datetimepicker({
-                locale: 'sv'
-            });
+               .datetimepicker({
+                   locale: 'sv'
+               });
 
-        $(".btn-success").on("click",
-            function() {
-                $(".alert").removeClass("in").show();
-                $(".alert").delay(200).addClass("in").fadeOut(2000);
-            });
-    </script>
+                $(".btn-success").on("click", function() {
+                    $(".alert").removeClass("in").show();
+	                $(".alert").delay(200).addClass("in").fadeOut(2000);
+                });
+</script>
 }
