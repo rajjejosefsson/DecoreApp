@@ -395,6 +395,10 @@
     <WCFMetadataStorage Include="Service References\LoginServiceReference\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Decore.Models\Decore.Models.csproj">
+      <Project>{9C642D6D-FFC3-4F5B-A6B2-7410B3E9D933}</Project>
+      <Name>Decore.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EventService\EventService.csproj">
       <Project>{d21c504d-460b-44d9-8891-130a7e2d61b5}</Project>
       <Name>EventService</Name>
