@@ -99,10 +99,6 @@
       <Project>{E9B843BE-F33C-4C79-8C4D-357BEF8BDB89}</Project>
       <Name>Decore.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\decore.models\Decore.Models.csproj">
-      <Project>{9C642D6D-FFC3-4F5B-A6B2-7410B3E9D933}</Project>
-      <Name>Decore.Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
