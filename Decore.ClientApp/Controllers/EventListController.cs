@@ -42,10 +42,9 @@ namespace Decore.ClientApp.Controllers
 
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public ActionResult CreateTicket(EventViewModel viewModel)
+        public ActionResult CreateTicket(AddTicketViewModel viewModel)
         {
-            if (ModelState.IsValid)
-            {
+        
                 viewModel.StudentId = 1; 
               
 
@@ -61,10 +60,9 @@ namespace Decore.ClientApp.Controllers
 
 
                 return RedirectToAction("Index", "EventList");
-            }
+     
 
-
-            return View("Index", viewModel);
+          
         }
     }
 }
