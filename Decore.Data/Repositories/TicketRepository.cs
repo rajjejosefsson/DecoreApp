@@ -1,14 +1,24 @@
 ﻿using Decore.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Decore.Data.Repositories
 {
-    class TicketRepository
+   public class TicketRepository
     {
+
+
+        public void CreateTicket(Ticket ticket)
+        {
+            using (var context = new DecoreDbContext())
+            {
+                context.Tickets.Add(ticket);
+                context.SaveChanges();
+            }
+        }
+
+
         public ICollection<Ticket> GetTickets()
         {
             using (DecoreDbContext context = new DecoreDbContext())
