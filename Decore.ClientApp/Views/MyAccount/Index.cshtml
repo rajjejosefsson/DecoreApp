@@ -3,6 +3,18 @@
     ViewBag.Title = "Index";
 }
 
+<style>
+    tr.first {
+        background-color: #FFA112;
+        color: white;
+    }
+
+    .table-holder {
+       border-radius: 7px;
+        box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.16);
+    }
+</style>
+
 <div class="row event" id="myTable">
     <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
         <div class="my-account">
@@ -15,81 +27,82 @@
                     <h3>Nyligen köpta biljetter</h3>
                 </div>
                 <!-- Table  -->
-                <div class="table-responsive">
+                <div class="table-holder table-responsive">
                     <table class="table table-striped table-bordered table-responsive text-left my-orders-table">
                         <thead>
-                            <tr class="first last">
-                                <th>Event</th>
-                                <th>Köptes</th>                             
-                                <th><span class="nobr">Antal Biljetter</span></th>    
-                                <th>Pris</th>                       
-                            </tr>
+                        <tr class="first last">
+                            <th>Event</th>
+                            <th>Köptes</th>                             
+                            <th><span class="nobr">Antal Biljetter</span></th>    
+                            <th>Pris</th>                       
+                        </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>NAMN</td>
-                                <td>4/30/14</td>
-                                <td>8</td>                           
-                                <td><span class="price">1300 kr</span></td>                                                     
-                            </tr>
-                            <tr>
-                                <td>NAMN</td>
-                                <td>3/03/14</td>   
-                                <td>7</td>                  
-                                <td><span class="price">1700 kr</span></td>                            
-                            </tr>
-                            <tr>
-                                <td>NAMN</td>
-                                <td>1/03/14</td>
-                                <td>3</td>  
-                                <td><span class="price">700 kr</span></td>                             
-                            </tr>
-                            <tr>
-                                <td>NAMN</td>
-                                <td>3/02/14</td>  
-                                <td>5</td>         
-                                <td><span class="price">1100 kr</span></td>                             
-                            </tr>
-                            <tr>
-                                <td>NAMN</td>
-                                <td>3/02/14</td>
-                                <td>4</td>  
-                                <td><span class="price">200 kr</span></td>                            
-                            </tr>
-                            <tr>
-                                <td>NAMN</td>
-                                <td>1/02/14</td>
-                                <td>10</td>  
-                                <td><span class="price">2880 kr</span></td>                              
-                            </tr>
-                            <tr>
-                                <td>NAMN</td>
-                                <td>25/01/14</td>
-                                <td>1</td>  
-                                <td><span class="price">50 kr</span></td>                              
-                            </tr>
-                            <tr>
-                                <td>NAMN</td>
-                                <td>24/01/14</td>
-                                <td>2</td>  
-                                <td><span class="price">12000 kr</span></td>                             
-                            </tr>
-                            <tr>
-                                <td>NAMN</td>
-                                <td>12/01/14</td>
-                                <td>3</td>  
-                                <td><span class="price">950 kr</span></td>                            
-                            </tr>
-                            <tr>
-                                <td>NAMN</td>
-                                <td>3/01/14</td>
-                                <td>7</td>  
-                                <td><span class="price">1200 kr</span></td>                             
-                            </tr>
+                        <tr>
+                            <td>NAMN</td>
+                            <td>4/30/14</td>
+                            <td>8</td>                           
+                            <td><span class="price">1300 kr</span></td>                                                     
+                        </tr>
+                        <tr>
+                            <td>NAMN</td>
+                            <td>3/03/14</td>   
+                            <td>7</td>                  
+                            <td><span class="price">1700 kr</span></td>                            
+                        </tr>
+                        <tr>
+                            <td>NAMN</td>
+                            <td>1/03/14</td>
+                            <td>3</td>  
+                            <td><span class="price">700 kr</span></td>                             
+                        </tr>
+                        <tr>
+                            <td>NAMN</td>
+                            <td>3/02/14</td>  
+                            <td>5</td>         
+                            <td><span class="price">1100 kr</span></td>                             
+                        </tr>
+                        <tr>
+                            <td>NAMN</td>
+                            <td>3/02/14</td>
+                            <td>4</td>  
+                            <td><span class="price">200 kr</span></td>                            
+                        </tr>
+                        <tr>
+                            <td>NAMN</td>
+                            <td>1/02/14</td>
+                            <td>10</td>  
+                            <td><span class="price">2880 kr</span></td>                              
+                        </tr>
+                        <tr>
+                            <td>NAMN</td>
+                            <td>25/01/14</td>
+                            <td>1</td>  
+                            <td><span class="price">50 kr</span></td>                              
+                        </tr>
+                        <tr>
+                            <td>NAMN</td>
+                            <td>24/01/14</td>
+                            <td>2</td>  
+                            <td><span class="price">12000 kr</span></td>                             
+                        </tr>
+                        <tr>
+                            <td>NAMN</td>
+                            <td>12/01/14</td>
+                            <td>3</td>  
+                            <td><span class="price">950 kr</span></td>                            
+                        </tr>
+                        <tr>
+                            <td>NAMN</td>
+                            <td>3/01/14</td>
+                            <td>7</td>  
+                            <td><span class="price">1200 kr</span></td>                             
+                        </tr>
                         </tbody>
                     </table>
                 </div>
                 <!-- /Table  -->
             </div>
         </div>  
- </div>
+    </div>
+</div>
