@@ -18,5 +18,12 @@ namespace TicketService
 
         [OperationContract]
         void AddTicket(Ticket ticket);
+
+        [OperationContract]
+        void CreateTicket(Ticket ticket);
+       
+    //    [OperationContract]
+     //   Ticket GetTicketByUserId(int userId);
+
     }
 }

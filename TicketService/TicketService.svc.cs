@@ -22,10 +22,20 @@ namespace TicketService
             return _ticketRepository.GetTickets();
         }
 
+        public void CreateTicket(Ticket ticket)
+        {
+            _ticketRepository.CreateTicket(ticket);
+        }
+
 
         public void AddTicket(Ticket ticket)
         {
             throw new NotImplementedException();
         }
-    }
+
+    /*    public Ticket GetTicketByUserId(int userId)
+        {
+            return _ticketRepository.GetTicketByUserId(userId);
+        }
+  */  }
 }
