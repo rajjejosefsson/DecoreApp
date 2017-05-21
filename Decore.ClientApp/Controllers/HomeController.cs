@@ -47,6 +47,7 @@ namespace Decore.ClientApp.Controllers
 
                 Session["userId"] = studentUser.Id;
 
+                return RedirectToAction("Index", "EventList");
             }
 
             else {
