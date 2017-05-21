@@ -44,9 +44,16 @@ namespace Decore.ClientApp.Controllers
 
 
             if (studentUser.StudentId != null)
+            {
                 return RedirectToAction("Index", "EventList");
-            ModelState.AddModelError("", "Username or Password is wrong");
-            return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ModelState.AddModelError("", "Username or Password is wrong");
+                return RedirectToAction("Index", "Home");
+            }
+
+         
 
 
             // Fungerar inte
