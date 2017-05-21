@@ -39,6 +39,12 @@ namespace Decore.ClientApp.EventServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEventService/DeleteEventById", ReplyAction="http://tempuri.org/IEventService/DeleteEventByIdResponse")]
         System.Threading.Tasks.Task DeleteEventByIdAsync(int eventId);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEventService/GetEventsBySectionId", ReplyAction="http://tempuri.org/IEventService/GetEventsBySectionIdResponse")]
+        Decore.Models.Event[] GetEventsBySectionId(int sectionId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEventService/GetEventsBySectionId", ReplyAction="http://tempuri.org/IEventService/GetEventsBySectionIdResponse")]
+        System.Threading.Tasks.Task<Decore.Models.Event[]> GetEventsBySectionIdAsync(int sectionId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEventService/GetEventTypes", ReplyAction="http://tempuri.org/IEventService/GetEventTypesResponse")]
         Decore.Models.EventType[] GetEventTypes();
         
@@ -103,6 +109,14 @@ namespace Decore.ClientApp.EventServiceReference {
         
         public System.Threading.Tasks.Task DeleteEventByIdAsync(int eventId) {
             return base.Channel.DeleteEventByIdAsync(eventId);
+        }
+        
+        public Decore.Models.Event[] GetEventsBySectionId(int sectionId) {
+            return base.Channel.GetEventsBySectionId(sectionId);
+        }
+        
+        public System.Threading.Tasks.Task<Decore.Models.Event[]> GetEventsBySectionIdAsync(int sectionId) {
+            return base.Channel.GetEventsBySectionIdAsync(sectionId);
         }
         
         public Decore.Models.EventType[] GetEventTypes() {

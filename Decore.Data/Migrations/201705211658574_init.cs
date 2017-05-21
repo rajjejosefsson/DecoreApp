@@ -40,10 +40,22 @@ namespace Decore.Data.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
+            CreateTable(
+                "dbo.Tickets",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        NumberOfTickets = c.Int(nullable: false),
+                        UserId = c.Int(nullable: false),
+                        EventId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
         }
         
         public override void Down()
         {
+            DropTable("dbo.Tickets");
             DropTable("dbo.EventTypes");
             DropTable("dbo.Events");
         }

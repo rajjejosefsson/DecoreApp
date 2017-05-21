@@ -31,6 +31,12 @@
   <wsdl:message name="IEventService_DeleteEventById_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteEventByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IEventService_GetEventsBySectionId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventsBySectionId" />
+  </wsdl:message>
+  <wsdl:message name="IEventService_GetEventsBySectionId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventsBySectionIdResponse" />
+  </wsdl:message>
   <wsdl:message name="IEventService_GetEventTypes_InputMessage">
     <wsdl:part name="parameters" element="tns:GetEventTypes" />
   </wsdl:message>
@@ -53,6 +59,10 @@
     <wsdl:operation name="DeleteEventById">
       <wsdl:input wsaw:Action="http://tempuri.org/IEventService/DeleteEventById" message="tns:IEventService_DeleteEventById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IEventService/DeleteEventByIdResponse" message="tns:IEventService_DeleteEventById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEventsBySectionId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEventService/GetEventsBySectionId" message="tns:IEventService_GetEventsBySectionId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEventService/GetEventsBySectionIdResponse" message="tns:IEventService_GetEventsBySectionId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetEventTypes">
       <wsdl:input wsaw:Action="http://tempuri.org/IEventService/GetEventTypes" message="tns:IEventService_GetEventTypes_InputMessage" />
@@ -90,6 +100,15 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteEventById">
       <soap:operation soapAction="http://tempuri.org/IEventService/DeleteEventById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEventsBySectionId">
+      <soap:operation soapAction="http://tempuri.org/IEventService/GetEventsBySectionId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
