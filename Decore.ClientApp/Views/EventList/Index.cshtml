@@ -91,43 +91,42 @@
                                         <h4 class="modal-title">Detaljer för köp</h4>
                                     </div>
                                     <div class="modal-body">                                   
-                                     @foreach (var items in Model.Events.OrderByDescending(Model => Model.CreatedAt))
-                                     {
+                                    
                                         <h3>@item.Title</h3>
-                                        <p>Beskrivning: @items.Description</p>
+                                        <p>Beskrivning: @item.Description</p>
                                         <p>
                                             Event typ:
                                             @foreach (var eventType in @Model.EventTypes)
                                             {
-                                                if (eventType.Id == @items.EventTypeId)
+                                                if (eventType.Id == @item.EventTypeId)
                                                 {
                                                     @eventType.Title
                                                 }
                                             }
                                         </p>
 
-                                        <p>Adress: @items.Adress</p>
-                                        <p>Pris på biljett: @items.BasePrice kr</p>
-                                        <p>Pris på biljett för medlemmar: @items.MemberPrice kr</p>
+                                        <p>Adress: @item.Adress</p>
+                                        <p>Pris på biljett: @item.BasePrice kr</p>
+                                        <p>Pris på biljett för medlemmar: @item.MemberPrice kr</p>
 
                                         <p>
                                             Utskott:
                                             @foreach (var sectionType in @Model.SectionTypes)
                                             {
-                                                if (sectionType.Id == @items.SectionId)
+                                                if (sectionType.Id == @item.SectionId)
                                                 {
                                                     @sectionType.Description;
                                                 }
                                             }
                                         </p>
 
-                                        <p>Startdatum för event: @items.StartDate</p>
-                                        <p>Slutdatum för event: @items.EndDate</p>
-                                        <p>Slutdatum för försäljning: @items.SaleStop</p>
+                                        <p>Startdatum för event: @item.StartDate</p>
+                                        <p>Slutdatum för event: @item.EndDate</p>
+                                        <p>Slutdatum för försäljning: @item.SaleStop</p>
 
 
                                             <div class="modal-footer">      
-                                                @using (Html.BeginForm("", "", new { id = @items.Id }))
+                                                @using (Html.BeginForm("", "", new { id = @item.Id }))
                                                 {
                                                     @Html.AntiForgeryToken()
                                                     <button type="submit" style="float:right;" class="btn btn-info">Köp Biljett</button>
@@ -136,7 +135,7 @@
                                                
                                                
                                             </div>
-                                     }
+                                     
 
                                     </div>
 
