@@ -1,20 +1,18 @@
-﻿using Decore.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Decore.ClientApp.EmployeeServiceReference;
+using Decore.Models;
 
 namespace Decore.ClientApp.ViewModels
 {
     public class EventViewModel
     {
-
         public int Id { get; set; }
 
         public ICollection<Event> Events { get; set; }
         public ICollection<EventType> EventTypes { get; set; }
         public ICollection<SectionInfo> SectionTypes { get; set; }
-
 
 
         [Required(ErrorMessage = "Eventtyp måste anges")]
@@ -50,7 +48,6 @@ namespace Decore.ClientApp.ViewModels
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime SaleStop { get; set; }
 
-     
 
         [Required(ErrorMessage = "Event Owner måste anges")]
         public int EventOwner { get; set; }
@@ -76,8 +73,6 @@ namespace Decore.ClientApp.ViewModels
         [Required(ErrorMessage = "Memberpris måste anges")]
         public float MemberPrice { get; set; }
 
-        public bool IsEdit { get; set; }    
-
-
+        public bool IsEdit { get; set; }
     }
 }

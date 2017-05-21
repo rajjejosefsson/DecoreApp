@@ -1,5 +1,4 @@
-﻿@using System.Web.Mvc.Html
-@model Decore.ClientApp.ViewModels.EventViewModel
+﻿@model Decore.ClientApp.ViewModels.EventViewModel
 
 @{
     ViewBag.Title = "Event Page";
@@ -7,16 +6,14 @@
 
 
 <style>
-    .event {
-        margin-bottom: 30px;
-    }
+    .event { margin-bottom: 30px; }
 
     .thumbnail {
+        -moz-box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.16);
+        -webkit-box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.16);
         background-color: #FFF;
-        -webkit-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
-        -moz-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
-        box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
         border-radius: 4px;
+        box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.16);
         color: #444444;
     }
 </style>
@@ -35,9 +32,9 @@
                         <p>Beskrivning: @item.Description</p>
                         <p>
                             Event typ:
-                            @foreach (var eventType in @Model.EventTypes)
+                            @foreach (var eventType in Model.EventTypes)
                             {
-                                if (eventType.Id == @item.EventTypeId)
+                                if (eventType.Id == item.EventTypeId)
                                 {
                                     @eventType.Title
                                 }
@@ -47,14 +44,15 @@
                         <p>Adress: @item.Adress</p>
                         <p>Pris på biljett: @item.BasePrice kr</p>
                         <p>Pris på biljett för medlemmar: @item.MemberPrice kr</p>
-                        
+
                         <p>
                             Utskott:
-                            @foreach (var sectionType in @Model.SectionTypes)
+                            @foreach (var sectionType in Model.SectionTypes)
                             {
-                                if (sectionType.Id == @item.SectionId)
+                                if (sectionType.Id == item.SectionId)
                                 {
-                                    @sectionType.Description;
+                                    @sectionType.Description
+                                    ;
                                 }
                             }
                         </p>
@@ -63,25 +61,22 @@
                         <p>Slutdatum för event: @item.EndDate</p>
                         <p>Slutdatum för försäljning: @item.SaleStop</p>
                         <p>Skapad: @item.CreatedAt</p>
-                        
-                        @using (Html.BeginForm("DeleteEventById", "EventList", new { id = @item.Id }))
+
+                        @using (Html.BeginForm("DeleteEventById", "EventList", new {id = item.Id}))
                         {
                             @Html.AntiForgeryToken()
-                            <button type="submit" style="float:right" class="btn btn-danger">Ta bort</button>
+                            <button type="submit" style="float: right" class="btn btn-danger">Ta bort</button>
                         }
 
-                        @using (Html.BeginForm("UpdateEventById", "CreateEvent", new { id = @item.Id }))
+                        @using (Html.BeginForm("UpdateEventById", "CreateEvent", new {id = item.Id}))
                         {
                             @Html.AntiForgeryToken()
-                            <button type="submit" style="float:right" class="btn btn-warning">Uppdatera</button>
+                            <button type="submit" style="float: right" class="btn btn-warning">Uppdatera</button>
                         }
                         <button href="#" class="btn btn-primary" role="button">Köp Biljett</button>
                         <button href="#" class="btn btn-default" role="button">Personal</button>
 
-                            
-                        
-                   
-                     
+
                     </div>
                 </div>
             </div>

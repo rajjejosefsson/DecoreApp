@@ -1,9 +1,8 @@
-﻿@using System.Web.Mvc.Html
-@using System.Web.Optimization
+﻿@using System.Web.Optimization
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Decore</title>
     @Scripts.Render("~/bundles/modernizr")
@@ -20,7 +19,7 @@
 @Html.Partial("_Navbar")
 
 
-@RenderSection("outsideContainer", required: false)
+@RenderSection("outsideContainer", false)
 
 <!-- All pages are rendered inside this container-->
 <section class="page-wrapper">
@@ -32,14 +31,11 @@
 </section>
 
 
-
 <!-- Render script bundle from App_Start > BundleConfig.cs -->
 @Scripts.Render("~/bundles/lib")
 
 
-
-
 <!--Must be the last script file-->
-@RenderSection("scripts", required: false)
+@RenderSection("scripts", false)
 </body>
 </html>

@@ -1,36 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
-using Decore.Models;
+﻿using System.Collections.Generic;
 using Decore.Data.Repositories;
-using Event = Decore.Models.Event;
-
+using Decore.Models;
 
 namespace EventService
 {
-
-
-    /// <summary>s
-    /// Class EventService.
+    /// <summary>
+    ///     s
+    ///     Class EventService.
     /// </summary>
     /// <seealso cref="IEventService" />
     public class EventService : IEventService
     {
-
         /// <summary>
-        /// The event repository
+        ///     The event repository
         /// </summary>
         private readonly EventRepository _eventRepository = new EventRepository();
 
-       
-
 
         /// <summary>
-        /// Creates the event.
+        ///     Creates the event.
         /// </summary>
         /// <param name="eventObject">The event object.</param>
         public void CreateEvent(Event eventObject)
@@ -40,19 +28,19 @@ namespace EventService
 
 
         /// <summary>
-        /// Gets the events.
+        ///     Gets the events.
         /// </summary>
         /// <returns>ICollection&lt;Event&gt;.</returns>
         public ICollection<Event> GetEvents()
         {
             var events = _eventRepository.GetEvents();
-            
+
             return events;
         }
 
-       
+
         /// <summary>
-        /// Gets the event by identifier.
+        ///     Gets the event by identifier.
         /// </summary>
         /// <param name="eventId">The event identifier.</param>
         /// <returns>Event.</returns>
@@ -75,7 +63,7 @@ namespace EventService
 
         public void DeleteEventById(int eventId)
         {
-           _eventRepository.DeleteEventById(eventId);         
+            _eventRepository.DeleteEventById(eventId);
         }
     }
 }

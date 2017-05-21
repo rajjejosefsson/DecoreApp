@@ -1,25 +1,19 @@
-﻿using Decore.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using Event = Decore.Models.Event;
-
+using Decore.Models;
 
 namespace Decore.Data.Repositories
 {
     public class EventRepository
     {
-
-
         public void CreateEvent(Event eventObj)
         {
-            using (DecoreDbContext context = new DecoreDbContext())
+            using (var context = new DecoreDbContext())
             {
-
                 if (eventObj.Id == 0)
                 {
                     // Create
                     context.Events.Add(eventObj);
-                   
                 }
                 else
                 {
@@ -44,13 +38,12 @@ namespace Decore.Data.Repositories
                     eventInDb.UpdatedAt = eventObj.UpdatedAt;
                 }
                 context.SaveChanges();
-               
             }
         }
 
         public ICollection<Event> GetEvents()
         {
-            using (DecoreDbContext context = new DecoreDbContext())
+            using (var context = new DecoreDbContext())
             {
                 return context.Events.AsNoTracking().ToList();
             }
@@ -58,7 +51,7 @@ namespace Decore.Data.Repositories
 
         public ICollection<EventType> GetEventTypes()
         {
-            using (DecoreDbContext context = new DecoreDbContext())
+            using (var context = new DecoreDbContext())
             {
                 return context.EventTypes.AsNoTracking().ToList();
             }
@@ -66,35 +59,30 @@ namespace Decore.Data.Repositories
 
         public void DeleteEventById(int eventId)
         {
-            using (DecoreDbContext context = new DecoreDbContext())
+            using (var context = new DecoreDbContext())
             {
                 // Get event by id
                 var eventInDb = context.Events.SingleOrDefault(e => e.Id == eventId);
-                context.Events.Remove(eventInDb);              
+                context.Events.Remove(eventInDb);
                 context.SaveChanges();
             }
         }
 
-        public ICollection<Event> GetEventsBySectionId(int sectionId) 
+        public ICollection<Event> GetEventsBySectionId(int sectionId)
         {
-            using (DecoreDbContext context = new DecoreDbContext())
+            using (var context = new DecoreDbContext())
             {
                 // Get event by id
                 return context.Events.Where(e => e.SectionId == sectionId).ToList();
-           
             }
         }
 
         public Event GetEventById(int eventId)
         {
-            using (DecoreDbContext context = new DecoreDbContext())
+            using (var context = new DecoreDbContext())
             {
                 return context.Events.AsNoTracking().SingleOrDefault(e => e.Id == eventId);
             }
         }
-
-
-
-
     }
 }
