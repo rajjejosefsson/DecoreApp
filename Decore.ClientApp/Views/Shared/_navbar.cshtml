@@ -1,17 +1,14 @@
-﻿@using System.Web.Mvc.Html
-<style>
+﻿<style>
     
 
-    .navbar {
-        border-bottom: transparent;
-    }
+    .navbar { border-bottom: transparent; }
 
 
     .navbar-default {
+        -moz-box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.16);
+        -webkit-box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.16);
         background-color: #1893FD;
-        -webkit-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
-        -moz-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
-        box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
+        box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.16);
     }
 
 
@@ -20,25 +17,21 @@
         font-weight: bold;
     }
 
-    .navbar-default .navbar-nav li a:hover {
-        transition: background-color 0.8s ease;
-    }
+    .navbar-default .navbar-nav li a:hover { transition: background-color 0.8s ease; }
 
-        .navbar-default .active a {
-            background-color: #1982dc !important;
-        }
+    .navbar-default .active a { background-color: #1982dc !important; }
        
 
     .navbar-header img {
-        width: 100px;
-        position: absolute;
         left: 10px;
+        position: absolute;
         top: 0;
+        width: 100px;
     }
-            
+
     .navbar-nav {
-        margin-right: 0;
         margin-left: 40px;
+        margin-right: 0;
     }
 </style>
 
@@ -51,7 +44,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a href='@Url.Action("Index", "Home")'>
-                <img src='@Url.Content("~/content/images/decore-logo.png")' />
+                <img src='@Url.Content("~/content/images/decore-logo.png")'/>
             </a>
         </div>
         <div class="navbar-collapse collapse">
@@ -66,18 +59,15 @@
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "CreateEvent" ? "active" : "")">
                     @Html.ActionLink("Skapa Event", "Index", "CreateEvent")
                 </li>
-                 
+
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Alcohol" ? "active" : "")">
                     @Html.ActionLink("Uppvägning", "Index", "Alcohol")
                 </li>
             </ul>
-            
+
             <ul class="nav navbar-nav pull-right">
-                <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Reg" ? "active" : "")">
-                    @Html.ActionLink("Logga In / Registrering", "Index", "Home")
-                </li>
+
             </ul>
         </div>
     </div>
 </nav>
-

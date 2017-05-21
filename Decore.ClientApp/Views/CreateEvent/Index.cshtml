@@ -74,7 +74,7 @@
                         <div class="input-group date" id="datetimepicker">
 
                             @Html.LabelFor(model => model.StartDate, "Startdatum")
-                            @Html.TextBoxFor(model => model.StartDate, new {@class = "form-control form-control input-group-addon", @placeholder = "plz input date"})
+                            @Html.TextBoxFor(model => model.StartDate, new {@class = "form-control form-control input-group-addon", @placeholder = "Please input a date"})
                             <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
                             <div class="error-holder">
                                 @Html.ValidationMessageFor(model => model.StartDate, "", new {@class = "text-danger"})
@@ -85,7 +85,7 @@
                     <div class="form-group has-feedback has-feedback-right">
                         <div class="input-group date" id="datetimepicker2">
                             @Html.LabelFor(model => model.EndDate, "Slutdatum")
-                            @Html.TextBoxFor(model => model.EndDate, new {@class = "form-control form-control input-group-addon", @placeholder = "plz input date"})
+                            @Html.TextBoxFor(model => model.EndDate, new {@class = "form-control form-control input-group-addon", @placeholder = "Please input a date"})
                             <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
                             <div class="error-holder">
                                 @Html.ValidationMessageFor(model => model.EndDate, "", new {@class = "text-danger"})
@@ -96,7 +96,7 @@
                     <div class="form-group has-feedback has-feedback-right">
                         <div class="input-group date" id="datetimepicker3">
                             @Html.LabelFor(model => model.SaleStop, "Slutdatum för säljeperiod")
-                            @Html.TextBoxFor(model => model.SaleStop, new {@class = "form-control form-control input-group-addon", @placeholder = "plz input date"})
+                            @Html.TextBoxFor(model => model.SaleStop, new {@class = "form-control form-control input-group-addon", @placeholder = "Please input a date" })
                             <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
                             <div class="error-holder">
                                 @Html.ValidationMessageFor(model => model.SaleStop, "", new {@class = "text-danger"})

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Decore.Models
+﻿namespace Decore.Models
 {
     public class Measure
     {

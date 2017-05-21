@@ -1,7 +1,9 @@
-﻿using Microsoft.Owin;
+﻿using DecoreApp;
+using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(DecoreApp.Startup))]
+[assembly: OwinStartup(typeof(Startup))]
+
 namespace DecoreApp
 {
     public partial class Startup

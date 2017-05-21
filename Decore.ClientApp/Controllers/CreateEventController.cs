@@ -7,12 +7,11 @@ using Decore.Models;
 
 namespace Decore.ClientApp.Controllers
 {
-
     public class CreateEventController : Controller
     {
+        private readonly EmployeeServiceWCFClient _employeeWcfClient = new EmployeeServiceWCFClient();
 
         private readonly EventServiceClient _eventWCFclient = new EventServiceClient();
-        private readonly EmployeeServiceWCFClient _employeeWcfClient = new EmployeeServiceWCFClient();
 
         public ActionResult Index()
         {
@@ -27,20 +26,14 @@ namespace Decore.ClientApp.Controllers
         }
 
 
-       
-
         [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult CreateEvent(EventViewModel viewModel)
         {
-
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-
-
                 viewModel.EventOwner = 1; // HARD CODED 
                 viewModel.CreatedBy = 1; // HARD CODED
-   
 
 
                 var eventObject = new Event
@@ -59,12 +52,12 @@ namespace Decore.ClientApp.Controllers
                     Adress = viewModel.Adress,
                     ImageURL = viewModel.ImageURL,
                     EventOwner = viewModel.EventOwner,
-                    CreatedBy = viewModel.EventOwner, 
+                    CreatedBy = viewModel.EventOwner,
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now // IS NOT NEEDED TO SHOW 
                 };
                 _eventWCFclient.CreateEvent(eventObject);
-              
+
 
                 return RedirectToAction("Index", "EventList");
             }
@@ -73,17 +66,13 @@ namespace Decore.ClientApp.Controllers
             var eventsTypes = _eventWCFclient.GetEventTypes();
             viewModel.EventTypes = eventsTypes;
 
-          
 
             return View("Index", viewModel);
         }
 
 
-       
-        
         public ActionResult UpdateEventById(int id)
         {
-
             var eventObj = _eventWCFclient.GetEventById(id);
             var eventsTypes = _eventWCFclient.GetEventTypes();
             var sectionTypes = _employeeWcfClient.GetAllSections();
@@ -112,11 +101,6 @@ namespace Decore.ClientApp.Controllers
             };
 
             return View("Index", viewModel);
-
         }
-
-
-
-
     }
 }
