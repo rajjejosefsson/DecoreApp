@@ -1,13 +1,11 @@
 ﻿using Decore.Models;
 using System.Collections.Generic;
 using System.Linq;
-using Decore.Data.UserServiceReference;
 
 namespace Decore.Data.Repositories
 {
    public class TicketRepository
     {
-        private readonly UserServiceClient _UserWCFclient = new UserServiceClient();
 
        
 
