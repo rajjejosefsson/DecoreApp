@@ -1,7 +1,9 @@
 ﻿using System.Web.Mvc;
 using Decore.ClientApp.EmployeeServiceReference;
 using Decore.ClientApp.EventServiceReference;
+using Decore.ClientApp.TicketServiceReference;
 using Decore.ClientApp.ViewModels;
+using Decore.Models;
 
 namespace Decore.ClientApp.Controllers
 {
@@ -10,6 +12,8 @@ namespace Decore.ClientApp.Controllers
         private readonly EmployeeServiceWCFClient _employeeWcfClient = new EmployeeServiceWCFClient();
 
         private readonly EventServiceClient _eventWCFclient = new EventServiceClient();
+
+        private readonly TicketServiceClient _ticketWCFclient = new TicketServiceClient();
 
 
         public ActionResult Index()
@@ -33,6 +37,34 @@ namespace Decore.ClientApp.Controllers
         {
             _eventWCFclient.DeleteEventById(id);
             return RedirectToAction("Index", "EventList");
+        }
+
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult CreateTicket(EventViewModel viewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                viewModel.StudentId = 1; 
+              
+
+                var ticket = new Ticket
+                {
+                    Id = viewModel.TicketId,
+                    EventId = viewModel.EventId,
+                    UserId = viewModel.StudentId,
+                    NumberOfTickets = viewModel.NumberOfTickets,
+                   
+                };
+                _ticketWCFclient.CreateTicket(ticket);
+
+
+                return RedirectToAction("Index", "EventList");
+            }
+
+
+            return View("Index", viewModel);
         }
     }
 }

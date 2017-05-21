@@ -1,6 +1,7 @@
 ﻿@using System.Web.Mvc.Html
 @model Decore.ClientApp.ViewModels.EventViewModel
 
+
 @{
     ViewBag.Title = "Event Page";
 }
@@ -92,50 +93,35 @@
                                     </div>
                                     <div class="modal-body">                                   
                                     
-                                        <h3>@item.Title</h3>
-                                        <p>Beskrivning: @item.Description</p>
-                                        <p>
-                                            Event typ:
-                                            @foreach (var eventType in @Model.EventTypes)
-                                            {
-                                                if (eventType.Id == @item.EventTypeId)
-                                                {
-                                                    @eventType.Title
-                                                }
-                                            }
-                                        </p>
+                                          @using (Html.BeginForm("CreateTicket", "EventList", "POST"))
+                                          {
+                                           
+                                            @Html.AntiForgeryToken()
+                                          
+                                        <h3>Du har valt att köpa biljett för: @item.Title</h3>
+                                        <p>Beskrivning: @item.Description</p>                                   
+                                        <p>Pris per biljett är: @item.BasePrice kr</p>
 
-                                        <p>Adress: @item.Adress</p>
-                                        <p>Pris på biljett: @item.BasePrice kr</p>
-                                        <p>Pris på biljett för medlemmar: @item.MemberPrice kr</p>
-
-                                        <p>
-                                            Utskott:
-                                            @foreach (var sectionType in @Model.SectionTypes)
-                                            {
-                                                if (sectionType.Id == @item.SectionId)
-                                                {
-                                                    @sectionType.Description;
-                                                }
-                                            }
-                                        </p>
-
-                                        <p>Startdatum för event: @item.StartDate</p>
-                                        <p>Slutdatum för event: @item.EndDate</p>
-                                        <p>Slutdatum för försäljning: @item.SaleStop</p>
-
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.NumberOfTickets, "Antal Biljetter")
+                                          @Html.TextBoxFor(model => model.NumberOfTickets, new { @type = "number", @placeholder = "Ange antal biljetter", @class = "form-control" })
+                                            <div class="error-holder">
+                                                @Html.ValidationMessageFor(model => model.NumberOfTickets, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
 
                                             <div class="modal-footer">      
-                                                @using (Html.BeginForm("", "", new { id = @item.Id }))
-                                                {
-                                                    @Html.AntiForgeryToken()
+                                               
+                                                <div class="form-group">
+                                                    @Html.HiddenFor(model => model.TicketId, new { id = "hiddenId" })
                                                     <button type="submit" style="float:right;" class="btn btn-info">Köp Biljett</button>
-                                                }                                      
-                                                <a href="#" style="margin-top: 5px;" data-dismiss="modal" class="btn">Close</a>
+                                                    </div>
+                                                <a href="#" data-dismiss="modal" class="btn">Stäng</a>
                                                
-                                               
-                                            </div>
-                                     
+
+
+                                                </div>
+                                          }
 
                                     </div>
 
