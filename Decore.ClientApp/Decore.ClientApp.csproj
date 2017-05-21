@@ -237,11 +237,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\TicketServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\BeverageViewModel.cs" />
     <Compile Include="ViewModels\EventViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="Controllers\Api\EventsController.cs" />
+    <Compile Include="ViewModels\TicketViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-datetimepicker.css" />
@@ -266,6 +272,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Properties\DataSources\Decore.Models.Ticket.datasource" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -335,6 +342,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\TicketServiceReference\TicketService.disco" />
+    <None Include="Service References\TicketServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\TicketServiceReference\configuration.svcinfo" />
+    <None Include="Service References\TicketServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
@@ -373,6 +387,16 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\MyAccount\Index.cshtml" />
+    <None Include="Service References\TicketServiceReference\TicketService.wsdl" />
+    <None Include="Service References\TicketServiceReference\TicketService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TicketServiceReference\TicketService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TicketServiceReference\TicketService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -395,6 +419,7 @@
     <WCFMetadataStorage Include="Service References\EmployeeServiceReference\" />
     <WCFMetadataStorage Include="Service References\EventServiceReference\" />
     <WCFMetadataStorage Include="Service References\LoginServiceReference\" />
+    <WCFMetadataStorage Include="Service References\TicketServiceReference\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Decore.Models\Decore.Models.csproj">

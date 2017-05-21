@@ -8,6 +8,24 @@ namespace Decore.ClientApp.ViewModels
 {
     public class EventViewModel
     {
+
+        public int TicketId { get; set; }
+
+        public int EventId { get; set; }
+
+        public int StudentId { get; set; }
+
+        [Required(ErrorMessage = "Antal Biljetter måste anges")]
+        public int NumberOfTickets { get; set; }
+
+
+
+
+
+
+
+
+
         public int Id { get; set; }
 
         public ICollection<Event> Events { get; set; }

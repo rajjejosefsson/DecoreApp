@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bf783323-cd71-4b18-96e2-a9ad8612acb3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://193.10.202.74/group4/TicketService/TicketService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TicketService.xsd" MetadataType="Schema" ID="b4f3f53f-3e13-43f4-8fc6-17fcf43563a6" SourceId="1" SourceUrl="http://193.10.202.74/group4/TicketService/TicketService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TicketService1.xsd" MetadataType="Schema" ID="b9820fa9-7f4f-4b02-bc4f-255a6f36fc91" SourceId="1" SourceUrl="http://193.10.202.74/group4/TicketService/TicketService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TicketService.wsdl" MetadataType="Wsdl" ID="f438abee-63b4-44f6-838f-6988b9bdb081" SourceId="1" SourceUrl="http://193.10.202.74/group4/TicketService/TicketService.svc?wsdl" />
+    <MetadataFile FileName="TicketService2.xsd" MetadataType="Schema" ID="d60af0a5-7850-4fa1-b279-afbb784f7ea5" SourceId="1" SourceUrl="http://193.10.202.74/group4/TicketService/TicketService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TicketService.disco" MetadataType="Disco" ID="72d42cd3-4890-45a7-b5a4-c74ab5c1d401" SourceId="1" SourceUrl="http://193.10.202.74/group4/TicketService/TicketService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
