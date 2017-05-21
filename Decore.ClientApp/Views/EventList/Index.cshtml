@@ -104,7 +104,7 @@
 
                                         <div class="form-group">
                                             @Html.LabelFor(model => model.NumberOfTickets, "Antal Biljetter")
-                                          @Html.TextBoxFor(model => model.NumberOfTickets, new { @type = "number", @placeholder = "Ange antal biljetter" })
+                                          @Html.TextBoxFor(model => model.NumberOfTickets, new { @type = "number", @placeholder = "Ange antal biljetter", @class = "form-control" })
                                             <div class="error-holder">
                                                 @Html.ValidationMessageFor(model => model.NumberOfTickets, "", new { @class = "text-danger" })
                                             </div>
