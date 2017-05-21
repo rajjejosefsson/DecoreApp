@@ -43,18 +43,13 @@ namespace Decore.ClientApp.Controllers
             var studentUser = _LoginWCFclient.LoginStudent(viewModel.Username, viewModel.Password);
 
 
-            if (studentUser.StudentId != null)
-            {
-                return RedirectToAction("Index", "EventList");
-            }
-            else
-            {
+            if (studentUser.StudentId != null) {
+                return RedirectToAction("Index", "EventList");}
+
+            else {
                 ModelState.AddModelError("", "Username or Password is wrong");
                 return RedirectToAction("Index", "Home");
             }
-
-         
-
 
             // Fungerar inte
             // var employeeUser = _LoginWCFclient.LoginEmployee(viewModel.Username, viewModel.Password);
