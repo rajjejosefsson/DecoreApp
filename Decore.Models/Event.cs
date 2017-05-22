@@ -57,6 +57,14 @@ namespace Decore.Models
 
         [Required]
         [DataMember]
+        public int MaxTickets { get; set; }
+
+        [Required]
+        [DataMember]
+        public int MaxEmployees { get; set; }
+
+        [Required]
+        [DataMember]
         public int EventOwner { get; set; }
 
         [Required]

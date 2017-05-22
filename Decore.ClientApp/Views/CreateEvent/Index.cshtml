@@ -106,6 +106,13 @@
 
                     <!-- Select DateTime END -->
 
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.MaxTickets, "Max Biljetter")
+                        @Html.TextBoxFor(model => model.MaxTickets, new { @type = "number", @placeholder = "Ange antal biljetter", @class = "form-control" })
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.MaxTickets, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
 
                     <div class="form-group">
@@ -115,14 +122,7 @@
                             @Html.ValidationMessageFor(model => model.BasePrice, "", new {@class = "text-danger"})
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.SectionTypes, "Utskott")
-                        @Html.DropDownListFor(model => model.SectionId, new SelectList(Model.SectionTypes, "Id", "Description"), new {@class = "form-control"})
-                        <div class="error-holder">
-                            @Html.ValidationMessageFor(model => model.SectionTypes, "", new {@class = "text-danger"})
-                        </div>
-                    </div>
+    
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.MemberPrice, "Pris för Medlemmar")
@@ -132,6 +132,25 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.SectionTypes, "Utskott")
+                        @Html.DropDownListFor(model => model.SectionId, new SelectList(Model.SectionTypes, "Id", "Description"), new { @class = "form-control" })
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.SectionTypes, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.MaxEmployees, "Antal personal")
+                        @Html.TextBoxFor(model => model.MaxEmployees, new { @type = "number", @placeholder = "Ange antal personal", @class = "form-control" })
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.MaxEmployees, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+              
                     <div class="form-group">
                         @Html.LabelFor(model => model.ZipCode, "Postnummer")
                         @Html.TextBoxFor(model => model.ZipCode, new {@class = "form-control"})

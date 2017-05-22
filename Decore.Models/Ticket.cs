@@ -19,7 +19,7 @@ namespace Decore.Models
 
         [Required]
         [DataMember]
-        public int NumberOfTickets { get; set; }
+        public int AmountOfTickets { get; set; }
 
         [Required]
         [DataMember]
