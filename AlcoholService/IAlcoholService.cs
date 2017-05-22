@@ -7,20 +7,17 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
-namespace TicketService
+namespace AlcoholService
 {
+
     [ServiceContract]
-    public interface ITicketService
+    public interface IAlcoholService
     {
 
         [OperationContract]
-        ICollection<Ticket> GetTickets();
-     
-        [OperationContract]
-        void CreateTicket(Ticket ticket);
-       
-    //    [OperationContract]
-     //   Ticket GetTicketByUserId(int userId);
-
+        ICollection<Beverage> GetBeverages();
+        
+         
     }
 }
+

@@ -13,22 +13,10 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddTicket">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Decore.Models" minOccurs="0" name="ticket" nillable="true" type="q2:Ticket" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AddTicketResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
   <xs:element name="CreateTicket">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Decore.Models" minOccurs="0" name="ticket" nillable="true" type="q3:Ticket" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Decore.Models" minOccurs="0" name="ticket" nillable="true" type="q2:Ticket" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

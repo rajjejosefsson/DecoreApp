@@ -28,14 +28,5 @@ namespace TicketService
         }
 
 
-        public void AddTicket(Ticket ticket)
-        {
-            throw new NotImplementedException();
-        }
-
-    /*    public Ticket GetTicketByUserId(int userId)
-        {
-            return _ticketRepository.GetTicketByUserId(userId);
-        }
-  */  }
+    }
 }

@@ -14,5 +14,7 @@ namespace Decore.Data
         public DbSet<EventType> EventTypes { get; set; }
         
         public DbSet<Ticket> Tickets { get; set; }
+
+        public DbSet<Beverage> Beverages { get; set; }
     }
 }

@@ -32,6 +32,8 @@ namespace Decore.Data.Repositories
                     eventInDb.ZipCode = eventObj.ZipCode;
                     eventInDb.Adress = eventObj.Adress;
                     eventInDb.ImageURL = eventObj.ImageURL;
+                    eventInDb.MaxEmployees = eventObj.MaxEmployees;
+                    eventInDb.MaxTickets = eventObj.MaxTickets;
                     eventInDb.EventOwner = eventObj.EventOwner;
                     eventInDb.CreatedBy = eventObj.EventOwner;
                     eventInDb.CreatedAt = eventObj.CreatedAt;
