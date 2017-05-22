@@ -18,16 +18,27 @@ namespace Decore.ClientApp.Controllers
         // GET: MyAccount
         public ActionResult Index()
         {
-           var tickets = _ticketWcfClient.GetTickets();
-           var events = _eventWCFclient.GetEvents();
 
 
-            var viewModel = new TicketViewModel
+            if (Session["userId"] != null)
             {
-               Tickets = tickets,
-               Events = events
-            };
-            return View(viewModel);
+
+                var tickets = _ticketWcfClient.GetTickets();
+                var events = _eventWCFclient.GetEvents();
+
+
+                var viewModel = new TicketViewModel
+                {
+                   Tickets = tickets,
+                   Events = events
+                };
+                return View(viewModel);
+
+            }
+
+            return RedirectToAction("Index", "Home");
+
+
         }
     }
 }
