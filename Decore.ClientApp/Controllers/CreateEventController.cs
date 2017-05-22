@@ -13,16 +13,26 @@ namespace Decore.ClientApp.Controllers
 
         private readonly EventServiceClient _eventWCFclient = new EventServiceClient();
 
+        
         public ActionResult Index()
         {
-            var eventsTypes = _eventWCFclient.GetEventTypes();
-            var sectionTypes = _employeeWcfClient.GetAllSections();
-            var viewModel = new EventViewModel
+            
+            if(Session["userId"] != null)
             {
-                SectionTypes = sectionTypes,
-                EventTypes = eventsTypes
-            };
-            return View(viewModel);
+                var eventsTypes = _eventWCFclient.GetEventTypes();
+                var sectionTypes = _employeeWcfClient.GetAllSections();
+                var viewModel = new EventViewModel
+                {
+                    SectionTypes = sectionTypes,
+                    EventTypes = eventsTypes
+                };
+
+                return View(viewModel);
+            }
+
+            return RedirectToAction("Index", "Home");
+           
+
         }
 
 

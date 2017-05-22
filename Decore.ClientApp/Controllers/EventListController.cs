@@ -18,17 +18,29 @@ namespace Decore.ClientApp.Controllers
 
         public ActionResult Index()
         {
-            var events = _eventWCFclient.GetEvents();
-            var eventTypes = _eventWCFclient.GetEventTypes();
-            var sectionTypes = _employeeWcfClient.GetAllSections();
 
-            var viewModel = new EventViewModel
+
+            if (Session["userId"] != null)
             {
-                Events = events,
-                EventTypes = eventTypes,
-                SectionTypes = sectionTypes
-            };
-            return View(viewModel);
+                    var events = _eventWCFclient.GetEvents();
+                    var eventTypes = _eventWCFclient.GetEventTypes();
+                    var sectionTypes = _employeeWcfClient.GetAllSections();
+
+                    var viewModel = new EventViewModel
+                    {
+                        Events = events,
+                        EventTypes = eventTypes,
+                        SectionTypes = sectionTypes
+                    };
+
+                return View(viewModel);
+
+
+            }
+
+            return RedirectToAction("Index", "Home");
+
+
         }
 
         [HttpPost]
