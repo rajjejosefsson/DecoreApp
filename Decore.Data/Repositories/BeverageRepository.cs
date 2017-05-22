@@ -48,5 +48,12 @@ namespace Decore.Data.Repositories
             }
         }
 
+        public Beverage GetBeverageById(int beverageId)
+        {
+            using (var context = new DecoreDbContext())
+            {
+                return context.Beverages.AsNoTracking().SingleOrDefault(e => e.Id == beverageId);
+            }
+        }
     }
 }

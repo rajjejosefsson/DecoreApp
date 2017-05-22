@@ -24,5 +24,7 @@ namespace Decore.ClientApp.ViewModels
         public float Amount { get; set; }
 
         public string UnitOfMeasure { get; set; }
+
+        public bool IsEdit { get; set; }
     }
 }
