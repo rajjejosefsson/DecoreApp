@@ -11,6 +11,7 @@ namespace Decore.ClientApp.Controllers
 
         public ActionResult Index()
         {
+
             var viewModel = new LoginViewModel
             {
                 Username = "",
@@ -46,7 +47,8 @@ namespace Decore.ClientApp.Controllers
             if (studentUser.StudentId != null) {
 
                 Session["userId"] = studentUser.Id;
-
+                var userId = Session["userId"];
+               
                 return RedirectToAction("Index", "EventList");
             }
 

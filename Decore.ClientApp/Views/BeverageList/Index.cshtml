@@ -1,0 +1,77 @@
+﻿@using System.Web.Mvc.Html
+@model Decore.ClientApp.ViewModels.BeverageViewModel
+
+
+@{
+    ViewBag.Title = "Beverage List";
+}
+
+
+<style>
+    .event {
+        margin-bottom: 30px;
+    }
+
+    .thumbnail {
+        background-color: #FFF;
+        -webkit-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
+        -moz-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
+        box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
+        border-radius: 4px;
+        color: #444444;
+    }
+
+
+    .modal-backdrop {
+        z-index: -1;
+    }
+</style>
+
+
+<div class="content" style="display: block">
+
+    @foreach (var item in Model.Beverages)
+    {
+        <div class="row beverage" id="myTable">
+            <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+                <div class="thumbnail">
+                    <img src="@item.ImageURL" alt="event image">
+                    <div class="caption">
+                        <h3>@item.Name</h3>
+                        <p>Innehåller Alkohol: @item.IsAlcoholic</p>
+                      
+                        <p>Adress: @item.Percent</p>
+                        <p>Pris på biljett: @item.Price kr</p>
+                        <p>Pris på biljett för medlemmar: @item.UnitOfMeasure</p>
+
+                        <div class="row" style="margin-right: 10px">
+
+
+                            @using (Html.BeginForm("DeleteBeverageById", "BeverageList", new { id = @item.Id }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <button type="submit" style="float: right" class="btn btn-danger">Ta bort</button>
+                            }
+
+                            @using (Html.BeginForm("UpdateBeverageById", "CreateBeverage", new { id = @item.Id }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <button type="submit" style="float: right" class="btn btn-warning">Uppdatera</button>
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+@section scripts {
+
+
+
+}
+
+
+
+

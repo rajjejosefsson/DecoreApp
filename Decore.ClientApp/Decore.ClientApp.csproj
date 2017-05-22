@@ -211,6 +211,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AlcoholController.cs" />
+    <Compile Include="Controllers\BeverageListController.cs" />
     <Compile Include="Controllers\CreateBeverageController.cs" />
     <Compile Include="Controllers\CreateEventController.cs" />
     <Compile Include="Controllers\EventListController.cs" />
@@ -424,6 +425,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Views\CreateBeverage\Index.cshtml" />
+    <Content Include="Views\BeverageList\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
