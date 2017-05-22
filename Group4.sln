@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.12
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventService", "EventService\EventService.csproj", "{D21C504D-460B-44D9-8891-130A7E2D61B5}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decore.Models", "Decore.Models\Decore.Models.csproj", "{9C642D6D-FFC3-4F5B-A6B2-7410B3E9D933}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketService", "TicketService\TicketService.csproj", "{1E1E6071-3CB2-4319-8DD9-3B0628D274FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlcoholService", "AlcoholService\AlcoholService.csproj", "{8D9BF1ED-E52C-4D8E-91AB-D9B76BC93EAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{1E1E6071-3CB2-4319-8DD9-3B0628D274FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E1E6071-3CB2-4319-8DD9-3B0628D274FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E1E6071-3CB2-4319-8DD9-3B0628D274FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D9BF1ED-E52C-4D8E-91AB-D9B76BC93EAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D9BF1ED-E52C-4D8E-91AB-D9B76BC93EAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D9BF1ED-E52C-4D8E-91AB-D9B76BC93EAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D9BF1ED-E52C-4D8E-91AB-D9B76BC93EAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
