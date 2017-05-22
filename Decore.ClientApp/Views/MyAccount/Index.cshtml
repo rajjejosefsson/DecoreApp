@@ -1,4 +1,6 @@
-﻿
+﻿@using System.Web.Mvc.Html
+
+@model Decore.ClientApp.ViewModels.TicketViewModel
 @{
     ViewBag.Title = "Index";
 }
@@ -32,77 +34,44 @@
                         <thead>
                         <tr class="first last">
                             <th>Event</th>
-                            <th>Köptes</th>                             
-                            <th><span class="nobr">Antal Biljetter</span></th>    
-                            <th>Pris</th>                       
+                            <th>Köptes</th>
+                            <th><span class="nobr">Antal Biljetter</span></th>
+                            <th>Pris</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>NAMN</td>
-                            <td>4/30/14</td>
-                            <td>8</td>                           
-                            <td><span class="price">1300 kr</span></td>                                                     
-                        </tr>
-                        <tr>
-                            <td>NAMN</td>
-                            <td>3/03/14</td>   
-                            <td>7</td>                  
-                            <td><span class="price">1700 kr</span></td>                            
-                        </tr>
-                        <tr>
-                            <td>NAMN</td>
-                            <td>1/03/14</td>
-                            <td>3</td>  
-                            <td><span class="price">700 kr</span></td>                             
-                        </tr>
-                        <tr>
-                            <td>NAMN</td>
-                            <td>3/02/14</td>  
-                            <td>5</td>         
-                            <td><span class="price">1100 kr</span></td>                             
-                        </tr>
-                        <tr>
-                            <td>NAMN</td>
-                            <td>3/02/14</td>
-                            <td>4</td>  
-                            <td><span class="price">200 kr</span></td>                            
-                        </tr>
-                        <tr>
-                            <td>NAMN</td>
-                            <td>1/02/14</td>
-                            <td>10</td>  
-                            <td><span class="price">2880 kr</span></td>                              
-                        </tr>
-                        <tr>
-                            <td>NAMN</td>
-                            <td>25/01/14</td>
-                            <td>1</td>  
-                            <td><span class="price">50 kr</span></td>                              
-                        </tr>
-                        <tr>
-                            <td>NAMN</td>
-                            <td>24/01/14</td>
-                            <td>2</td>  
-                            <td><span class="price">12000 kr</span></td>                             
-                        </tr>
-                        <tr>
-                            <td>NAMN</td>
-                            <td>12/01/14</td>
-                            <td>3</td>  
-                            <td><span class="price">950 kr</span></td>                            
-                        </tr>
-                        <tr>
-                            <td>NAMN</td>
-                            <td>3/01/14</td>
-                            <td>7</td>  
-                            <td><span class="price">1200 kr</span></td>                             
-                        </tr>
+                        @foreach(var item in Model.Tickets) {
+
+                            <tr>
+                                <td>
+                                @foreach (var eventId in Model.Events) {
+                                    if (eventId.Id == @item.EventId)
+                                    {
+                                        @eventId.Title
+                                    }
+
+                                }
+                                </td>
+                                <td>4/30/14</td>
+                                <td>@item.NumberOfTickets</td>
+                                <td><span class="price">
+                                    @foreach (var eventId in Model.Events)
+                                    {
+                                    if (eventId.Id == @item.EventId)
+                                    {
+                                        @eventId.BasePrice
+                                    }
+
+                                }</span></td>
+                            </tr>
+
+                        }
+
                         </tbody>
                     </table>
                 </div>
                 <!-- /Table  -->
             </div>
-        </div>  
+        </div>
     </div>
 </div>

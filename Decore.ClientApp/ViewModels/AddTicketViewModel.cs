@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Decore.ClientApp.EventServiceReference;
-using Decore.Models;
-
+using System.Linq;
+using System.Web;
 
 namespace Decore.ClientApp.ViewModels
 {
-    public class TicketViewModel
-
+    public class AddTicketViewModel
     {
+
         public int TicketId { get; set; }
 
         public int EventId { get; set; }
@@ -20,9 +19,6 @@ namespace Decore.ClientApp.ViewModels
         public int NumberOfTickets { get; set; }
 
 
-        public ICollection<Ticket> Tickets { get; set; }
-
-        public ICollection<Event> Events { get; set; }
 
     }
 }
