@@ -1,0 +1,58 @@
+﻿@using System.Web.Mvc
+@using System.Web.Mvc.Html
+
+@model Decore.ClientApp.ViewModels.CreateBeverageViewModel
+    
+
+@{
+    ViewBag.Title = "Event Page";
+}
+
+
+
+<style>
+    .input-group-addon {
+        background-color: white;
+        border-radius: 3px !important;
+    }
+
+
+</style>
+
+
+
+
+<div class="row content">
+    <div class="col-sm-12 col-md-8 col-md-offset-2">
+
+        <div class="form-box">
+            
+         
+            <div class="inner-form">
+
+
+                @using (Html.BeginForm("CreateBeverage", "CreateBeverage", "POST"))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name, "Title")
+                        @Html.TextBoxFor(model => model.Name, new {@class = "form-control"})
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.Name, "", new {@class = "text-danger"})
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+   
+
+
+
