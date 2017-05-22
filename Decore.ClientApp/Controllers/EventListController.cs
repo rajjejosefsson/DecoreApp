@@ -4,7 +4,7 @@ using Decore.ClientApp.EventServiceReference;
 using Decore.ClientApp.TicketServiceReference;
 using Decore.ClientApp.ViewModels;
 using Decore.Models;
-
+using System;
 namespace Decore.ClientApp.Controllers
 {
     public class EventListController : Controller
@@ -56,7 +56,8 @@ namespace Decore.ClientApp.Controllers
                     EventId = viewModel.TicketViewModel.EventId,
                     UserId = viewModel.TicketViewModel.StudentId,
                     NumberOfTickets = viewModel.TicketViewModel.NumberOfTickets,
-                   
+                    BoughtAt = DateTime.Now
+                    
                 };
                 _ticketWCFclient.CreateTicket(ticket);
 
