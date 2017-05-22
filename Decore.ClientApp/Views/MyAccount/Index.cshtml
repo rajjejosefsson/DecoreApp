@@ -40,29 +40,35 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach(var item in Model.Tickets) {
+                        @foreach(var ticket in Model.Tickets) {
 
                             <tr>
+                               
                                 <td>
-                                @foreach (var eventId in Model.Events) {
-                                    if (eventId.Id == @item.EventId)
-                                    {
-                                        @eventId.Title
-                                    }
+                                    <!-- Problemet är att Ticket inte får något EventId när det skapas! FIXA  -->
+                                    @foreach (var eventObj in Model.Events) {
+                                        if (ticket.EventId == @eventObj.Id)
+                                        {
+                                            @eventObj.Title
+                                        }
 
-                                }
+                                    }
                                 </td>
-                                <td>4/30/14</td>
-                                <td>@item.NumberOfTickets</td>
-                                <td><span class="price">
-                                    @foreach (var eventId in Model.Events)
-                                    {
-                                    if (eventId.Id == @item.EventId)
-                                    {
-                                        @eventId.BasePrice
-                                    }
 
-                                }</span></td>
+                                <td>@ticket.BoughtAt</td>
+                                <td>@ticket.NumberOfTickets</td>
+                              
+                                <td><span class="price">
+                                        @foreach (var eventObj in Model.Events)
+                                        {
+                                            if (eventObj.Id == @ticket.EventId)
+                                            {
+                                                @eventObj.BasePrice
+                                            }
+                                        }</span>
+                                </td>
+                                
+
                             </tr>
 
                         }
