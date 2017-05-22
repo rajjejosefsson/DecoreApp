@@ -46,7 +46,10 @@ namespace Decore.ClientApp.Controllers
               
                 return RedirectToAction("Index", "EventList");
             }
- 
+       
+            
+
+
             return View("Index", viewModel);
         }
 
