@@ -56,7 +56,6 @@ namespace Decore.ClientApp.Controllers
                     EventOwner = viewModel.EventOwner,
                     CreatedBy = viewModel.EventOwner,
                     CreatedAt = DateTime.Now,
-                    UpdatedAt = DateTime.Now // IS NOT NEEDED TO SHOW 
                 };
                 _eventWCFclient.CreateEvent(eventObject);
 

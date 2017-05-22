@@ -1,10 +1,41 @@
-﻿namespace Decore.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
+
+namespace Decore.Models
 {
+    [DataContract]
     public class Beverage
     {
-        public int BeverageId { get; set; }
-        public string Title { get; set; }
-        public double Volume { get; set; }
-        public double Price { get; set; }
+        [Required]
+        [DataMember]
+        public int Id { get; set; }
+
+        [Required]
+        [DataMember]
+        public string Name { get; set; }
+
+        [Required]
+        [DataMember]
+        public float Percent { get; set; }
+
+        [Required]
+        [DataMember]
+        public float Price { get; set; }
+
+        [Required]
+        [DataMember]
+        public bool IsAlcoholic { get; set; }
+
+        [Required]
+        [DataMember]
+        public string ImageURL { get; set; }
+
+        [Required]
+        [DataMember]
+        public float Amount { get; set; }
+
+        [Required]
+        [DataMember]
+        public string UnitOfMeasure { get; set; }
     }
 }
