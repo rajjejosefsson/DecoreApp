@@ -114,6 +114,7 @@
                                                
                                                 <div class="form-group">
                                                     @Html.HiddenFor(model => model.TicketViewModel.TicketId, new { id = "hiddenId" })
+                                                    @Html.HiddenFor(model => model.TicketViewModel.EventId, new { id = @item.Id })
                                                     <button type="submit" style="float:right;" class="btn btn-info">Köp Biljett</button>
                                                     </div>
                                                 <a href="#" data-dismiss="modal" class="btn">Stäng</a>

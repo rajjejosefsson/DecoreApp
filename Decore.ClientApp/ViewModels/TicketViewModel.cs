@@ -16,9 +16,10 @@ namespace Decore.ClientApp.ViewModels
 
         public int StudentId { get; set; }
 
-        [Required(ErrorMessage = "Antal Biljetter måste anges")]
-        public int NumberOfTickets { get; set; }
+        public DateTime BoughtAt { get; set; }
 
+        [Required(ErrorMessage = "Antal Biljetter måste anges")]
+        public int NumberOfTickets { get; set; }  
 
         public ICollection<Ticket> Tickets { get; set; }
 

@@ -44,10 +44,11 @@
 
                             <tr>
                                 <td>
-                                @foreach (var eventId in Model.Events) {
-                                    if (eventId.Id == @item.EventId)
+                                <!-- Problemet är att Ticket inte får något EventId när det skapas! FIXA  -->
+                                @foreach (var items in Model.Events) {
+                                    if (item.Id == @item.EventId)
                                     {
-                                        @eventId.Title
+                                        @items.Title
                                     }
 
                                 }
@@ -55,11 +56,11 @@
                                 <td>4/30/14</td>
                                 <td>@item.NumberOfTickets</td>
                                 <td><span class="price">
-                                    @foreach (var eventId in Model.Events)
+                                    @foreach (var items in Model.Events)
                                     {
-                                    if (eventId.Id == @item.EventId)
+                                    if (items.Id == @item.EventId)
                                     {
-                                        @eventId.BasePrice
+                                        @items.BasePrice
                                     }
 
                                 }</span></td>
