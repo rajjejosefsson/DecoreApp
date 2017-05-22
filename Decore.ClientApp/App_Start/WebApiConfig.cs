@@ -13,6 +13,7 @@ namespace Decore.ClientApp
                 "api/{controller}/{id}",
                 new {id = RouteParameter.Optional}
             );
+            config.EnableCors();
         }
     }
 }
