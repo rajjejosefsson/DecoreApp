@@ -20,11 +20,11 @@
         border-radius: 4px;
         color: #444444;
     }
-   
- 
+
+
     .modal-backdrop {
-  z-index: -1;
-}
+        z-index: -1;
+    }
 </style>
 
 
@@ -53,7 +53,7 @@
                         <p>Adress: @item.Adress</p>
                         <p>Pris på biljett: @item.BasePrice kr</p>
                         <p>Pris på biljett för medlemmar: @item.MemberPrice kr</p>
-                        
+
                         <p>
                             Utskott:
                             @foreach (var sectionType in @Model.SectionTypes)
@@ -69,7 +69,7 @@
                         <p>Slutdatum för event: @item.EndDate</p>
                         <p>Slutdatum för försäljning: @item.SaleStop</p>
                         <p>Skapad: @item.CreatedAt</p>
-                        
+
                         @using (Html.BeginForm("DeleteEventById", "EventList", new { id = @item.Id }))
                         {
                             @Html.AntiForgeryToken()
@@ -91,38 +91,38 @@
                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                         <h4 class="modal-title">Detaljer för köp</h4>
                                     </div>
-                                    <div class="modal-body">                                   
-                                    
-                                          @using (Html.BeginForm("CreateTicket", "EventList", "POST"))
-                                          {
-                                           
+                                    <div class="modal-body">
+
+                                        @using (Html.BeginForm("CreateTicket", "EventList", "POST"))
+                                        {
+
                                             @Html.AntiForgeryToken()
-                                          
-                                        <h3>Du har valt att köpa biljett för: @item.Title</h3>
-                                        <p>Beskrivning: @item.Description</p>                                   
-                                        <p>Pris per biljett är: @item.BasePrice kr</p>
 
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.TicketViewModel.NumberOfTickets, "Antal Biljetter")
-                                          @Html.TextBoxFor(model => model.TicketViewModel.NumberOfTickets, new { @type = "number", @placeholder = "Ange antal biljetter", @class = "form-control" })
-                                            <div class="error-holder">
-                                                @Html.ValidationMessageFor(model => model.TicketViewModel.NumberOfTickets, "", new { @class = "text-danger" })
+                                            <h3>Du har valt att köpa biljett för: @item.Title</h3>
+                                            <p>Beskrivning: @item.Description</p>
+                                            <p>Pris per biljett är: @item.BasePrice kr</p>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.TicketViewModel.NumberOfTickets, "Antal Biljetter")
+                                                @Html.TextBoxFor(model => model.TicketViewModel.NumberOfTickets, new { @type = "number", @placeholder = "Ange antal biljetter", @class = "form-control" })
+                                                <div class="error-holder">
+                                                    @Html.ValidationMessageFor(model => model.TicketViewModel.NumberOfTickets, "", new { @class = "text-danger" })
+                                                </div>
                                             </div>
-                                        </div>
 
-                                            <div class="modal-footer">      
-                                               
+                                            <div class="modal-footer">
+
                                                 <div class="form-group">
                                                     @Html.HiddenFor(model => model.TicketViewModel.TicketId, new { id = "hiddenId" })
-                                                    @Html.HiddenFor(model => model.TicketViewModel.EventId, new { id = @item.Id })
+                                                    @Html.HiddenFor(model => model.TicketViewModel.EventId, new { id = @item.Id, Value = @item.Id })
                                                     <button type="submit" style="float:right;" class="btn btn-info">Köp Biljett</button>
-                                                    </div>
-                                                <a href="#" data-dismiss="modal" class="btn">Stäng</a>
-                                               
-
-
                                                 </div>
-                                          }
+                                                <a href="#" data-dismiss="modal" class="btn">Stäng</a>
+
+
+
+                                            </div>
+                                        }
 
                                     </div>
 
@@ -130,9 +130,9 @@
                             </div>
                         </div>
 
-                        
-                   
-                     
+
+
+
                     </div>
                 </div>
             </div>
