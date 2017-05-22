@@ -29,11 +29,11 @@
             
             @if (Model.IsEdit)
             {
-                <h2 class="text-center">Edit beverage</h2>
+                <h2 class="text-center">Ändra dryck</h2>
             }
             else
             {
-                <h2 class="text-center">Create new beverage</h2>
+                <h2 class="text-center">Skapa dryck</h2>
 
             }
          
@@ -61,11 +61,16 @@
                     </div>
 
                     <div class="form-group">
+                        
                         @Html.LabelFor(model => model.IsAlcoholic, "Innehåller alkohol?")
-                        @Html.TextBoxFor(model => model.IsAlcoholic, new { @class = "form-control" })
+                           <br/>
+                       
+                        Ja: @Html.RadioButtonFor(m => m.IsAlcoholic,"true", new { @style = "margin-right: 8px" })
+                        Nej: @Html.RadioButtonFor(m => m.IsAlcoholic,"false")
                         <div class="error-holder">
-                            @Html.ValidationMessageFor(model => model.IsAlcoholic, "", new { @class = "text-danger" })
+                            @Html.ValidationMessageFor(model => model.IsAlcoholic, "", new {@class = "text-danger"})
                         </div>
+
                     </div>
 
                     <div class="form-group">
