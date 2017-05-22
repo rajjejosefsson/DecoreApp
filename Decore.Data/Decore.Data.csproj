@@ -71,6 +71,10 @@
     <Compile Include="Migrations\201705221049258_updateTables.Designer.cs">
       <DependentUpon>201705221049258_updateTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705221238315_updateDatabase.cs" />
+    <Compile Include="Migrations\201705221238315_updateDatabase.Designer.cs">
+      <DependentUpon>201705221238315_updateDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BeverageRepository.cs" />
@@ -121,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705221049258_updateTables.resx">
       <DependentUpon>201705221049258_updateTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705221238315_updateDatabase.resx">
+      <DependentUpon>201705221238315_updateDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

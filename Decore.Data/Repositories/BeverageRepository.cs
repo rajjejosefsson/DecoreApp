@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Decore.Data.Repositories
 {
-    class BeverageRepository
+   public class BeverageRepository
     {
         public ICollection<Beverage> GetBeverages()
         {
@@ -17,6 +17,14 @@ namespace Decore.Data.Repositories
             }
         }
 
+        public void CreateBeverage(Beverage beverageObject)
+        {
+            using (var context = new DecoreDbContext())
+            {
+                context.Beverages.Add(beverageObject);
+                context.SaveChanges();
+            }
+        }
 
     }
 }

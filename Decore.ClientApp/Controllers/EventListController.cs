@@ -55,7 +55,7 @@ namespace Decore.ClientApp.Controllers
                     Id = viewModel.TicketViewModel.TicketId,
                     EventId = viewModel.TicketViewModel.EventId,
                     UserId = viewModel.TicketViewModel.StudentId,
-                    AmountOfTickets = viewModel.TicketViewModel.NumberOfTickets,
+                    AmountOfTickets = viewModel.TicketViewModel.AmountOfTickets,
                    
                 };
                 _ticketWCFclient.CreateTicket(ticket);
