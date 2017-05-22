@@ -211,6 +211,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AlcoholController.cs" />
+    <Compile Include="Controllers\CreateBeverageController.cs" />
     <Compile Include="Controllers\CreateEventController.cs" />
     <Compile Include="Controllers\EventListController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -222,6 +223,11 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\AlcoholServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\EmployeeServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -245,6 +251,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AddTicketViewModel.cs" />
     <Compile Include="ViewModels\BeverageViewModel.cs" />
+    <Compile Include="ViewModels\CreateBeverageViewModel.cs" />
     <Compile Include="ViewModels\EventViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="Controllers\Api\EventsController.cs" />
@@ -274,6 +281,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Properties\DataSources\Decore.Models.Ticket.datasource" />
+    <Content Include="Properties\DataSources\Decore.Models.Beverage.datasource" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -291,6 +299,13 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <None Include="Service References\AlcoholServiceReference\AlcoholService.disco" />
+    <None Include="Service References\AlcoholServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\AlcoholServiceReference\configuration.svcinfo" />
+    <None Include="Service References\AlcoholServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Service References\EmployeeServiceReference\Decore.ClientApp.EmployeeServiceReference.AccessInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -303,6 +318,16 @@
     <Content Include="Service References\EmployeeServiceReference\Decore.ClientApp.EmployeeServiceReference.SectionInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\AlcoholServiceReference\AlcoholService.wsdl" />
+    <None Include="Service References\AlcoholServiceReference\AlcoholService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AlcoholServiceReference\AlcoholService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AlcoholServiceReference\AlcoholService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\EmployeeServiceReference\EmployeeServiceWCF.wsdl" />
     <None Include="Service References\EmployeeServiceReference\EmployeeServiceWCF.xsd">
       <SubType>Designer</SubType>
@@ -398,6 +423,7 @@
     <None Include="Service References\TicketServiceReference\TicketService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\CreateBeverage\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -417,6 +443,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AlcoholServiceReference\" />
     <WCFMetadataStorage Include="Service References\EmployeeServiceReference\" />
     <WCFMetadataStorage Include="Service References\EventServiceReference\" />
     <WCFMetadataStorage Include="Service References\LoginServiceReference\" />

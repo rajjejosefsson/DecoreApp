@@ -13,7 +13,7 @@ namespace Decore.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201705211658574_init"; }
+            get { return "201705221328153_init"; }
         }
         
         string IMigrationMetadata.Source

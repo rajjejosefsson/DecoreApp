@@ -55,25 +55,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="DecoreDbContext.cs" />
-    <Compile Include="Migrations\201705211658574_init.cs" />
-    <Compile Include="Migrations\201705211658574_init.Designer.cs">
-      <DependentUpon>201705211658574_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705220109170_addedcolumnBoughtAtinTickets.cs" />
-    <Compile Include="Migrations\201705220109170_addedcolumnBoughtAtinTickets.Designer.cs">
-      <DependentUpon>201705220109170_addedcolumnBoughtAtinTickets.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705221024101_addedMaxTicketsandMaxEmployees.cs" />
-    <Compile Include="Migrations\201705221024101_addedMaxTicketsandMaxEmployees.Designer.cs">
-      <DependentUpon>201705221024101_addedMaxTicketsandMaxEmployees.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705221049258_updateTables.cs" />
-    <Compile Include="Migrations\201705221049258_updateTables.Designer.cs">
-      <DependentUpon>201705221049258_updateTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705221238315_updateDatabase.cs" />
-    <Compile Include="Migrations\201705221238315_updateDatabase.Designer.cs">
-      <DependentUpon>201705221238315_updateDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\201705221328153_init.cs" />
+    <Compile Include="Migrations\201705221328153_init.Designer.cs">
+      <DependentUpon>201705221328153_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -114,23 +98,6 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705211658574_init.resx">
-      <DependentUpon>201705211658574_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705220109170_addedcolumnBoughtAtinTickets.resx">
-      <DependentUpon>201705220109170_addedcolumnBoughtAtinTickets.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705221024101_addedMaxTicketsandMaxEmployees.resx">
-      <DependentUpon>201705221024101_addedMaxTicketsandMaxEmployees.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705221049258_updateTables.resx">
-      <DependentUpon>201705221049258_updateTables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705221238315_updateDatabase.resx">
-      <DependentUpon>201705221238315_updateDatabase.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Decore.Models\Decore.Models.csproj">
       <Project>{9C642D6D-FFC3-4F5B-A6B2-7410B3E9D933}</Project>
       <Name>Decore.Models</Name>
@@ -153,6 +120,11 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201705221328153_init.resx">
+      <DependentUpon>201705221328153_init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

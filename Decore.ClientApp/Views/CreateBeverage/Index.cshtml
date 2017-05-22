@@ -1,0 +1,138 @@
+﻿@using System.Web.Mvc
+@using System.Web.Mvc.Html
+
+@model Decore.ClientApp.ViewModels.CreateBeverageViewModel
+    
+
+@{
+    ViewBag.Title = "Event Page";
+}
+
+
+
+<style>
+    .input-group-addon {
+        background-color: white;
+        border-radius: 3px !important;
+    }
+
+
+</style>
+
+
+
+
+<div class="row content">
+    <div class="col-sm-12 col-md-8 col-md-offset-2">
+
+        <div class="form-box">
+            
+            @if (Model.IsEdit)
+            {
+                <h2 class="text-center">Edit beverage</h2>
+            }
+            else
+            {
+                <h2 class="text-center">Create new beverage</h2>
+
+            }
+         
+            <div class="inner-form">
+
+
+                @using (Html.BeginForm("CreateBeverage", "CreateBeverage", "POST"))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name, "Namn på dryck")
+                        @Html.TextBoxFor(model => model.Name, new {@class = "form-control"})
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.Name, "", new {@class = "text-danger"})
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Amount, "Mängd")
+                        @Html.TextBoxFor(model => model.Amount, new { @class = "form-control" })
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.IsAlcoholic, "Innehåller alkohol?")
+                        @Html.TextBoxFor(model => model.IsAlcoholic, new { @class = "form-control" })
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.IsAlcoholic, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Percent, "% Alkohol")
+                        @Html.TextBoxFor(model => model.Percent, new { @class = "form-control" })
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.Percent, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Price, "Pris")
+                        @Html.TextBoxFor(model => model.Price, new { @class = "form-control" })
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.UnitOfMeasure, "Mått")
+                        @Html.TextBoxFor(model => model.UnitOfMeasure, new { @class = "form-control" })
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.UnitOfMeasure, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ImageURL, "Url till bild")
+                        @Html.TextBoxFor(model => model.ImageURL, new { @class = "form-control" })
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.ImageURL, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="form-group">
+                        @Html.HiddenFor(model => model.Id, new { id = "hiddenId" })
+
+
+                        @if (Model.IsEdit)
+                        {
+                            <input type="submit" value="Uppdatera" class="btn btn-primary create-save-btn" />
+
+                        }
+                        else
+                        {
+                            <input type="submit" value="Lägg till" class="btn btn-primary create-save-btn" />
+                        }
+
+
+
+                    </div>
+                }
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+   
+
+
+

@@ -52,7 +52,7 @@
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Home" ? "active" : "")">
                     @Html.ActionLink("Hem", "Index", "Home")
                 </li>
-
+            
                    @if (Session["userId"] != null) { 
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "EventList" ? "active" : "")">
                     @Html.ActionLink("Alla Event", "Index", "EventList")
@@ -64,6 +64,11 @@
 
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Alcohol" ? "active" : "")">
                     @Html.ActionLink("Uppvägning", "Index", "Alcohol")
+                </li>
+                
+
+                <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "CreateBeverage" ? "active" : "")">
+                    @Html.ActionLink("Skapa Dryck", "Index", "CreateBeverage")
                 </li>
                    }
             </ul>

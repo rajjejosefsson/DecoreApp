@@ -74,7 +74,7 @@
     <Compile Include="AlcoholService.svc.cs">
       <DependentUpon>AlcoholService.svc</DependentUpon>
     </Compile>
-    <Compile Include="IAlchoholService.cs" />
+    <Compile Include="IAlcoholService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

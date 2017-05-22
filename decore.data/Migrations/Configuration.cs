@@ -1,15 +1,18 @@
-using System.Data.Entity.Migrations;
-
 namespace Decore.Data.Migrations
 {
-    internal sealed class Configuration : DbMigrationsConfiguration<DecoreDbContext>
+    using System;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
+
+    internal sealed class Configuration : DbMigrationsConfiguration<Decore.Data.DecoreDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(DecoreDbContext context)
+        protected override void Seed(Decore.Data.DecoreDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
