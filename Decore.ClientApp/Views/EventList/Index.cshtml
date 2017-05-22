@@ -69,70 +69,24 @@
                         <p>Slutdatum för event: @item.EndDate</p>
                         <p>Slutdatum för försäljning: @item.SaleStop</p>
                         <p>Skapad: @item.CreatedAt</p>
+                        
+                        
+                        <div class="row" style="margin-right: 10px">
+                            
 
-                        @using (Html.BeginForm("DeleteEventById", "EventList", new { id = @item.Id }))
-                        {
-                            @Html.AntiForgeryToken()
-                            <button type="submit" style="float:right" class="btn btn-danger">Ta bort</button>
-                        }
+                            @using (Html.BeginForm("DeleteEventById", "EventList", new {id = @item.Id}))
+                            {
+                                @Html.AntiForgeryToken()
+                                <button type="submit" style="float: right" class="btn btn-danger">Ta bort</button>
+                            }
 
-                        @using (Html.BeginForm("UpdateEventById", "CreateEvent", new { id = @item.Id }))
-                        {
-                            @Html.AntiForgeryToken()
-                            <button type="submit" style="float:right" class="btn btn-warning">Uppdatera</button>
-                        }
-                        <button class="btn btn-primary" role="button" data-toggle="modal" data-target="#@item.Id">Köp Biljett</button>
-                        <button href="#" class="btn btn-default" role="button">Personal</button>
-
-                        <div class="modal fade" id="@item.Id">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                        <h4 class="modal-title">Detaljer för köp</h4>
-                                    </div>
-                                    <div class="modal-body">
-
-                                        @using (Html.BeginForm("CreateTicket", "EventList", "POST"))
-                                        {
-
-                                            @Html.AntiForgeryToken()
-
-                                            <h3>Du har valt att köpa biljett för: @item.Title</h3>
-                                            <p>Beskrivning: @item.Description</p>
-                                            <p>Pris per biljett är: @item.BasePrice kr</p>
-
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.TicketViewModel.NumberOfTickets, "Antal Biljetter")
-                                                @Html.TextBoxFor(model => model.TicketViewModel.NumberOfTickets, new { @type = "number", @placeholder = "Ange antal biljetter", @class = "form-control" })
-                                                <div class="error-holder">
-                                                    @Html.ValidationMessageFor(model => model.TicketViewModel.NumberOfTickets, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
-
-                                            <div class="modal-footer">
-
-                                                <div class="form-group">
-                                                    @Html.HiddenFor(model => model.TicketViewModel.TicketId, new { id = "hiddenId" })
-                                                    @Html.HiddenFor(model => model.TicketViewModel.EventId, new { id = @item.Id, Value = @item.Id })
-                                                    <button type="submit" style="float:right;" class="btn btn-info">Köp Biljett</button>
-                                                </div>
-                                                <a href="#" data-dismiss="modal" class="btn">Stäng</a>
-
-
-
-                                            </div>
-                                        }
-
-                                    </div>
-
-                                </div>
-                            </div>
+                            @using (Html.BeginForm("UpdateEventById", "CreateEvent", new {id = @item.Id}))
+                            {
+                                @Html.AntiForgeryToken()
+                                <button type="submit" style="float: right" class="btn btn-warning">Uppdatera</button>
+                            }
                         </div>
-
-
-
-
+                    
                     </div>
                 </div>
             </div>
