@@ -43,7 +43,8 @@ namespace Decore.ClientApp.Controllers
                     UnitOfMeasure = viewModel.UnitOfMeasure
 
                 };
-              
+                _beverageWcfClient.CreateBeverage(beverageObject);
+
                 return RedirectToAction("Index", "EventList");
             }
        

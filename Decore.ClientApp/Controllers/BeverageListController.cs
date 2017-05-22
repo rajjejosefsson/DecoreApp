@@ -12,12 +12,15 @@ namespace Decore.ClientApp.Controllers
         {
             var beverages = _beverageWcfClient.GetBeverage();
 
-
-            var viewModel = new BeverageViewModel
+            if (Session["userId"] != null)
             {
-                Beverages = beverages
-            };
-            return View(viewModel);
+                var viewModel = new BeverageViewModel
+                {
+                    Beverages = beverages
+                };
+                return View(viewModel);
+            }
+            return RedirectToAction("Index","Home");
         }
 
        
