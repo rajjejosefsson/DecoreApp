@@ -58,6 +58,10 @@
                     @Html.ActionLink("Alla Event", "Index", "EventList")
                 </li>
 
+                <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "BeverageList" ? "active" : "")">
+                    @Html.ActionLink("Alla Drycker", "Index", "BeverageList")
+                </li>
+
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "CreateEvent" ? "active" : "")">
                     @Html.ActionLink("Skapa Event", "Index", "CreateEvent")
                 </li>
