@@ -44,10 +44,11 @@ namespace Decore.ClientApp.Controllers
         [HttpPost]
         public ActionResult CreateTicket(EventViewModel viewModel)
         {
-            if (ModelState.IsValid)
-            {
+
+            
                 viewModel.TicketViewModel.StudentId = 1; 
-              
+
+       
 
                 var ticket = new Ticket
                 {
@@ -61,10 +62,9 @@ namespace Decore.ClientApp.Controllers
 
 
                 return RedirectToAction("Index", "EventList");
-            }
+     
 
-
-            return View("Index", viewModel);
+          
         }
     }
 }

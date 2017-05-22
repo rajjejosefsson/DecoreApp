@@ -9,7 +9,18 @@ namespace Decore.ClientApp.ViewModels
     public class EventViewModel
     {
 
+
         public TicketViewModel TicketViewModel { get; set; }
+
+        /*
+        public int TicketId { get; set; }
+        public int EventId { get; set; }
+        public int StudentId { get; set; }
+        public int NumberOfTickets { get; set; }
+        */
+
+
+
 
 
 
