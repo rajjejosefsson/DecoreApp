@@ -211,6 +211,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AlcoholController.cs" />
+    <Compile Include="Controllers\CreateBeverageController.cs" />
     <Compile Include="Controllers\CreateEventController.cs" />
     <Compile Include="Controllers\EventListController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -245,6 +246,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AddTicketViewModel.cs" />
     <Compile Include="ViewModels\BeverageViewModel.cs" />
+    <Compile Include="ViewModels\CreateBeverageViewModel.cs" />
     <Compile Include="ViewModels\EventViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="Controllers\Api\EventsController.cs" />
@@ -398,6 +400,7 @@
     <None Include="Service References\TicketServiceReference\TicketService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\CreateBeverage\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

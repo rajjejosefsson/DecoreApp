@@ -13,7 +13,7 @@ namespace AlcoholService
     public class AlcoholService : IAlcoholService
     {
 
-        private readonly
+    
 
         public ICollection<Beverage> GetBeverages()
         {
