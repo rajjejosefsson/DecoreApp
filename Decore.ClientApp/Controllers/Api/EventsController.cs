@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Net;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using Decore.ClientApp.EventServiceReference;
 using Decore.Models;
 
@@ -12,6 +13,7 @@ namespace Decore.ClientApp.Controllers.Api
 
 
         // GET /api/events
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
         public IEnumerable<Event> GetEvents()
         {
             return _client.GetEvents();
@@ -19,6 +21,7 @@ namespace Decore.ClientApp.Controllers.Api
 
 
         // GET /api/events/id
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
         public Event GetEvent(int id)
         {
             var eventObj = _client.GetEventById(id);
