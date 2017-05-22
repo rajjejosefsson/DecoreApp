@@ -14,7 +14,8 @@ namespace Decore.ClientApp.Controllers
             {
                 new Beverage {BeverageId = 1, Title = "Öl", Price = 22, Volume = 23},
                 new Beverage {BeverageId = 2, Title = "Cider", Price = 12, Volume = 43},
-                new Beverage {BeverageId = 3, Title = "Finsk vodka", Price = 42, Volume = 32}
+                new Beverage {BeverageId = 3, Title = "Finsk vodka", Price = 42, Volume = 32},
+                new Beverage {BeverageId = 3, Title = "Finsk Perkele", Price = 42, Volume = 32}
             };
 
 
