@@ -55,6 +55,12 @@ namespace Decore.Models
         [DataMember]
         public string ImageURL { get; set; }
 
+        [DataMember]
+        public int MaxTickets { get; set; }
+
+        [DataMember]
+        public int MaxEmployees { get; set; }
+
         [Required]
         [DataMember]
         public int EventOwner { get; set; }

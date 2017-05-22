@@ -63,6 +63,10 @@
     <Compile Include="Migrations\201705220109170_addedcolumnBoughtAtinTickets.Designer.cs">
       <DependentUpon>201705220109170_addedcolumnBoughtAtinTickets.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705221024101_addedMaxTicketsandMaxEmployees.cs" />
+    <Compile Include="Migrations\201705221024101_addedMaxTicketsandMaxEmployees.Designer.cs">
+      <DependentUpon>201705221024101_addedMaxTicketsandMaxEmployees.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EventRepository.cs" />
@@ -106,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705220109170_addedcolumnBoughtAtinTickets.resx">
       <DependentUpon>201705220109170_addedcolumnBoughtAtinTickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705221024101_addedMaxTicketsandMaxEmployees.resx">
+      <DependentUpon>201705221024101_addedMaxTicketsandMaxEmployees.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
