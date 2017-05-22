@@ -46,15 +46,15 @@ namespace Decore.ClientApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                viewModel.StudentId = 1; 
+                viewModel.TicketViewModel.StudentId = 1; 
               
 
                 var ticket = new Ticket
                 {
-                    Id = viewModel.TicketId,
-                    EventId = viewModel.EventId,
-                    UserId = viewModel.StudentId,
-                    NumberOfTickets = viewModel.NumberOfTickets,
+                    Id = viewModel.TicketViewModel.TicketId,
+                    EventId = viewModel.TicketViewModel.EventId,
+                    UserId = viewModel.TicketViewModel.StudentId,
+                    NumberOfTickets = viewModel.TicketViewModel.NumberOfTickets,
                    
                 };
                 _ticketWCFclient.CreateTicket(ticket);

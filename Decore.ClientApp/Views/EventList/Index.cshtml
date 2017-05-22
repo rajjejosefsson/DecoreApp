@@ -103,17 +103,17 @@
                                         <p>Pris per biljett är: @item.BasePrice kr</p>
 
                                         <div class="form-group">
-                                            @Html.LabelFor(model => model.NumberOfTickets, "Antal Biljetter")
-                                          @Html.TextBoxFor(model => model.NumberOfTickets, new { @type = "number", @placeholder = "Ange antal biljetter", @class = "form-control" })
+                                            @Html.LabelFor(model => model.TicketViewModel.NumberOfTickets, "Antal Biljetter")
+                                          @Html.TextBoxFor(model => model.TicketViewModel.NumberOfTickets, new { @type = "number", @placeholder = "Ange antal biljetter", @class = "form-control" })
                                             <div class="error-holder">
-                                                @Html.ValidationMessageFor(model => model.NumberOfTickets, "", new { @class = "text-danger" })
+                                                @Html.ValidationMessageFor(model => model.TicketViewModel.NumberOfTickets, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
 
                                             <div class="modal-footer">      
                                                
                                                 <div class="form-group">
-                                                    @Html.HiddenFor(model => model.TicketId, new { id = "hiddenId" })
+                                                    @Html.HiddenFor(model => model.TicketViewModel.TicketId, new { id = "hiddenId" })
                                                     <button type="submit" style="float:right;" class="btn btn-info">Köp Biljett</button>
                                                     </div>
                                                 <a href="#" data-dismiss="modal" class="btn">Stäng</a>

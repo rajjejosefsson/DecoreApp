@@ -8,6 +8,7 @@ using Decore.Models;
 namespace Decore.ClientApp.ViewModels
 {
     public class TicketViewModel
+
     {
         public int TicketId { get; set; }
 
@@ -18,7 +19,10 @@ namespace Decore.ClientApp.ViewModels
         [Required(ErrorMessage = "Antal Biljetter måste anges")]
         public int NumberOfTickets { get; set; }
 
-        
+
+        public ICollection<Ticket> Tickets { get; set; }
+
+        public ICollection<Event> Events { get; set; }
 
     }
 }
