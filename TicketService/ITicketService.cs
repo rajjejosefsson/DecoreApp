@@ -15,10 +15,7 @@ namespace TicketService
 
         [OperationContract]
         ICollection<Ticket> GetTickets();
-
-        [OperationContract]
-        void AddTicket(Ticket ticket);
-
+     
         [OperationContract]
         void CreateTicket(Ticket ticket);
        

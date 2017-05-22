@@ -93,6 +93,8 @@ namespace Decore.ClientApp.Controllers
                 SaleStop = eventObj.SaleStop,
                 BasePrice = eventObj.BasePrice,
                 EventTypeId = eventObj.EventTypeId,
+                MaxEmployees = eventObj.MaxEmployees,
+                MaxTickets = eventObj.MaxTickets,
                 ZipCode = eventObj.ZipCode,
                 Adress = eventObj.Adress,
                 ImageURL = eventObj.ImageURL,
