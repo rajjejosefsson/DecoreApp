@@ -38,6 +38,14 @@ namespace Decore.ClientApp.ViewModels
         public int EventTypeId { get; set; }
 
 
+        [Required(ErrorMessage = "Antal personal måste anges")]
+        public int MaxEmployees { get; set; }
+
+
+        [Required(ErrorMessage = "Ett Max antal biljetter måste anges")]
+        public int MaxTickets { get; set; }
+
+
         [Required(ErrorMessage = "Title måste anges")]
         [StringLength(40, ErrorMessage = "Får ej vara över 40 bokstäver")]
         public string Title { get; set; }

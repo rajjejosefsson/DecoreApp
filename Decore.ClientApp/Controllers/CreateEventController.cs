@@ -50,6 +50,8 @@ namespace Decore.ClientApp.Controllers
                     EventTypeId = viewModel.EventTypeId,
                     ZipCode = viewModel.ZipCode,
                     Adress = viewModel.Adress,
+                    MaxEmployees = viewModel.MaxEmployees,
+                    MaxTickets = viewModel.MaxTickets,
                     ImageURL = viewModel.ImageURL,
                     EventOwner = viewModel.EventOwner,
                     CreatedBy = viewModel.EventOwner,
