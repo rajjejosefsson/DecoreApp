@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
 namespace Decore.Models
@@ -10,6 +11,11 @@ namespace Decore.Models
         [Required]
         [DataMember]
         public int Id { get; set; }
+
+
+        [Required]
+        [DataMember]
+        public DateTime BoughtAt { get; set; }
 
         [Required]
         [DataMember]
