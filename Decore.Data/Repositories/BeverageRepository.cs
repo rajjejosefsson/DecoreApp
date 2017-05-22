@@ -19,9 +19,31 @@ namespace Decore.Data.Repositories
 
         public void CreateBeverage(Beverage beverageObject)
         {
+     
             using (var context = new DecoreDbContext())
             {
-                context.Beverages.Add(beverageObject);
+                if (beverageObject.Id == 0)
+                {
+                    // Create
+                    context.Beverages.Add(beverageObject);
+                }
+                else
+                {
+                    // Edit
+                    var beverageInDb = context.Beverages.SingleOrDefault(p => p.Id == beverageObject.Id);
+
+                    beverageInDb.Id = beverageObject.Id;
+                    beverageInDb.Name = beverageObject.Name;
+                    beverageInDb.Amount = beverageObject.Amount;
+                    beverageInDb.ImageURL = beverageObject.ImageURL;
+                    beverageInDb.IsAlcoholic = beverageObject.IsAlcoholic;
+                    beverageInDb.Percent = beverageObject.Percent;
+                    beverageInDb.Price = beverageObject.Price;
+                    beverageInDb.UnitOfMeasure = beverageObject.UnitOfMeasure;
+                   
+
+
+                }
                 context.SaveChanges();
             }
         }
