@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Net.Http.Headers;
+using System.Web.Http;
 
 namespace Decore.ClientApp
 {
@@ -14,6 +15,9 @@ namespace Decore.ClientApp
                 new {id = RouteParameter.Optional}
             );
             config.EnableCors();
+
+            config.Formatters.JsonFormatter.SupportedMediaTypes
+                .Add(new MediaTypeHeaderValue("text/html"));
         }
     }
 }
