@@ -35,5 +35,13 @@ namespace Decore.ClientApp.Controllers
 
             return View(viewModel);
         }
+
+
+
+        [HttpPost]
+        public ActionResult PostCountBeverage (List<CountBeverage> CountBeverages)
+        {
+            return View("Index");
+        }
     }
 }
