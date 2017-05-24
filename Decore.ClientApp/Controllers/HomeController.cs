@@ -63,5 +63,10 @@ namespace Decore.ClientApp.Controllers
             // Fungerar inte
             // var employeeUser = _LoginWCFclient.LoginEmployee(viewModel.Username, viewModel.Password);
         }
+        public ActionResult Logout()
+        {
+            Session["userId"] = null;
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

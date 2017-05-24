@@ -34,7 +34,7 @@
 
                     <button type="button" class="btn btn-primary onAdd">Lägg till</button>
                 </form>
-             
+
                 <hr/>
                 
                 
@@ -43,8 +43,8 @@
                 <ul id="measureListUl">
                     
                 </ul>
-                
-                <button type="submit" class="btn btn-primary onPostButton">Post List</button>
+
+                <button type="button" class="btn btn-primary onPostButton">POST</button>
 
             </div>
         </div>
@@ -62,71 +62,59 @@
 
     <script>
         $(document)
-            .ready(function () {
+            .ready(function() {
 
 
                 var records = [];
-                var test;
 
-                $("#myForm").on("click", ".onAdd", function () {
+
+                $("#myForm").on("click", ".onAdd",  function() {
 
                     var amount = $('#amount').val();
                     var unit = $('#unit').val();
                     var beverage = $('#beverage').val();
-                    records.push({ amount: amount, unit: unit, beverage: beverage });
+                    records.push({ BeverageId: beverage, Amount: amount });
 
-
-                    $("#measureListUl").append("" +
-                        "<li>" +
-                        "<p>" +
-                        "Amount: " + amount + " " + "Unit:" + unit + " " + "Beverage: " + beverage +
-                        "</p>" +
-                        "</li>");
-                });
-
-                $("#myForm").on("click", ".onPostButton", function () {
-
-                    var amount = $('#amount').val();
-                    var unit = $('#unit').val();
-                    var beverageId = $('#beverage').val();
-
-                    records.push({ BeverageId: beverageId, Amount: amount, Unit: unit });
-
-                    test = { BeverageId: beverageId, Amount: amount, Unit: unit }
 
 
                     $("#measureListUl").append("" +
                         "<li>" +
-                        "<p>" +
-                        "Amount: " + amount + " " + "Unit:" + unit + " " + "Beverage: " + beverage +
-                        "</p>" +
+                            "<p>" +
+                                "Amount: " + amount +  " " +  "Beverage: " + beverage +
+                            "</p>" +
                         "</li>");
+                   
                 });
-
 
                 $(".onPostButton").on("click", function () {
 
-                    console.log('POSTING', records);
+                    var data = { BeverageId: 2, Amount: 3 };
+                 
+                    var dataArray = [ { BeverageId: 2, Amount: 3 }, { BeverageId: 2, Amount: 3 }, { BeverageId: 2, Amount: 3 } ]
 
 
                     $.ajax({
                         type: "post",
                         url: "@Url.Action("PostCountBeverage", "Alcohol")",
-                                data: {records: records}
+                        data: data,
 
-                                success: function() {
-                                    alert("success");
-                                },
-                                error: function(data) {
-                                    alert(data);
-                                }
-                            });
+                        success: function () {
+
+                            alert("success");
+
+                        },
+                        error: function (data) {
+                            alert(data);
+                        }
+
+
+                    });
+
                 });
 
 
-             
 
-
+                // Ajax submit records
 
 
             });

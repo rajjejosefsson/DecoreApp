@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using Decore.ClientApp.AlcoholServiceReference;
 using Decore.ClientApp.ViewModels;
@@ -14,9 +13,9 @@ namespace Decore.ClientApp.Controllers
         public ActionResult Index()
         {
 
-
             if (Session["userId"] == null)
                 return RedirectToAction("Index", "Home");
+
 
 
 
@@ -40,17 +39,8 @@ namespace Decore.ClientApp.Controllers
 
 
         [HttpPost]
-        public ActionResult PostCountBeverage(List<TestViewModel> viewModel)
+        public ActionResult PostCountBeverage (CountBeverage CountBeverages)
         {
-
-            
-
-            // Wcf client - post list with rows
-            // row 1 - Datum - AlcoId - MeausreTypeId - Amount
-            // row 2 - Datum - AlcoId - MeausreTypeId - Amount
-
-
-
             return View("Index");
         }
     }
