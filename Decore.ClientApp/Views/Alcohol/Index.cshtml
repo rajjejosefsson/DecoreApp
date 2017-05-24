@@ -34,7 +34,7 @@
 
                     <button type="button" class="btn btn-primary onAdd">Lägg till</button>
                 </form>
-             
+
                 <hr/>
                 
                 
@@ -43,6 +43,8 @@
                 <ul id="measureListUl">
                     
                 </ul>
+
+                <button type="button" class="btn btn-primary onPostButton">POST</button>
 
             </div>
         </div>
@@ -71,14 +73,14 @@
                     var amount = $('#amount').val();
                     var unit = $('#unit').val();
                     var beverage = $('#beverage').val();
-                    records.push({ amount: amount, unit: unit, beverage: beverage });
+                    records.push({ BeverageId: beverage, Amount: amount });
 
 
 
                     $("#measureListUl").append("" +
                         "<li>" +
                             "<p>" +
-                                "Amount: " + amount +  " " + "Unit:" + unit + " " +  "Beverage: " + beverage +
+                                "Amount: " + amount +  " " +  "Beverage: " + beverage +
                             "</p>" +
                         "</li>");
                    
@@ -86,10 +88,15 @@
 
                 $(".onPostButton").on("click", function () {
 
+                    var data = { BeverageId: 2, Amount: 3 };
+                 
+                    var dataArray = [ { BeverageId: 2, Amount: 3 }, { BeverageId: 2, Amount: 3 }, { BeverageId: 2, Amount: 3 } ]
+
+
                     $.ajax({
                         type: "post",
                         url: "@Url.Action("PostCountBeverage", "Alcohol")",
-                        data: JSON.stringify(records),
+                        data: data,
 
                         success: function () {
 
