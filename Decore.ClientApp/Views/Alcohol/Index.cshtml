@@ -112,7 +112,7 @@
                     $.ajax({
                         type: "post",
                         url: "@Url.Action("PostCountBeverage", "Alcohol")",
-                                data: JSON.stringify(records),
+                                data: {records: records}
 
                                 success: function() {
                                     alert("success");
