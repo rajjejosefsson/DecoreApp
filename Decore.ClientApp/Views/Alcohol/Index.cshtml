@@ -6,9 +6,6 @@
 
 <style>
 
-
-    
-    
 </style>
 
 
@@ -18,64 +15,34 @@
             <h2 class="text-center">Uppvägning</h2>
             <div class="inner-form">
 
+                
+                <form id="myForm" class="form-group">        
+                   
+                    <label for="amount">Amount</label>
+                    <input type="number" name="amount" id="amount" class="form-control">
+                    
+                    
+                    <!-- Dropdown pass id -->
+                    <label for="beverage">Beverage</label>
+                    <input type="number" name="beverage" id="beverage" class="form-control">
+                    
+                    <!-- Dropdown pass id -->
+                    <label for="unit">Unit Of Measurment</label>
+                    <input type="number" name="unit" id="unit" class="form-control">
+                    
+                    
 
-                @using (Html.BeginForm())
-                {
-                    @Html.AntiForgeryToken()
-
-                    <div class="form-group">
-                        @Html.Label("Beverage", "Dryck")
-                        @Html.DropDownListFor(model => model.Beverages, new SelectList(Model.Beverages, "BeverageId", "Title"), new {@class = "form-control"})
-                    </div>
-
-                    <div class="form-group">
-                        @Html.Label("Measure", "Enhet för uppvägning")
-                        @Html.DropDownListFor(model => model.Measures, new SelectList(Model.Measures, "MeasureId", "MeasureTYPE"), new {@class = "form-control"})
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Beverage.Volume, "Volym")
-                        @Html.TextBoxFor(model => model.Beverage.Volume, new {@class = "form-control", id = "volume"})
-                    </div>
-
-
-                    <!-- TODO: INTE FIXAD ÄNNU -->
-
-                    <div class="form-group">
-                        <label for="usr">Pris:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-
-                    <button type="button" class="btn btn-primary">Lägg till</button>
+                    <button type="button" class="btn btn-primary onAdd">Lägg till</button>
+                </form>
+             
+                <hr/>
+                
+                
 
 
-                    <hr/>
-
-
-                    <!-- Exempel men mycket mer kod
-
-                    <div class="form-group">
-                        @Html.Label("dryck", "Dryck:")
-                        <select name="myFormInputName" id="dryck" class="form-control">
-                            @foreach (var beverage in Model.Beverages)
-                            {
-                                <option value="@(beverage.BeverageId)">@(beverage.Title)</option>
-                            }
-                        </select>
-                    </div>
-
-                    -->
-
-
-                    <div>
-                        <p>Carlsberg, 33cl, 5%, 19,90:- (30 st)</p>
-                        <p>Tequila, 40%, 199:- (1500g) </p>
-                        <p>Viko cider, 33cl, 4.5%, 11.50:- (20 st)</p>
-                    </div>
-
-                    <button type="submit" class="btn btn-success">Klar</button>
-                }
-
+                <ul id="measureListUl">
+                    
+                </ul>
 
             </div>
         </div>
@@ -83,6 +50,46 @@
 
 </div>
 
-<!-- EN KOMMENTAR -->
-<!--test-->
-<!--test-->
+@section scripts {
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+        
+    </script>
+
+    <script>
+        $(document)
+            .ready(function() {
+
+
+                var records = [];
+
+
+                $("#myForm").on("click", ".onAdd",  function() {
+
+                    var amount = $('#amount').val();
+                    var unit = $('#unit').val();
+                    var beverage = $('#beverage').val();
+                    records.push({ amount: amount, unit: unit, beverage: beverage });
+
+
+
+                    $("#measureListUl").append("" +
+                        "<li>" +
+                            "<p>" +
+                                "Amount: " + amount +  " " + "Unit:" + unit + " " +  "Beverage: " + beverage +
+                            "</p>" +
+                        "</li>");
+                   
+                });
+
+
+
+                // Ajax submit records
+
+
+            });
+
+    </script>
+}
