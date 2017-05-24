@@ -39,7 +39,7 @@ namespace Decore.ClientApp.Controllers
 
 
         [HttpPost]
-        public ActionResult PostCountBeverage (CountBeverage CountBeverages)
+        public ActionResult PostCountBeverage (List<CountBeverage> results)
         {
             return View("Index");
         }

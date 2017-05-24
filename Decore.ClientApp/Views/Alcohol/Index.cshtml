@@ -24,11 +24,11 @@
                     
                     <!-- Dropdown pass id -->
                     <label for="beverage">Beverage</label>
-                    <input type="number" name="beverage" id="beverage" class="form-control">
+                    <input type="number" name="beverage" id="beverageId" class="form-control">
                     
                     <!-- Dropdown pass id -->
                     <label for="unit">Unit Of Measurment</label>
-                    <input type="number" name="unit" id="unit" class="form-control">
+                    <input type="number" name="unit" id="unitId" class="form-control">
                     
                     
 
@@ -68,53 +68,34 @@
                 var records = [];
 
 
-                $("#myForm").on("click", ".onAdd",  function() {
+                $("#myForm").on("click", ".onAdd", function () {
 
                     var amount = $('#amount').val();
-                    var unit = $('#unit').val();
-                    var beverage = $('#beverage').val();
-                    records.push({ BeverageId: beverage, Amount: amount });
-
-
+                    var unitId = $('#unitId').val();
+                    var beverageId = $('#beverageId').val();
+                    records.push({ BeverageId: beverageId, Amount: amount, UnitId: unitId });
 
                     $("#measureListUl").append("" +
                         "<li>" +
                             "<p>" +
-                                "Amount: " + amount +  " " +  "Beverage: " + beverage +
+                                "Amount: " + amount +  " " +  "Beverage: " + beverageId +
                             "</p>" +
                         "</li>");
-                   
                 });
+
 
                 $(".onPostButton").on("click", function () {
 
-                    var data = { BeverageId: 2, Amount: 3 };
-                 
-                    var dataArray = [ { BeverageId: 2, Amount: 3 }, { BeverageId: 2, Amount: 3 }, { BeverageId: 2, Amount: 3 } ]
+                    var results = records;
 
-
-                    $.ajax({
-                        type: "post",
-                        url: "@Url.Action("PostCountBeverage", "Alcohol")",
-                        data: data,
-
-                        success: function () {
-
-                            alert("success");
-
-                        },
-                        error: function (data) {
-                            alert(data);
-                        }
-
-
-                    });
-
+                    $.post('@Url.Action("PostCountBeverage", "Alcohol")', { results: results },
+                        function () {
+                            console.log('success');
+                        });
                 });
 
 
-
-                // Ajax submit records
+                
 
 
             });
