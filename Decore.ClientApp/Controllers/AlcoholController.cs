@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using Decore.ClientApp.AlcoholServiceReference;
 using Decore.ClientApp.ViewModels;
@@ -34,6 +35,23 @@ namespace Decore.ClientApp.Controllers
             };
 
             return View(viewModel);
+        }
+
+
+
+        [HttpPost]
+        public ActionResult PostCountBeverage(List<Object> records)
+        {
+
+            
+
+            // Wcf client - post list with rows
+            // row 1 - Datum - AlcoId - MeausreTypeId - Amount
+            // row 2 - Datum - AlcoId - MeausreTypeId - Amount
+
+
+
+            return View("Index");
         }
     }
 }

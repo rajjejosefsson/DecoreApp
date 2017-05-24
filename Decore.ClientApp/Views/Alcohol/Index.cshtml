@@ -43,6 +43,8 @@
                 <ul id="measureListUl">
                     
                 </ul>
+                
+                <button type="submit" class="btn btn-primary onPostButton">Post List</button>
 
             </div>
         </div>
@@ -74,19 +76,48 @@
                     records.push({ amount: amount, unit: unit, beverage: beverage });
 
 
-
                     $("#measureListUl").append("" +
                         "<li>" +
                             "<p>" +
                                 "Amount: " + amount +  " " + "Unit:" + unit + " " +  "Beverage: " + beverage +
                             "</p>" +
                         "</li>");
-                   
+                });
+
+                $("#myForm").on("click", ".onPostButton",  function() {
+
+                    var amount = $('#amount').val();
+                    var unit = $('#unit').val();
+                    var beverage = $('#beverage').val();
+                    records.push({ amount: amount, unit: unit, beverage: beverage });
+
+
+                    $("#measureListUl").append("" +
+                        "<li>" +
+                        "<p>" +
+                        "Amount: " + amount +  " " + "Unit:" + unit + " " +  "Beverage: " + beverage +
+                        "</p>" +
+                        "</li>");
                 });
 
 
+                $(".onPostButton").on("click", function () {
 
-                // Ajax submit records
+                            console.log('POSTING', records);
+
+                            $.ajax({
+                                type: "post",
+                                url: "@Url.Action("PostCountBeverage", "Alcohol")",
+                                data: { records: records },
+
+                                success: function() {
+                                    alert("success");
+                                },
+                                error: function(data) {
+                                    alert(data);
+                                }
+                            });
+                        });
 
 
             });
