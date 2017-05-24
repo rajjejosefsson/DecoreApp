@@ -74,17 +74,15 @@
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "CreateBeverage" ? "active" : "")">
                     @Html.ActionLink("Skapa Dryck", "Index", "CreateBeverage")
                 </li>
-                   }
-            </ul>
-            @if (Session["userId"] != null)
-            {
-            <ul class="nav navbar-nav pull-right">
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "MyAccount" ? "active" : "")">
                     @Html.ActionLink("Mina biljetter", "Index", "MyAccount")
                 </li>
+                <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Logout" ? "active" : "")">
+                    @Html.ActionLink("Logout", "Logout", "Home")
+                </li>
+                   }
             </ul>
-            }
-
+           
         </div>
     </div>
 </nav>
