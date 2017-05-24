@@ -14,9 +14,9 @@ namespace Decore.ClientApp.Controllers
         public ActionResult Index()
         {
 
+
             if (Session["userId"] == null)
                 return RedirectToAction("Index", "Home");
-
 
 
 
@@ -40,7 +40,7 @@ namespace Decore.ClientApp.Controllers
 
 
         [HttpPost]
-        public ActionResult PostCountBeverage(List<Object> records)
+        public ActionResult PostCountBeverage(List<TestViewModel> viewModel)
         {
 
             
