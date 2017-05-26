@@ -17,5 +17,7 @@ namespace AlcoholService
         [OperationContract]
         void CreateBeverage(Beverage beverageObject);
 
+        [OperationContract]
+        void DeleteBeverageById(int beverageId);
     }
 }

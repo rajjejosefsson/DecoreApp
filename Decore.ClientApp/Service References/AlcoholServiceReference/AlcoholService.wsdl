@@ -25,6 +25,12 @@
   <wsdl:message name="IAlcoholService_CreateBeverage_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateBeverageResponse" />
   </wsdl:message>
+  <wsdl:message name="IAlcoholService_DeleteBeverageById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBeverageById" />
+  </wsdl:message>
+  <wsdl:message name="IAlcoholService_DeleteBeverageById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBeverageByIdResponse" />
+  </wsdl:message>
   <wsdl:portType name="IAlcoholService">
     <wsdl:operation name="GetBeverage">
       <wsdl:input wsaw:Action="http://tempuri.org/IAlcoholService/GetBeverage" message="tns:IAlcoholService_GetBeverage_InputMessage" />
@@ -37,6 +43,10 @@
     <wsdl:operation name="CreateBeverage">
       <wsdl:input wsaw:Action="http://tempuri.org/IAlcoholService/CreateBeverage" message="tns:IAlcoholService_CreateBeverage_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAlcoholService/CreateBeverageResponse" message="tns:IAlcoholService_CreateBeverage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBeverageById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAlcoholService/DeleteBeverageById" message="tns:IAlcoholService_DeleteBeverageById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAlcoholService/DeleteBeverageByIdResponse" message="tns:IAlcoholService_DeleteBeverageById_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IAlcoholService" type="tns:IAlcoholService">
@@ -61,6 +71,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateBeverage">
       <soap:operation soapAction="http://tempuri.org/IAlcoholService/CreateBeverage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBeverageById">
+      <soap:operation soapAction="http://tempuri.org/IAlcoholService/DeleteBeverageById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

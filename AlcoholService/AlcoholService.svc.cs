@@ -30,5 +30,9 @@ namespace AlcoholService
             return _beverageRepository.GetBeverageById(beverageId);
         }
 
+        public void DeleteBeverageById(int beverageId)
+        {
+            _beverageRepository.DeleteBeverageById(beverageId);
+        }
     }
 }

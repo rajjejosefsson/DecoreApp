@@ -32,6 +32,12 @@ namespace Decore.ClientApp.AlcoholServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlcoholService/CreateBeverage", ReplyAction="http://tempuri.org/IAlcoholService/CreateBeverageResponse")]
         System.Threading.Tasks.Task CreateBeverageAsync(Decore.Models.Beverage beverageObject);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlcoholService/DeleteBeverageById", ReplyAction="http://tempuri.org/IAlcoholService/DeleteBeverageByIdResponse")]
+        void DeleteBeverageById(int beverageId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlcoholService/DeleteBeverageById", ReplyAction="http://tempuri.org/IAlcoholService/DeleteBeverageByIdResponse")]
+        System.Threading.Tasks.Task DeleteBeverageByIdAsync(int beverageId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -83,6 +89,14 @@ namespace Decore.ClientApp.AlcoholServiceReference {
         
         public System.Threading.Tasks.Task CreateBeverageAsync(Decore.Models.Beverage beverageObject) {
             return base.Channel.CreateBeverageAsync(beverageObject);
+        }
+        
+        public void DeleteBeverageById(int beverageId) {
+            base.Channel.DeleteBeverageById(beverageId);
+        }
+        
+        public System.Threading.Tasks.Task DeleteBeverageByIdAsync(int beverageId) {
+            return base.Channel.DeleteBeverageByIdAsync(beverageId);
         }
     }
 }

@@ -55,5 +55,16 @@ namespace Decore.Data.Repositories
                 return context.Beverages.AsNoTracking().SingleOrDefault(e => e.Id == beverageId);
             }
         }
+
+        public void DeleteBeverageById(int beverageId)
+        {
+            using (var context = new DecoreDbContext())
+            {
+                // Get beverage by id
+                var beverageInDb = context.Beverages.SingleOrDefault(e => e.Id == beverageId);
+                context.Beverages.Remove(beverageInDb);
+                context.SaveChanges();
+            }
+        }
     }
 }

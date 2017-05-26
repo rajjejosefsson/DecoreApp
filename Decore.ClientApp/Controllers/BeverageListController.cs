@@ -23,6 +23,13 @@ namespace Decore.ClientApp.Controllers
             return RedirectToAction("Index","Home");
         }
 
-       
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteBeverageById(int id)
+        {
+            _beverageWcfClient.DeleteBeverageById(id);
+            return RedirectToAction("Index", "BeverageList");
+        }
+
     }
 }
