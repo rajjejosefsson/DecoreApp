@@ -10,9 +10,7 @@ namespace Decore.ClientApp.Controllers
     public class EventListController : Controller
     {
         private readonly EmployeeServiceWCFClient _employeeWcfClient = new EmployeeServiceWCFClient();
-
         private readonly EventServiceClient _eventWCFclient = new EventServiceClient();
-
         private readonly TicketServiceClient _ticketWCFclient = new TicketServiceClient();
 
 

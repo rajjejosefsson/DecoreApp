@@ -43,6 +43,7 @@ namespace Decore.ClientApp.Controllers
             // fungerar
             var studentUser = _LoginWCFclient.LoginStudent(viewModel.Username, viewModel.Password);
 
+            // Load login
 
             if (studentUser.StudentId != null) {
 

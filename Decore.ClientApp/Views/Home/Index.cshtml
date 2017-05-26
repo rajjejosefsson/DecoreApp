@@ -96,7 +96,7 @@
                             </div>
                         </div>
 
-                        <input type="submit" value="Logga in" class="btn btn-primary create-save-btn"/>
+                        <input type="submit" value="Logga in" class="btn btn-primary onLogin"/>
                     </div>
                 }
 
@@ -225,3 +225,41 @@
         </div>
     </div>
 </div>
+
+
+
+@section scripts {
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+        
+    </script>
+
+    <script>
+        $(document)
+            .ready(function() {
+
+                
+
+                $(".login-form").on("click", ".onLogin",  function() {
+
+                    console.log('TEST');
+                    var loginForm = document.querySelector(".login-form");
+                    loginForm.children().remove();
+                 
+
+                    $(".login-form").append("" +
+                        "<div>" +
+                            "<p> Loading </p>" +
+                        "</div");
+                });
+
+
+
+
+
+            });
+
+    </script>
+}

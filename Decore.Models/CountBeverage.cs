@@ -11,5 +11,7 @@ namespace Decore.Models
         public int BeverageId { get; set; }
 
         public int Amount { get; set; }
+
+        public int Unit { get; set; }
     }
 }
