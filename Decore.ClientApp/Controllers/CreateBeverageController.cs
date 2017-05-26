@@ -45,7 +45,7 @@ namespace Decore.ClientApp.Controllers
                 };
                 _beverageWcfClient.CreateBeverage(beverageObject);
 
-                return RedirectToAction("Index", "EventList");
+                return RedirectToAction("Index", "BeverageList");
             }
        
             
