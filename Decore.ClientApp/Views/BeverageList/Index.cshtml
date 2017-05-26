@@ -21,7 +21,6 @@
         color: #444444;
     }
 
-
     .modal-backdrop {
         z-index: -1;
     }
@@ -35,14 +34,13 @@
         <div class="row beverage" id="myTable">
             <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
                 <div class="thumbnail">
-                    <img src="@item.ImageURL" alt="event image">
+                    <img style="max-height: 450px" class="image" src="@item.ImageURL" alt="beverage image">
                     <div class="caption">
                         <h3>@item.Name</h3>
-                        <p>Innehåller Alkohol: @item.IsAlcoholic</p>
-                      
-                        <p>Adress: @item.Percent</p>
-                        <p>Pris på biljett: @item.Price kr</p>
-                        <p>Pris på biljett för medlemmar: @item.UnitOfMeasure</p>
+                        <p>Innehåller Alkohol: @item.IsAlcoholic</p>                   
+                        <p>Antal Procent: @item.Percent %</p>
+                        <p>Kostnad: @item.Price kr</p>
+                        <p>Mått: @item.UnitOfMeasure</p>
 
                         <div class="row" style="margin-right: 10px">
 
