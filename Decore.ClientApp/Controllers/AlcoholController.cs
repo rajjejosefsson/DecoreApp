@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using Decore.ClientApp.AlcoholServiceReference;
 using Decore.ClientApp.ViewModels;
@@ -41,6 +42,22 @@ namespace Decore.ClientApp.Controllers
         [HttpPost]
         public ActionResult PostCountBeverage (List<CountBeverage> results)
         {
+            var countTime = DateTime.Now;
+
+            foreach (var countResult in results)
+            {
+                // create object to send to db with the global countTime above
+                var countItem = new CountBeverage()
+                {
+                    CountTime = countTime,
+                    BeverageId = countResult.BeverageId,
+                    Amount = countResult.Amount,
+                    Unit = countResult.Unit,
+                };
+            }
+
+            // Send countItem to db (new tabel of the CountBeverage model)
+
             return View("Index");
         }
     }

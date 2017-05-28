@@ -8,10 +8,14 @@ namespace Decore.Models
 {
     public class CountBeverage
     {
+
+        public DateTime CountTime { get; set; }
+
         public int BeverageId { get; set; }
 
         public int Amount { get; set; }
 
         public int Unit { get; set; }
+
     }
 }
