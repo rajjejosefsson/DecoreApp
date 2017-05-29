@@ -36,7 +36,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach (var ticket in Model.Tickets) {
+                        @foreach (var ticket in Model.Tickets.OrderByDescending(Model => Model.BoughtAt)) {
 
                             <tr>
                                
@@ -45,21 +45,22 @@
                                     @foreach (var eventObj in Model.Events) {
                                         if (ticket.EventId == @eventObj.Id)
                                         {
-                                            @eventObj.Title
+                                           @eventObj.Title
+
                                         }
 
                                     }
                                 </td>
 
                                 <td>@ticket.BoughtAt</td>
-                                <td>@foreach (var e in Model.TicketsSold)
-                                {
-                                    if (ticket.EventId == @e.Key)
+                                <td>@(Model.TicketsSold.ContainsKey(ticket.EventId)?Model.TicketsSold[ticket.EventId].ToString():"0")/@{
+                                    foreach(var e in Model.Events)
                                     {
-                                        @e.Value
-                                      
+                                        if(ticket.EventId == e.Id)
+                                        {
+                                            @e.MaxTickets;
+                                        }
                                     }
-
                                 }</td>
                               
                                 <td><span class="price">

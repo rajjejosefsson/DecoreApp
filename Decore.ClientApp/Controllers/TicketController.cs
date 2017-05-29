@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Decore.ClientApp.TicketServiceReference;
 using Decore.ClientApp.EventServiceReference;
 using Decore.ClientApp.ViewModels;
+using Decore.Models;
 
 namespace Decore.ClientApp.Controllers
 {
@@ -25,6 +26,14 @@ namespace Decore.ClientApp.Controllers
 
                 var tickets = _ticketWcfClient.GetTickets();
                 var events = _eventWCFclient.GetEvents();
+
+
+
+
+                    
+              
+
+
                 var alltickets = new Dictionary<int, int>();
                 foreach (var e in tickets)
                 {
@@ -34,6 +43,7 @@ namespace Decore.ClientApp.Controllers
                     }else
                     {
                         alltickets.Add(e.EventId, 1);
+                        
                     }
                 };
 
@@ -43,7 +53,7 @@ namespace Decore.ClientApp.Controllers
                    Tickets = tickets,
                    Events = events,
                    TicketsSold = alltickets
-                
+                   
                     
                 };
                 return View(viewModel);
