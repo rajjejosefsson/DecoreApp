@@ -47,7 +47,7 @@ namespace Decore.ClientApp.Controllers
                     }
                 };
 
-                var viewModel = new TicketViewModel
+                var viewModel = new EventViewModel
            
                 {
                    Tickets = tickets,

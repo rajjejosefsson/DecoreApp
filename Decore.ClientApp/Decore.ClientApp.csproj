@@ -335,6 +335,9 @@
     <None Include="Service References\AlcoholServiceReference\AlcoholService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Service References\EmployeeServiceReference\Decore.ClientApp.EmployeeServiceReference.SectionMembers.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\EmployeeServiceReference\EmployeeServiceWCF.wsdl" />
     <None Include="Service References\EmployeeServiceReference\EmployeeServiceWCF.xsd">
       <SubType>Designer</SubType>
@@ -346,6 +349,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\EmployeeServiceReference\EmployeeServiceWCF3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmployeeServiceReference\EmployeeServiceWCF4.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\EventServiceReference\EventService.disco" />

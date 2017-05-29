@@ -18,7 +18,8 @@ namespace Decore.ClientApp.ViewModels
         public ICollection<Event> Events { get; set; }
         public ICollection<EventType> EventTypes { get; set; }
         public ICollection<SectionInfo> SectionTypes { get; set; }
-
+        public ICollection<Ticket> Tickets { get; set; }
+        public Dictionary<int, int> TicketsSold { get; set; }
 
         [Required(ErrorMessage = "Eventtyp måste anges")]
         public int EventTypeId { get; set; }

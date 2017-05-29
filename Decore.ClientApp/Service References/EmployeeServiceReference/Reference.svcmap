@@ -24,6 +24,7 @@
   <Metadata>
     <MetadataFile FileName="EmployeeServiceWCF.xsd" MetadataType="Schema" ID="25a874ea-c15b-4a34-be79-018b2803871f" SourceId="1" SourceUrl="http://193.10.202.73/EmployeeService/EmployeeServiceWCF.svc?xsd=xsd1" />
     <MetadataFile FileName="EmployeeServiceWCF.disco" MetadataType="Disco" ID="1d0d179b-f8d3-4886-888e-106331913295" SourceId="1" SourceUrl="http://193.10.202.73/EmployeeService/EmployeeServiceWCF.svc?disco" />
+    <MetadataFile FileName="EmployeeServiceWCF4.xsd" MetadataType="Schema" ID="41711279-153c-46b5-ac47-0b4594f66eb9" SourceId="1" SourceUrl="http://193.10.202.73/EmployeeService/EmployeeServiceWCF.svc?xsd=xsd4" />
     <MetadataFile FileName="EmployeeServiceWCF1.xsd" MetadataType="Schema" ID="b323423b-287a-477a-9ab4-e63eee368d9d" SourceId="1" SourceUrl="http://193.10.202.73/EmployeeService/EmployeeServiceWCF.svc?xsd=xsd3" />
     <MetadataFile FileName="EmployeeServiceWCF.wsdl" MetadataType="Wsdl" ID="13c947f8-5ec5-4056-bbd9-278812de4b57" SourceId="1" SourceUrl="http://193.10.202.73/EmployeeService/EmployeeServiceWCF.svc?wsdl" />
     <MetadataFile FileName="EmployeeServiceWCF2.xsd" MetadataType="Schema" ID="2c349e34-4ccf-454d-b564-02de8547cf0d" SourceId="1" SourceUrl="http://193.10.202.73/EmployeeService/EmployeeServiceWCF.svc?xsd=xsd2" />

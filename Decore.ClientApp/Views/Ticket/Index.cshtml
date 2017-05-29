@@ -1,6 +1,6 @@
 ﻿@using System.Web.Mvc.Html
 
-@model Decore.ClientApp.ViewModels.TicketViewModel
+@model Decore.ClientApp.ViewModels.EventViewModel
 @{
     ViewBag.Title = "Index";
 }
@@ -30,48 +30,45 @@
                         <thead>
                         <tr class="first last">
                             <th>Event</th>
-                            <th>Köptes</th>
-                            <th><span class="nobr">Antal Biljetter</span></th>
-                            <th>Pris</th>
+                            <th>Senaste biljetten köptes</th>
+                            <th><span class="nobr">Antal Biljetter</span></th>                          
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach (var ticket in Model.Tickets.OrderByDescending(Model => Model.BoughtAt)) {
+                        @foreach (var events in Model.Events.OrderByDescending(Model => Model.MaxTickets)) {
 
                             <tr>
                                
                                 <td>
-                                 
-                                    @foreach (var eventObj in Model.Events) {
-                                        if (ticket.EventId == @eventObj.Id)
-                                        {
-                                           @eventObj.Title
-
-                                        }
-
-                                    }
+                                 @events.Title                               
                                 </td>
 
-                                <td>@ticket.BoughtAt</td>
-                                <td>@(Model.TicketsSold.ContainsKey(ticket.EventId)?Model.TicketsSold[ticket.EventId].ToString():"0")/@{
-                                    foreach(var e in Model.Events)
+                                <td>
+                                    @foreach(var e in Model.Tickets)
                                     {
-                                        if(ticket.EventId == e.Id)
+                                        if(events.Id == e.EventId)
                                         {
-                                            @e.MaxTickets;
+
+
+                                            @e.BoughtAt.ToShortTimeString();
+
                                         }
+                                    }                                                     
+                                 </td>
+
+
+                                <td>
+                                @foreach(var e in Model.TicketsSold) {
+                                    if (e.Key == events.Id)
+                                    {
+                                        @e.Value
                                     }
-                                }</td>
+                                }
+                                / @events.MaxTickets
+                                
+                                  </td>
                               
-                                <td><span class="price">
-                                        @foreach (var eventObj in Model.Events)
-                                        {
-                                            if (eventObj.Id == @ticket.EventId)
-                                            {
-                                                @eventObj.BasePrice
-                                            }
-                                        }</span>
-                                </td>
+                           
                                 
 
                             </tr>
