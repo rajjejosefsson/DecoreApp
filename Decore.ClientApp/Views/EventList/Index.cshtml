@@ -66,10 +66,10 @@
                             }
                         </p>
 
-                        <p>Startdatum för event: @item.StartDate</p>
-                        <p>Slutdatum för event: @item.EndDate</p>
-                        <p>Slutdatum för försäljning: @item.SaleStop</p>
-                        <p>Skapad: @item.CreatedAt</p>
+                        <p>Startdatum för event: @item.StartDate.ToShortDateString()</p>
+                        <p>Slutdatum för event: @item.EndDate.ToShortDateString()</p>
+                        <p>Slutdatum för försäljning: @item.SaleStop.ToShortDateString()</p>
+                        <p>Skapad: @item.CreatedAt.ToLocalTime()</p>
                         
                         
                         <div class="row" style="margin-right: 10px">
