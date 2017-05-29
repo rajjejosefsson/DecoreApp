@@ -19,11 +19,7 @@
 
 <div class="row event" id="myTable">
     <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
-        <div class="my-account">
-            <div class="bottom-padding">
-                <h3 class="hello">Hej, USERID!</h3>
-                <p>Här kan du se vilka biljetter du har köpt</p>
-            </div>
+        <div class="my-account">                  
             <div class="bottom-padding">
                 <div class="title-box">
                     <h3>Nyligen köpta biljetter</h3>
@@ -45,7 +41,7 @@
                             <tr>
                                
                                 <td>
-                                    <!-- Problemet är att Ticket inte får något EventId när det skapas! FIXA  -->
+                                 
                                     @foreach (var eventObj in Model.Events) {
                                         if (ticket.EventId == @eventObj.Id)
                                         {
@@ -56,7 +52,14 @@
                                 </td>
 
                                 <td>@ticket.BoughtAt</td>
-                                <td>@ticket.AmountOfTickets</td>
+                                <td>@foreach (var eventObj in Model.Events)
+                                {
+                                    if (ticket.EventId == @eventObj.Id)
+                                    {
+                                        @eventObj.MaxTickets
+                                    }
+
+                                }</td>
                               
                                 <td><span class="price">
                                         @foreach (var eventObj in Model.Events)
