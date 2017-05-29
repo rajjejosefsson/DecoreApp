@@ -9,7 +9,7 @@ using Decore.ClientApp.ViewModels;
 
 namespace Decore.ClientApp.Controllers
 {
-    public class MyAccountController : Controller
+    public class TicketController : Controller
     {
         private readonly TicketServiceClient _ticketWcfClient = new TicketServiceClient();
 

@@ -222,7 +222,7 @@
     <Compile Include="Controllers\CreateEventController.cs" />
     <Compile Include="Controllers\EventListController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MyAccountController.cs" />
+    <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -419,7 +419,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\MyAccount\Index.cshtml" />
+    <Content Include="Views\Tickets\Index.cshtml" />
     <None Include="Service References\TicketServiceReference\TicketService.wsdl" />
     <None Include="Service References\TicketServiceReference\TicketService.xsd">
       <SubType>Designer</SubType>
