@@ -56,7 +56,7 @@
                                 {
                                     if (ticket.EventId == @eventObj.Id)
                                     {
-                                        eventObj.MaxTickets = (eventObj.MaxTickets - ticket.AmountOfTickets);
+                                        @eventObj.MaxTickets = (eventObj.MaxTickets - ticket.AmountOfTickets);
                                     }
 
                                 }</td>
