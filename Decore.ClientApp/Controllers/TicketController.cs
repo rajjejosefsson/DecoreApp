@@ -23,26 +23,27 @@ namespace Decore.ClientApp.Controllers
             if (Session["userId"] != null)
             {
 
-                var alltickets = _ticketWcfClient.GetTickets();
+                var tickets = _ticketWcfClient.GetTickets();
                 var events = _eventWCFclient.GetEvents();
-                var tickets = new Dictionary<int, int>();
-                foreach (var e in alltickets)
+                var alltickets = new Dictionary<int, int>();
+                foreach (var e in tickets)
                 {
-                    if(tickets.ContainsKey(e.EventId))
+                    if(alltickets.ContainsKey(e.EventId))
                     {
-                        tickets[e.EventId] += 1; 
+                        alltickets[e.EventId] += 1; 
                     }else
                     {
-                        tickets.Add(e.EventId, 1);
+                        alltickets.Add(e.EventId, 1);
                     }
                 };
 
                 var viewModel = new TicketViewModel
            
                 {
-                   Tickets = alltickets,
+                   Tickets = tickets,
                    Events = events,
-                   TicketsSold = tickets
+                   TicketsSold = alltickets
+                
                     
                 };
                 return View(viewModel);
