@@ -52,15 +52,7 @@
                                 </td>
 
                                 <td>@ticket.BoughtAt</td>
-                                <td>@foreach (var e in Model.TicketsSold)
-                                {
-                                    if (ticket.EventId == @e.Key)
-                                    {
-                                        @e.Value
-                                      
-                                    }
-
-                                }</td>
+                              
                               
                                 <td><span class="price">
                                         @foreach (var eventObj in Model.Events)
