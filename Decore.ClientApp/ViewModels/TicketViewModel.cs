@@ -27,6 +27,8 @@ namespace Decore.ClientApp.ViewModels
 
         public ICollection<Ticket> Tickets { get; set; }
 
+        public Dictionary<int, int> TicketsSold { get; set; }
+
         public ICollection<Event> Events { get; set; }
 
     }

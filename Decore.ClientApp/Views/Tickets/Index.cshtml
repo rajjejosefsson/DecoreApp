@@ -52,11 +52,11 @@
                                 </td>
 
                                 <td>@ticket.BoughtAt</td>
-                                <td>@foreach (var eventObj in Model.Events)
+                                <td>@foreach (var eventId in Model.TicketsSold)
                                 {
-                                    if (ticket.EventId == @eventObj.Id)
+                                    if (ticket.EventId == @eventId.Key)
                                     {
-                                        @eventObj.MaxTickets
+                                        @eventId.Value
                                       
                                     }
 

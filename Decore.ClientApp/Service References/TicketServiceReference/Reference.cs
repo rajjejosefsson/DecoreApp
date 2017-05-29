@@ -26,6 +26,12 @@ namespace Decore.ClientApp.TicketServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITicketService/CreateTicket", ReplyAction="http://tempuri.org/ITicketService/CreateTicketResponse")]
         System.Threading.Tasks.Task CreateTicketAsync(Decore.Models.Ticket ticket);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITicketService/GetTicketByEventId", ReplyAction="http://tempuri.org/ITicketService/GetTicketByEventIdResponse")]
+        Decore.Models.Ticket[] GetTicketByEventId(int eventId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITicketService/GetTicketByEventId", ReplyAction="http://tempuri.org/ITicketService/GetTicketByEventIdResponse")]
+        System.Threading.Tasks.Task<Decore.Models.Ticket[]> GetTicketByEventIdAsync(int eventId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,6 +75,14 @@ namespace Decore.ClientApp.TicketServiceReference {
         
         public System.Threading.Tasks.Task CreateTicketAsync(Decore.Models.Ticket ticket) {
             return base.Channel.CreateTicketAsync(ticket);
+        }
+        
+        public Decore.Models.Ticket[] GetTicketByEventId(int eventId) {
+            return base.Channel.GetTicketByEventId(eventId);
+        }
+        
+        public System.Threading.Tasks.Task<Decore.Models.Ticket[]> GetTicketByEventIdAsync(int eventId) {
+            return base.Channel.GetTicketByEventIdAsync(eventId);
         }
     }
 }
