@@ -26,14 +26,14 @@ namespace Decore.ClientApp.Controllers
                 var alltickets = _ticketWcfClient.GetTickets();
                 var events = _eventWCFclient.GetEvents();
                 var tickets = new Dictionary<int, int>();
-                foreach (var e in events)
+                foreach (var e in alltickets)
                 {
-                    if(tickets.ContainsKey(e.Id))
+                    if(tickets.ContainsKey(e.EventId))
                     {
-                        tickets[e.Id] += 1; 
+                        tickets[e.EventId] += 1; 
                     }else
                     {
-                        tickets.Add(e.Id, 1);
+                        tickets.Add(e.EventId, 1);
                     }
                 };
 
