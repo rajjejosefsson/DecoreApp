@@ -27,6 +27,10 @@ namespace TicketService
             _ticketRepository.CreateTicket(ticket);
         }
 
+       public ICollection<Ticket> GetTicketByEventId(int eventId)
+        {
+            return _ticketRepository.GetTicketByEventId(eventId);
+        }
 
     }
 }

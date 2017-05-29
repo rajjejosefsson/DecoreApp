@@ -37,5 +37,14 @@ namespace Decore.Data.Repositories
           }
        }
 
+
+        public ICollection<Ticket> GetTicketByEventId(int eventId)
+        {
+            using (var context = new DecoreDbContext())
+            {
+                return context.Tickets.AsNoTracking().Where(t => t.EventId == eventId).ToList();
+            }
+        }
+
     }
 }

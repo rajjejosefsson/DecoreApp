@@ -28,9 +28,12 @@ namespace Decore.ClientApp.Controllers
 
 
                 var viewModel = new TicketViewModel
+           
                 {
                    Tickets = tickets,
-                   Events = events
+                   Events = events,
+                 
+                    
                 };
                 return View(viewModel);
 

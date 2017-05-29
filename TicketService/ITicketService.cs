@@ -18,9 +18,15 @@ namespace TicketService
      
         [OperationContract]
         void CreateTicket(Ticket ticket);
-       
-    //    [OperationContract]
-     //   Ticket GetTicketByUserId(int userId);
+
+        [OperationContract]
+        ICollection<Ticket> GetTicketByEventId(int eventId);
+
+
+
+
+        //    [OperationContract]
+        //   Ticket GetTicketByUserId(int userId);
 
     }
 }
