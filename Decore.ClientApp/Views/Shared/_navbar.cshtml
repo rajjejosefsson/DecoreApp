@@ -74,8 +74,8 @@
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "CreateBeverage" ? "active" : "")">
                     @Html.ActionLink("Skapa Dryck", "Index", "CreateBeverage")
                 </li>
-                <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Tickets" ? "active" : "")">
-                    @Html.ActionLink("Alla Biljetter", "Index", "Tickets")
+                <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Ticket" ? "active" : "")">
+                    @Html.ActionLink("Alla Biljetter", "Index", "Ticket")
                 </li>
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Logout" ? "active" : "")">
                     @Html.ActionLink("Logout", "Logout", "Home")
