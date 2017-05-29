@@ -22,7 +22,7 @@
         <div class="my-account">                  
             <div class="bottom-padding">
                 <div class="title-box">
-                    <h3>Nyligen köpta biljetter</h3>
+                    <h3>Översikt - Biljetter</h3>
                 </div>
                 <!-- Table  -->
                 <div class="table-holder table-responsive">
@@ -30,8 +30,8 @@
                         <thead>
                         <tr class="first last">
                             <th>Event</th>
-                            <th>Senaste biljetten köptes</th>
-                            <th><span class="nobr">Antal Biljetter</span></th>                          
+                            <th>Biljetter slutar säljas</th>
+                            <th><span class="nobr">Sålda biljetter</span></th>                          
                         </tr>
                         </thead>
                         <tbody>
@@ -44,16 +44,7 @@
                                 </td>
 
                                 <td>
-                                    @foreach(var e in Model.Tickets)
-                                    {
-                                        if(events.Id == e.EventId)
-                                        {
-
-
-                                            @e.BoughtAt.ToShortTimeString();
-
-                                        }
-                                    }                                                     
+                                   @events.SaleStop.ToLongDateString()                                                
                                  </td>
 
 
