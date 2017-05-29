@@ -419,7 +419,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Tickets\Index.cshtml" />
+    <Content Include="Views\Ticket\Index.cshtml" />
     <None Include="Service References\TicketServiceReference\TicketService.wsdl" />
     <None Include="Service References\TicketServiceReference\TicketService.xsd">
       <SubType>Designer</SubType>
