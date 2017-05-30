@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using Decore.ClientApp.AlcoholServiceReference;
 using Decore.ClientApp.ViewModels;
@@ -38,6 +39,7 @@ namespace Decore.ClientApp.Controllers
             }
         }
 
+
         public ActionResult Counting()
         {
 
@@ -62,6 +64,36 @@ namespace Decore.ClientApp.Controllers
           return RedirectToAction("Index", "Home");
             }
         }
+
+
+        public ActionResult CountDown(DateTime dateTime)
+        {
+
+            if (Session["userId"] != null || Session["employeeUserId"] != null)
+            {
+                var countings = _beverageWcfClient.GetBeverageCountUpsByDateTime(dateTime);
+
+
+                var beverages = _beverageWcfClient.GetBeverage();
+
+
+                var viewModel = new CountBeverageViewModel
+                {
+                    CountBeverages = countings,
+                    Beverages = beverages,
+                };
+
+
+                return View(viewModel);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
+
+
 
         [HttpPost]
         public ActionResult PostCountBeverage (List<CountBeverage> results)

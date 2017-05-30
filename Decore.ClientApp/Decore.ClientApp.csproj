@@ -446,6 +446,7 @@
     <Content Include="Views\CreateBeverage\Index.cshtml" />
     <Content Include="Views\BeverageList\Index.cshtml" />
     <Content Include="Views\Alcohol\Counting.cshtml" />
+    <Content Include="Views\Alcohol\CountDown.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

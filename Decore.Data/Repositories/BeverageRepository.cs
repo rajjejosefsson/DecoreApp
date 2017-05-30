@@ -112,7 +112,7 @@ namespace Decore.Data.Repositories
         {
             using (var context = new DecoreDbContext())
             {
-                return context.CountBeverages.AsNoTracking().Where(t => t.CountTime == countTime).ToList();
+                return context.CountBeverages.AsNoTracking().Where(t => t.CountTime.ToString() == countTime.ToString()).ToList();
             }
         }
 
