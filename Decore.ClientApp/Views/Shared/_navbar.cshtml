@@ -70,7 +70,10 @@
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Alcohol" ? "active" : "")">
                     @Html.ActionLink("Uppvägning", "Index", "Alcohol")
                 </li>
-                
+
+                <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Alcohol" ? "active" : "")">
+                    @Html.ActionLink("Alla uppvägningar", "Counting", "Alcohol")
+                </li>
 
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "CreateBeverage" ? "active" : "")">
                     @Html.ActionLink("Skapa Dryck", "Index", "CreateBeverage")

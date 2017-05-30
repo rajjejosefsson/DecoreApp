@@ -35,7 +35,16 @@ namespace Decore.ClientApp.Controllers
             return View(viewModel);
         }
 
+        public ActionResult Counting()
+        {
 
+            if (Session["userId"] == null)
+                return RedirectToAction("Index", "Home");
+
+
+
+            return View("Counting");
+        }
 
         [HttpPost]
         public ActionResult PostCountBeverage (List<CountBeverage> results)
