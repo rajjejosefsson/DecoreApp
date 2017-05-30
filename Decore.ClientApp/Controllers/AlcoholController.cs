@@ -42,14 +42,16 @@ namespace Decore.ClientApp.Controllers
                 return RedirectToAction("Index", "Home");
 
 
-           var countings = _beverageWcfClient.GetBeverageCountUps();
+            var countings = _beverageWcfClient.GetBeverageCountUps();
             var beverages = _beverageWcfClient.GetBeverage();
+            var countDateTimes = _beverageWcfClient.GetCountDateTimes();
 
 
             var viewModel = new CountBeverageViewModel
             {
                 CountBeverages = countings,
-                Beverages = beverages
+                Beverages = beverages,
+                CountDateTimes = countDateTimes
             };
 
 

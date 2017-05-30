@@ -7,6 +7,8 @@ namespace Decore.ClientApp.ViewModels
     {
         public ICollection<CountBeverage> CountBeverages { get; set; }
         public ICollection<Beverage> Beverages { get; set; }
+        public ICollection<CountDateTime> CountDateTimes { get; set; }
+
 
     }
 }

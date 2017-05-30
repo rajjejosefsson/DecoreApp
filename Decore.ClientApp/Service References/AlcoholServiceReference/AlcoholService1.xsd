@@ -34,4 +34,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CountBeverage" nillable="true" type="tns:CountBeverage" />
+  <xs:complexType name="ArrayOfCountDateTime">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CountDateTime" nillable="true" type="tns:CountDateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCountDateTime" nillable="true" type="tns:ArrayOfCountDateTime" />
+  <xs:complexType name="CountDateTime">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CountDateTime" nillable="true" type="tns:CountDateTime" />
 </xs:schema>

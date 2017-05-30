@@ -295,6 +295,7 @@
     <Content Include="Properties\DataSources\Decore.Models.Ticket.datasource" />
     <Content Include="Properties\DataSources\Decore.Models.Beverage.datasource" />
     <Content Include="Properties\DataSources\Decore.Models.CountBeverage.datasource" />
+    <Content Include="Properties\DataSources\Decore.Models.CountDateTime.datasource" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
