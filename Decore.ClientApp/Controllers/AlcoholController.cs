@@ -42,8 +42,18 @@ namespace Decore.ClientApp.Controllers
                 return RedirectToAction("Index", "Home");
 
 
+           var countings = _beverageWcfClient.GetBeverageCountUps();
+            var beverages = _beverageWcfClient.GetBeverage();
 
-            return View("Counting");
+
+            var viewModel = new CountBeverageViewModel
+            {
+                CountBeverages = countings,
+                Beverages = beverages
+            };
+
+
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -69,8 +79,8 @@ namespace Decore.ClientApp.Controllers
                  _beverageWcfClient.PostBeverageCountUp(countItem);
             }
 
+            return RedirectToAction("Counting", "Alcohol");
 
-            return View("Index");
         }
     }
 }

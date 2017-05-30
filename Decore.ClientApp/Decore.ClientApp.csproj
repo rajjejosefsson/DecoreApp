@@ -261,6 +261,7 @@
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AddTicketViewModel.cs" />
+    <Compile Include="ViewModels\CountBeverageViewModel.cs" />
     <Compile Include="ViewModels\BeverageViewModel.cs" />
     <Compile Include="ViewModels\CreateBeverageViewModel.cs" />
     <Compile Include="ViewModels\EventViewModel.cs" />
