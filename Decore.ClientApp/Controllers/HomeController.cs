@@ -50,8 +50,8 @@ namespace Decore.ClientApp.Controllers
         public ActionResult LoginEmployee(LoginViewModel viewModel)
         {
           
-            // fungerar
-         //var studentUser = _LoginWCFclient.LoginStudent(viewModel.Username, viewModel.Password);
+         
+        
             var employeeUser = _LoginWCFclient.LoginEmployee(viewModel.Username, viewModel.Password);
 
 
