@@ -12,7 +12,7 @@ namespace Decore.ClientApp.Controllers
         {
             var beverages = _beverageWcfClient.GetBeverage();
 
-            if (Session["userId"] != null)
+            if (Session["userId"] != null || Session["employeeUserId"] != null)
             {
                 var viewModel = new BeverageViewModel
                 {

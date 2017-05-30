@@ -13,11 +13,15 @@ namespace Decore.ClientApp.Controllers
 
         public ActionResult Index()
         {
-            var viewModel = new CreateBeverageViewModel
+            if (Session["employeeUserId"] != null|| Session["userId"] != null )
+            {
+          var viewModel = new CreateBeverageViewModel
             {
                
             };
-            return View(viewModel);
+                return View(viewModel);
+            }
+            return RedirectToAction("Index", "Home");
         }
 
 
