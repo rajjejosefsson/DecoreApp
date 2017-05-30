@@ -14,11 +14,9 @@ namespace Decore.ClientApp.Controllers
         public ActionResult Index()
         {
 
-            if (Session["userId"] == null || Session["employeeUserId"] == null)
-                return RedirectToAction("Index", "Home");
-
-
-            var measures = new List<Measure>
+            if (Session["userId"] != null || Session["employeeUserId"] != null)
+            {
+                var measures = new List<Measure>
             {
                 new Measure {MeasureId = 1, MeasureType = "Styck"},
                 new Measure {MeasureId = 2, MeasureType = "Gram"},
@@ -26,34 +24,41 @@ namespace Decore.ClientApp.Controllers
                 new Measure {MeasureId = 4, MeasureType = "Liter"}
             };
 
-            var viewModel = new BeverageViewModel
-            {
-                Beverages = _beverageWcfClient.GetBeverage(),
-                Measures = measures
-            };
+                var viewModel = new BeverageViewModel
+                {
+                    Beverages = _beverageWcfClient.GetBeverage(),
+                    Measures = measures
+                };
 
-            return View(viewModel);
+                return View(viewModel);
+            }
+            else { 
+          
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         public ActionResult Counting()
         {
 
-            if (Session["userId"] == null)
-                return RedirectToAction("Index", "Home");
-
-
-           var countings = _beverageWcfClient.GetBeverageCountUps();
-            var beverages = _beverageWcfClient.GetBeverage();
-
-
-            var viewModel = new CountBeverageViewModel
+            if (Session["userId"] != null || Session["employeeUserId"] != null)
             {
-                CountBeverages = countings,
-                Beverages = beverages
-            };
+                var countings = _beverageWcfClient.GetBeverageCountUps();
+                var beverages = _beverageWcfClient.GetBeverage();
 
 
-            return View(viewModel);
+                var viewModel = new CountBeverageViewModel
+                {
+                    CountBeverages = countings,
+                    Beverages = beverages
+                };
+
+
+                return View(viewModel);
+            }
+            else {
+          return RedirectToAction("Index", "Home");
+            }
         }
 
         [HttpPost]

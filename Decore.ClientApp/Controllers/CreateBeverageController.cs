@@ -13,7 +13,7 @@ namespace Decore.ClientApp.Controllers
 
         public ActionResult Index()
         {
-            if (Session["employeeUserId"] != null|| Session["userId"] != null )
+            if (Session["employeeUserId"] != null || Session["userId"] != null )
             {
           var viewModel = new CreateBeverageViewModel
             {
