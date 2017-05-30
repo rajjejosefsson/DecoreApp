@@ -81,6 +81,14 @@ namespace Decore.Data.Repositories
             }
         }
 
+        public void PostCountDateTime(CountDateTime countDateTime)
+        {
+            using (var context = new DecoreDbContext())
+            {
+                context.CountDateTimes.Add(countDateTime);
+                context.SaveChanges();
+            }
+        }
 
 
         public ICollection<CountBeverage> GetBeverageCountUps()
@@ -101,7 +109,7 @@ namespace Decore.Data.Repositories
         }
 
 
-
+       
 
 
 

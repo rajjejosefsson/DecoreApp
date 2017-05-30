@@ -18,6 +18,8 @@ namespace Decore.Data
         public DbSet<Beverage> Beverages { get; set; }
 
         public DbSet<CountBeverage> CountBeverages { get; set; }
+        public DbSet<CountDateTime> CountDateTimes { get; set; }
+
 
     }
 }

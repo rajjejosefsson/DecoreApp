@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Beverage.cs" />
+    <Compile Include="CountDateTime.cs" />
     <Compile Include="CountBeverage.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="EventType.cs" />

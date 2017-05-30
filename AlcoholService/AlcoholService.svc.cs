@@ -52,5 +52,11 @@ namespace AlcoholService
         {
             _beverageRepository.PostBeverageCountUp(countBeverageItem);
         }
+
+        public void PostCountDateTime(DateTime dateTime)
+        {
+            var countTime = new CountDateTime { CountTime = dateTime };
+            _beverageRepository.PostCountDateTime(countTime);
+        }
     }
 }

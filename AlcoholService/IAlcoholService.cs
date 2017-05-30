@@ -31,8 +31,9 @@ namespace AlcoholService
         [OperationContract]
         void PostBeverageCountUp(CountBeverage countBeverageItem);
 
+        [OperationContract]
+        void PostCountDateTime(DateTime countTime);
 
-        
 
 
     }
