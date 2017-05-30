@@ -4,7 +4,7 @@ using Decore.ClientApp.EmployeeServiceReference;
 using Decore.ClientApp.EventServiceReference;
 using Decore.ClientApp.ViewModels;
 using Decore.Models;
-using log4net;
+//using log4net;
 
 namespace Decore.ClientApp.Controllers
 {
@@ -12,12 +12,12 @@ namespace Decore.ClientApp.Controllers
     {
         private readonly EmployeeServiceWCFClient _employeeWcfClient = new EmployeeServiceWCFClient();
         private readonly EventServiceClient _eventWCFclient = new EventServiceClient();
-        private static readonly ILog logger = LogManager.GetLogger(typeof(CreateEventController));
+       // private static readonly ILog logger = LogManager.GetLogger(typeof(CreateEventController));
 
         
         public ActionResult Index()
         {
-            logger.Debug("Hello someone called create event");
+       //     logger.Debug("Hello someone called create event");
             if(Session["userId"] != null)
             {
                 var eventsTypes = _eventWCFclient.GetEventTypes();

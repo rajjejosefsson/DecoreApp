@@ -1,19 +1,19 @@
 ﻿using System.Web.Mvc;
 using Decore.ClientApp.LoginServiceReference;
 using Decore.ClientApp.ViewModels;
-using log4net;
+//using log4net;
 
 namespace Decore.ClientApp.Controllers
 {
     public class HomeController : Controller
     {
         private readonly LoginServiceClient _LoginWCFclient = new LoginServiceClient();
-        private static readonly ILog logger = LogManager.GetLogger(typeof(CreateEventController));
+    //    private static readonly ILog logger = LogManager.GetLogger(typeof(CreateEventController));
 
 
         public ActionResult Index()
         {
-            logger.Debug("Hello someone called tried to login");
+          //  logger.Debug("Hello someone called tried to login");
             var viewModel = new LoginViewModel
             {
                 Username = "",
@@ -56,9 +56,9 @@ namespace Decore.ClientApp.Controllers
 
 
             // Load login
-            logger.Debug("Hello someone called loginEmployee");
+          //  logger.Debug("Hello someone called loginEmployee");
             if (employeeUser != null) {  
-                logger.Debug("Loggin worked");
+          //      logger.Debug("Loggin worked");
 
                 Session["userId"] = employeeUser.Id;
                 var userId = Session["userId"];
@@ -68,7 +68,7 @@ namespace Decore.ClientApp.Controllers
             }
 
             else {
-                logger.Debug("Loggin failed");
+             //   logger.Debug("Loggin failed");
                 ModelState.AddModelError("", "Username or Password is wrong");
                 return RedirectToAction("Index", "Home");
             }
