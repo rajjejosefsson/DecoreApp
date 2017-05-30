@@ -1,24 +1,33 @@
 ﻿using System.Web.Mvc;
 using Decore.ClientApp.LoginServiceReference;
 using Decore.ClientApp.ViewModels;
+using log4net;
 
 namespace Decore.ClientApp.Controllers
 {
     public class HomeController : Controller
     {
         private readonly LoginServiceClient _LoginWCFclient = new LoginServiceClient();
+        private static readonly ILog logger = LogManager.GetLogger(typeof(CreateEventController));
 
 
         public ActionResult Index()
         {
-
+            logger.Debug("Hello someone called tried to login");
             var viewModel = new LoginViewModel
             {
                 Username = "",
                 Password = ""
             };
-
-            return View(viewModel);
+            if (Session["userId"] != null)
+            {
+                return RedirectToAction("Index", "EventList");
+            }
+            else
+            {
+                return View(viewModel);
+            }
+            
         }
 
         public ActionResult About()
@@ -40,20 +49,26 @@ namespace Decore.ClientApp.Controllers
         [HttpPost]
         public ActionResult LoginEmployee(LoginViewModel viewModel)
         {
+          
             // fungerar
-            var studentUser = _LoginWCFclient.LoginStudent(viewModel.Username, viewModel.Password);
+         //var studentUser = _LoginWCFclient.LoginStudent(viewModel.Username, viewModel.Password);
+            var employeeUser = _LoginWCFclient.LoginEmployee(viewModel.Username, viewModel.Password);
+
 
             // Load login
+            logger.Debug("Hello someone called loginEmployee");
+            if (employeeUser != null) {  
+                logger.Debug("Loggin worked");
 
-            if (studentUser.StudentId != null) {
-
-                Session["userId"] = studentUser.Id;
+                Session["userId"] = employeeUser.Id;
                 var userId = Session["userId"];
                
                 return RedirectToAction("Index", "EventList");
+
             }
 
             else {
+                logger.Debug("Loggin failed");
                 ModelState.AddModelError("", "Username or Password is wrong");
                 return RedirectToAction("Index", "Home");
             }
@@ -61,7 +76,7 @@ namespace Decore.ClientApp.Controllers
             
 
             // Fungerar inte
-            // var employeeUser = _LoginWCFclient.LoginEmployee(viewModel.Username, viewModel.Password);
+            // 
         }
         public ActionResult Logout()
         {
