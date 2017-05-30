@@ -73,13 +73,17 @@ namespace Decore.ClientApp.Controllers
             {
                 var countings = _beverageWcfClient.GetBeverageCountUpsByDateTime(dateTime);
 
+                // temp
+                var countings2 = _beverageWcfClient.GetBeverageCountUps();
+                var testCountings = countings2.Where(d => d.CountTime.ToString() == dateTime.ToString()).ToList();
+
 
                 var beverages = _beverageWcfClient.GetBeverage();
 
 
                 var viewModel = new CountBeverageViewModel
                 {
-                    CountBeverages = countings,
+                    CountBeverages = testCountings,
                     Beverages = beverages,
                 };
 
