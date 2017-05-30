@@ -53,17 +53,33 @@ namespace Decore.ClientApp.Controllers
          
         
             var employeeUser = _LoginWCFclient.LoginEmployee(viewModel.Username, viewModel.Password);
+          
 
 
             // Load login
           //  logger.Debug("Hello someone called loginEmployee");
-            if (employeeUser != null) {  
-          //      logger.Debug("Loggin worked");
+            if (employeeUser != null) {
+                //      logger.Debug("Loggin worked");
+                foreach (var e in employeeUser.EmployeeInfo.Roles)
+                {
+                    if (e.Section.Name == "SuperAdmin" || e.Section.Name == "SA")
+                    {
+                        Session["userId"] = employeeUser.Id;
+                        var userId = Session["userId"];
 
-                Session["userId"] = employeeUser.Id;
-                var userId = Session["userId"];
-               
-                return RedirectToAction("Index", "EventList");
+                        return RedirectToAction("Index", "EventList");
+                    }
+                    else
+                    {
+                        Session["employeeUserId"] = employeeUser.Id;
+                        var employeeUserId = Session["employeeUserId"];
+
+                        return RedirectToAction("Index", "BeverageList");
+                    }
+                }
+
+
+                return RedirectToAction("Index", "Home");
 
             }
 
@@ -81,6 +97,7 @@ namespace Decore.ClientApp.Controllers
         public ActionResult Logout()
         {
             Session["userId"] = null;
+            Session["employeeUserId"] = null;
             return RedirectToAction("Index", "Home");
         }
     }

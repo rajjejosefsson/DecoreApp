@@ -14,7 +14,7 @@ namespace Decore.ClientApp.Controllers
         public ActionResult Index()
         {
 
-            if (Session["userId"] == null)
+            if (Session["userId"] == null || Session["employeeUserId"] == null)
                 return RedirectToAction("Index", "Home");
 
 

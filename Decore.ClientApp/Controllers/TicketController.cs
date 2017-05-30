@@ -21,17 +21,11 @@ namespace Decore.ClientApp.Controllers
         {
 
 
-            if (Session["userId"] != null)
+            if (Session["userId"] != null || Session["employeeUserId"] != null)
             {
 
                 var tickets = _ticketWcfClient.GetTickets();
                 var events = _eventWCFclient.GetEvents();
-
-
-
-
-                    
-              
 
 
                 var alltickets = new Dictionary<int, int>();

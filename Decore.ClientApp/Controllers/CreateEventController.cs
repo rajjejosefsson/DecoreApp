@@ -18,7 +18,7 @@ namespace Decore.ClientApp.Controllers
         public ActionResult Index()
         {
        //     logger.Debug("Hello someone called create event");
-            if(Session["userId"] != null)
+            if(Session["userId"] != null || Session["employeeUserId"] != null)
             {
                 var eventsTypes = _eventWCFclient.GetEventTypes();
                 var sectionTypes = _employeeWcfClient.GetAllSections();

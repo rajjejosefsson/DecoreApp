@@ -49,38 +49,37 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                @if (Session["userId"] == null) {  
-                <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Home" ? "active" : "")">
-                    @Html.ActionLink("Hem", "Index", "Home")
-                </li>
-                }
-                   @if (Session["userId"] != null) { 
+            
+                   @if (Session["userId"] != null)
+                   {
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "EventList" ? "active" : "")">
                     @Html.ActionLink("Alla Event", "Index", "EventList")
                 </li>
-
+                   }
+                @if (Session["employeeUserId"] != null || Session["userId"] != null) { 
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "BeverageList" ? "active" : "")">
                     @Html.ActionLink("Alla Drycker", "Index", "BeverageList")
                 </li>
-
+                }
+                 @if (Session["userId"] != null) { 
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "CreateEvent" ? "active" : "")">
                     @Html.ActionLink("Skapa Event", "Index", "CreateEvent")
                 </li>
-
+                 }
+                 @if (Session["employeeUserId"] != null || Session["userId"] != null)
+                 {
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Alcohol" ? "active" : "")">
                     @Html.ActionLink("Uppvägning", "Index", "Alcohol")
                 </li>
-
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Alcohol" ? "active" : "")">
                     @Html.ActionLink("Alla uppvägningar", "Counting", "Alcohol")
                 </li>
-
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "CreateBeverage" ? "active" : "")">
                     @Html.ActionLink("Skapa Dryck", "Index", "CreateBeverage")
                 </li>
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Ticket" ? "active" : "")">
                     @Html.ActionLink("Alla Biljetter", "Index", "Ticket")
-                </li>
+                </li>     
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Logout" ? "active" : "")">
                     @Html.ActionLink("Logout", "Logout", "Home")
                 </li>
