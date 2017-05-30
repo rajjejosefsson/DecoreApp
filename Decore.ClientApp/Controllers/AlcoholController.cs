@@ -18,8 +18,6 @@ namespace Decore.ClientApp.Controllers
                 return RedirectToAction("Index", "Home");
 
 
-
-
             var measures = new List<Measure>
             {
                 new Measure {MeasureId = 1, MeasureType = "Styck"},
@@ -49,14 +47,19 @@ namespace Decore.ClientApp.Controllers
                 // create object to send to db with the global countTime above
                 var countItem = new CountBeverage()
                 {
-                    CountTime = countTime,
+                    CountTime = countTime, 
                     BeverageId = countResult.BeverageId,
                     Amount = countResult.Amount,
-                    Unit = countResult.Unit,
                 };
+
+                // Db will look like this:
+                // Id, DateTime, BeverageId, Amount
+                // Id, DateTime, BeverageId, Amount
+                // Id, DateTime, BeverageId, Amount
+
+                 _beverageWcfClient.PostBeverageCountUp(countItem);
             }
 
-            // Send countItem to db (new tabel of the CountBeverage model)
 
             return View("Index");
         }

@@ -17,22 +17,28 @@
 
                 
                 <form id="myForm" class="form-group">        
-                   
-                    <label for="amount">Amount</label>
-                    <input type="number" name="amount" id="amount" class="form-control">
+                                       
+                  
+                    <div class="dropdown form-group">
+                        <label for="beverage">Välj dryck</label>
+
+                        <select name="beverage" id="beverageId" class="form-control">
+                            @foreach (var beverage in Model.Beverages)
+                            {
+                                <option value="@(beverage.Id)">@beverage.Name @beverage.Percent% @beverage.Amount @beverage.UnitOfMeasure</option>
+                            }
+                        </select>
+                    </div>
                     
-                    
-                    <!-- Dropdown pass id -->
-                    <label for="beverage">Beverage</label>
-                    <input type="number" name="beverage" id="beverageId" class="form-control">
-                    
-                    <!-- Dropdown pass id -->
-                    <label for="unit">Unit Of Measurment</label>
-                    <input type="number" name="unit" id="unitId" class="form-control">
-                    
+                    <div class="form-group">
+                        <label for="amount">Antal</label>
+                        <input type="number" name="amount" id="amount" class="form-control">
+                    </div>
                     
 
-                    <button type="button" class="btn btn-primary onAdd">Lägg till</button>
+                
+
+                    <button type="button" class="btn btn-primary onAdd">Lägg till ny</button>
                 </form>
 
                 <hr/>
@@ -40,11 +46,11 @@
                 
 
 
-                <ul id="measureListUl">
+                <ul id="measureListUl" class="list-group">
                     
                 </ul>
 
-                <button type="button" class="btn btn-primary onPostButton">POST</button>
+                <button type="button" class="btn btn-success onPostButton">Skicka uppvägning</button>
 
             </div>
         </div>
@@ -69,31 +75,27 @@
 
 
                 $("#myForm").on("click", ".onAdd", function () {
-
-                    var amount = $('#amount').val();
-                    var unitId = $('#unitId').val();
-                    console.log(unitId);
+                    var beverageInfo = $('#beverageId  option:selected').text();
                     var beverageId = $('#beverageId').val();
-                    records.push({ BeverageId: beverageId, Amount: amount, UnitId: unitId });
+                    var amount = $('#amount').val();
+                    records.push({ BeverageId: beverageId, Amount: amount });
 
                     $("#measureListUl").append("" +
-                        "<li>" +
-                            "<p>" +
-                                "Amount: " + amount +  " " +  "Beverage: " + beverageId +
-                            "</p>" +
+                        "<li class='list-group-item'>" +
+                        "<p>" + beverageInfo + "<strong class='pull-right'>" + amount + "st</strong></p>" +
                         "</li>");
                 });
 
+                
+
 
                 $(".onPostButton").on("click", function () {
-
                     var results = records;
-
                     $.post('@Url.Action("PostCountBeverage", "Alcohol")', { results: results },
                         function () {
                             console.log('success');
                         });
-                });
+                  });
 
 
                 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ServiceModel;
 using Decore.Models;
 
@@ -19,5 +20,20 @@ namespace AlcoholService
 
         [OperationContract]
         void DeleteBeverageById(int beverageId);
+
+
+        [OperationContract]
+        ICollection<CountBeverage> GetBeverageCountUps();
+
+        [OperationContract]
+        ICollection<CountBeverage> GetBeverageCountUpsByDateTime(DateTime countTime);
+
+        [OperationContract]
+        void PostBeverageCountUp(CountBeverage countBeverageItem);
+
+
+        
+
+
     }
 }

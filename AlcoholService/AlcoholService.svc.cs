@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Decore.Data.Repositories;
 using Decore.Models;
 
@@ -33,6 +34,23 @@ namespace AlcoholService
         public void DeleteBeverageById(int beverageId)
         {
             _beverageRepository.DeleteBeverageById(beverageId);
+        }
+
+
+
+        public ICollection<CountBeverage> GetBeverageCountUps()
+        {
+            return _beverageRepository.GetBeverageCountUps();
+        }
+
+        public ICollection<CountBeverage> GetBeverageCountUpsByDateTime(DateTime countTime)
+        {
+            return _beverageRepository.GetBeverageCountUpsByDateTime(countTime);
+        }
+
+        public void PostBeverageCountUp(CountBeverage countBeverageItem)
+        {
+            _beverageRepository.PostBeverageCountUp(countBeverageItem);
         }
     }
 }

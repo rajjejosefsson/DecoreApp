@@ -16,5 +16,8 @@ namespace Decore.Data
         public DbSet<Ticket> Tickets { get; set; }
 
         public DbSet<Beverage> Beverages { get; set; }
+
+        public DbSet<CountBeverage> CountBeverages { get; set; }
+
     }
 }

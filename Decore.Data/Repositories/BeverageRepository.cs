@@ -66,5 +66,46 @@ namespace Decore.Data.Repositories
                 context.SaveChanges();
             }
         }
+
+
+
+
+        // ------NEW------
+
+        public void PostBeverageCountUp(CountBeverage countBeverageItem)
+        {
+            using (var context = new DecoreDbContext())
+            {
+                context.CountBeverages.Add(countBeverageItem);
+                context.SaveChanges();
+            }
+        }
+
+
+
+        public ICollection<CountBeverage> GetBeverageCountUps()
+        {
+            using (var context = new DecoreDbContext())
+            {
+                return context.CountBeverages.AsNoTracking().ToList();
+            }
+        }
+
+
+        public ICollection<CountBeverage> GetBeverageCountUpsByDateTime(DateTime countTime)
+        {
+            using (var context = new DecoreDbContext())
+            {
+                return context.CountBeverages.AsNoTracking().Where(t => t.CountTime == countTime).ToList();
+            }
+        }
+
+
+
+
+
+
+
+
     }
 }
