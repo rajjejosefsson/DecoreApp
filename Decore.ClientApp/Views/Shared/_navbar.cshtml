@@ -49,10 +49,11 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
+                @if (Session["userId"] == null) {  
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Home" ? "active" : "")">
                     @Html.ActionLink("Hem", "Index", "Home")
                 </li>
-            
+                }
                    @if (Session["userId"] != null) { 
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "EventList" ? "active" : "")">
                     @Html.ActionLink("Alla Event", "Index", "EventList")
