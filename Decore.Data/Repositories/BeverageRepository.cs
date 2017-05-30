@@ -90,6 +90,14 @@ namespace Decore.Data.Repositories
             }
         }
 
+        public ICollection<CountDateTime> GetCountDateTimes()
+        {
+            using (DecoreDbContext context = new DecoreDbContext())
+            {
+                return context.CountDateTimes.AsNoTracking().ToList();
+            }
+        }
+
 
         public ICollection<CountBeverage> GetBeverageCountUps()
         {
