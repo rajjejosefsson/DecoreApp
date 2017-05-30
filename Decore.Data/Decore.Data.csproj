@@ -63,6 +63,10 @@
     <Compile Include="Migrations\201705301401208_countbeverage.Designer.cs">
       <DependentUpon>201705301401208_countbeverage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705302220498_tableCountDate.cs" />
+    <Compile Include="Migrations\201705302220498_tableCountDate.Designer.cs">
+      <DependentUpon>201705302220498_tableCountDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BeverageRepository.cs" />
@@ -131,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705301401208_countbeverage.resx">
       <DependentUpon>201705301401208_countbeverage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705302220498_tableCountDate.resx">
+      <DependentUpon>201705302220498_tableCountDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
