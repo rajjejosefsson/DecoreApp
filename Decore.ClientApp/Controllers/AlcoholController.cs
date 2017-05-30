@@ -45,12 +45,14 @@ namespace Decore.ClientApp.Controllers
             {
                 var countings = _beverageWcfClient.GetBeverageCountUps();
                 var beverages = _beverageWcfClient.GetBeverage();
+                var countTimes = _beverageWcfClient.GetCountDateTimes();
 
 
                 var viewModel = new CountBeverageViewModel
                 {
                     CountBeverages = countings,
-                    Beverages = beverages
+                    Beverages = beverages,
+                    CountDateTimes = countTimes
                 };
 
 
@@ -68,19 +70,12 @@ namespace Decore.ClientApp.Controllers
 
             foreach (var countResult in results)
             {
-                // create object to send to db with the global countTime above
                 var countItem = new CountBeverage()
                 {
                     CountTime = countTime, 
                     BeverageId = countResult.BeverageId,
                     Amount = countResult.Amount,
                 };
-
-                // Db will look like this:
-                // Id, DateTime, BeverageId, Amount
-                // Id, DateTime, BeverageId, Amount
-                // Id, DateTime, BeverageId, Amount
-
                  _beverageWcfClient.PostBeverageCountUp(countItem);
             }
 
