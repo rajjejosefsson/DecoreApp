@@ -56,6 +56,12 @@ namespace Decore.ClientApp.AlcoholServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlcoholService/PostBeverageCountUp", ReplyAction="http://tempuri.org/IAlcoholService/PostBeverageCountUpResponse")]
         System.Threading.Tasks.Task PostBeverageCountUpAsync(Decore.Models.CountBeverage countBeverageItem);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlcoholService/PostCountDateTime", ReplyAction="http://tempuri.org/IAlcoholService/PostCountDateTimeResponse")]
+        void PostCountDateTime(System.DateTime countTime);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlcoholService/PostCountDateTime", ReplyAction="http://tempuri.org/IAlcoholService/PostCountDateTimeResponse")]
+        System.Threading.Tasks.Task PostCountDateTimeAsync(System.DateTime countTime);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -139,6 +145,14 @@ namespace Decore.ClientApp.AlcoholServiceReference {
         
         public System.Threading.Tasks.Task PostBeverageCountUpAsync(Decore.Models.CountBeverage countBeverageItem) {
             return base.Channel.PostBeverageCountUpAsync(countBeverageItem);
+        }
+        
+        public void PostCountDateTime(System.DateTime countTime) {
+            base.Channel.PostCountDateTime(countTime);
+        }
+        
+        public System.Threading.Tasks.Task PostCountDateTimeAsync(System.DateTime countTime) {
+            return base.Channel.PostCountDateTimeAsync(countTime);
         }
     }
 }

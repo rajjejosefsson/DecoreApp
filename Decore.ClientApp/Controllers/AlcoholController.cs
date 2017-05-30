@@ -79,7 +79,7 @@ namespace Decore.ClientApp.Controllers
                  _beverageWcfClient.PostBeverageCountUp(countItem);
             }
 
-            // _beverageWcfClient.PostCountDateTime(countTime);
+            _beverageWcfClient.PostCountDateTime(countTime);
 
 
             return RedirectToAction("Counting", "Alcohol");

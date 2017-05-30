@@ -58,5 +58,10 @@ namespace AlcoholService
             var countTime = new CountDateTime { CountTime = dateTime };
             _beverageRepository.PostCountDateTime(countTime);
         }
+
+        public ICollection<CountDateTime> GetCountDateTimes()
+        {
+           return _beverageRepository.GetCountDateTimes();
+        }
     }
 }

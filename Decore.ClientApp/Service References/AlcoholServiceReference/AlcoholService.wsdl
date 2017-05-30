@@ -49,6 +49,12 @@
   <wsdl:message name="IAlcoholService_PostBeverageCountUp_OutputMessage">
     <wsdl:part name="parameters" element="tns:PostBeverageCountUpResponse" />
   </wsdl:message>
+  <wsdl:message name="IAlcoholService_PostCountDateTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostCountDateTime" />
+  </wsdl:message>
+  <wsdl:message name="IAlcoholService_PostCountDateTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostCountDateTimeResponse" />
+  </wsdl:message>
   <wsdl:portType name="IAlcoholService">
     <wsdl:operation name="GetBeverage">
       <wsdl:input wsaw:Action="http://tempuri.org/IAlcoholService/GetBeverage" message="tns:IAlcoholService_GetBeverage_InputMessage" />
@@ -77,6 +83,10 @@
     <wsdl:operation name="PostBeverageCountUp">
       <wsdl:input wsaw:Action="http://tempuri.org/IAlcoholService/PostBeverageCountUp" message="tns:IAlcoholService_PostBeverageCountUp_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAlcoholService/PostBeverageCountUpResponse" message="tns:IAlcoholService_PostBeverageCountUp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostCountDateTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAlcoholService/PostCountDateTime" message="tns:IAlcoholService_PostCountDateTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAlcoholService/PostCountDateTimeResponse" message="tns:IAlcoholService_PostCountDateTime_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IAlcoholService" type="tns:IAlcoholService">
@@ -137,6 +147,15 @@
     </wsdl:operation>
     <wsdl:operation name="PostBeverageCountUp">
       <soap:operation soapAction="http://tempuri.org/IAlcoholService/PostBeverageCountUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostCountDateTime">
+      <soap:operation soapAction="http://tempuri.org/IAlcoholService/PostCountDateTime" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

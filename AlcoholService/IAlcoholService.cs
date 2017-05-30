@@ -34,7 +34,11 @@ namespace AlcoholService
         [OperationContract]
         void PostCountDateTime(DateTime countTime);
 
+        [OperationContract]
+        ICollection<CountDateTime> GetCountDateTimes();
 
+
+       
 
     }
 }
