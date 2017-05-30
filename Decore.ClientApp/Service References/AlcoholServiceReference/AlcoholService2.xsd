@@ -51,4 +51,42 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetBeverageCountUps">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBeverageCountUpsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Decore.Models" minOccurs="0" name="GetBeverageCountUpsResult" nillable="true" type="q4:ArrayOfCountBeverage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBeverageCountUpsByDateTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="countTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBeverageCountUpsByDateTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Decore.Models" minOccurs="0" name="GetBeverageCountUpsByDateTimeResult" nillable="true" type="q5:ArrayOfCountBeverage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostBeverageCountUp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Decore.Models" minOccurs="0" name="countBeverageItem" nillable="true" type="q6:CountBeverage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostBeverageCountUpResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

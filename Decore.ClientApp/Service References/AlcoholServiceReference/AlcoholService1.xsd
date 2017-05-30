@@ -19,4 +19,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Beverage" nillable="true" type="tns:Beverage" />
+  <xs:complexType name="ArrayOfCountBeverage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CountBeverage" nillable="true" type="tns:CountBeverage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCountBeverage" nillable="true" type="tns:ArrayOfCountBeverage" />
+  <xs:complexType name="CountBeverage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:int" />
+      <xs:element minOccurs="0" name="BeverageId" type="xs:int" />
+      <xs:element minOccurs="0" name="CountTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CountBeverage" nillable="true" type="tns:CountBeverage" />
 </xs:schema>

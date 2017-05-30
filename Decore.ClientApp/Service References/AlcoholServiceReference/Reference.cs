@@ -38,6 +38,24 @@ namespace Decore.ClientApp.AlcoholServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlcoholService/DeleteBeverageById", ReplyAction="http://tempuri.org/IAlcoholService/DeleteBeverageByIdResponse")]
         System.Threading.Tasks.Task DeleteBeverageByIdAsync(int beverageId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlcoholService/GetBeverageCountUps", ReplyAction="http://tempuri.org/IAlcoholService/GetBeverageCountUpsResponse")]
+        Decore.Models.CountBeverage[] GetBeverageCountUps();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlcoholService/GetBeverageCountUps", ReplyAction="http://tempuri.org/IAlcoholService/GetBeverageCountUpsResponse")]
+        System.Threading.Tasks.Task<Decore.Models.CountBeverage[]> GetBeverageCountUpsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlcoholService/GetBeverageCountUpsByDateTime", ReplyAction="http://tempuri.org/IAlcoholService/GetBeverageCountUpsByDateTimeResponse")]
+        Decore.Models.CountBeverage[] GetBeverageCountUpsByDateTime(System.DateTime countTime);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlcoholService/GetBeverageCountUpsByDateTime", ReplyAction="http://tempuri.org/IAlcoholService/GetBeverageCountUpsByDateTimeResponse")]
+        System.Threading.Tasks.Task<Decore.Models.CountBeverage[]> GetBeverageCountUpsByDateTimeAsync(System.DateTime countTime);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlcoholService/PostBeverageCountUp", ReplyAction="http://tempuri.org/IAlcoholService/PostBeverageCountUpResponse")]
+        void PostBeverageCountUp(Decore.Models.CountBeverage countBeverageItem);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlcoholService/PostBeverageCountUp", ReplyAction="http://tempuri.org/IAlcoholService/PostBeverageCountUpResponse")]
+        System.Threading.Tasks.Task PostBeverageCountUpAsync(Decore.Models.CountBeverage countBeverageItem);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -97,6 +115,30 @@ namespace Decore.ClientApp.AlcoholServiceReference {
         
         public System.Threading.Tasks.Task DeleteBeverageByIdAsync(int beverageId) {
             return base.Channel.DeleteBeverageByIdAsync(beverageId);
+        }
+        
+        public Decore.Models.CountBeverage[] GetBeverageCountUps() {
+            return base.Channel.GetBeverageCountUps();
+        }
+        
+        public System.Threading.Tasks.Task<Decore.Models.CountBeverage[]> GetBeverageCountUpsAsync() {
+            return base.Channel.GetBeverageCountUpsAsync();
+        }
+        
+        public Decore.Models.CountBeverage[] GetBeverageCountUpsByDateTime(System.DateTime countTime) {
+            return base.Channel.GetBeverageCountUpsByDateTime(countTime);
+        }
+        
+        public System.Threading.Tasks.Task<Decore.Models.CountBeverage[]> GetBeverageCountUpsByDateTimeAsync(System.DateTime countTime) {
+            return base.Channel.GetBeverageCountUpsByDateTimeAsync(countTime);
+        }
+        
+        public void PostBeverageCountUp(Decore.Models.CountBeverage countBeverageItem) {
+            base.Channel.PostBeverageCountUp(countBeverageItem);
+        }
+        
+        public System.Threading.Tasks.Task PostBeverageCountUpAsync(Decore.Models.CountBeverage countBeverageItem) {
+            return base.Channel.PostBeverageCountUpAsync(countBeverageItem);
         }
     }
 }
